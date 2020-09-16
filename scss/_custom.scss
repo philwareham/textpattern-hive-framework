@@ -6,3 +6,19 @@ $use-jquery-ui: false;
 
 // Support for Hive Icons?
 $use-icons: true;
+
+// typography grid
+$base-font-size:       16px;
+$line-height-desktop:  1.5;
+$line-height-mobile:   1.375;
+$code-font-size:       0.875rem;
+$small-font-size:      0.8125rem;
+
+// layout grid
+$container-max-width:  72em;
+$breakpoint-3:         60em;
+$breakpoint-2:         48em;
+$breakpoint-1:         30em;
+
+// borders
+$border-radius:        0.5em;
