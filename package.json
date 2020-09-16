@@ -1,0 +1,35 @@
+{
+  "name": "textpattern-hive-framework",
+  "description": "A Textpattern website development framework built with Grunt and Sass.",
+  "version": "0.0.0",
+  "keywords": [
+    "css",
+    "framework",
+    "front-end",
+    "responsive",
+    "sass",
+    "textpattern",
+    "theme",
+    "web"
+  ],
+  "author": {
+    "name": "Phil Wareham",
+    "url": "https://twitter.com/philwareham"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philwareham/textpattern-hive-framework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/philwareham/textpattern-hive-framework/issues"
+  },
+  "dependencies": {
+    "hive-framework": "0.17.0"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "Firefox ESR",
+    "not IE 11"
+  ],
+  "license": "(MIT AND GPL-2.0)"
+}
