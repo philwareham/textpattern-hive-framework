@@ -136,12 +136,11 @@ module.exports = function (grunt)
             options: {
                 implementation: require('sass'),
                 outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
-                sourceMap: false
+                sourceMap: true
             },
             dist: {
                 files: [
-                    {'<%= paths.dest.css %>style.css': '<%= paths.src.sass %>style.scss'},
-                    {'<%= paths.dest.css %>design-patterns.css': '<%= paths.src.sass %>design-patterns.scss'}
+                    {'<%= paths.dest.css %>style.css': '<%= paths.src.sass %>app.scss'}
                 ]
             }
         },
