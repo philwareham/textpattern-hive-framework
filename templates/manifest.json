@@ -1,0 +1,8 @@
+{
+  "title": "Textpattern Hive Framework",
+  "txp-type": "textpattern-theme",
+  "version": "0.0.0",
+  "description": "A Textpattern website theme development framework.",
+  "author": "Phil Wareham",
+  "author_uri": "https://github.com/philwarehan/textpattern-hive-framework"
+}
