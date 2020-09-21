@@ -1,5 +1,5 @@
 <txp:pages pg link="" showalways="2" evaluate="5,2,8,4,6">
-    <nav class="paginator" aria-label="Blog navigation">
+    <nav class="paginator" aria-label="<txp:text item="page_nav" />">
         Pages:
         <txp:newer showalways><a rel="prev" href="<txp:yield item="url" />" title="Go to previous page" aria-label="Go to previous page">Previous</a></txp:newer>
         <ul class="pagination">
