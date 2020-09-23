@@ -1,3 +1,6 @@
+// Use user defined list of modules?
+$modules-user-defined: false;
+
 // Support non-latin languages?
 $internationalization: true;
 
@@ -25,3 +28,8 @@ $breakpoint-1:         30em;
 
 // borders
 $border-radius:        0.5em;
+
+// Site logo defaults
+$site-logo-file:   "../img/site-logo@2x.png";
+$site-logo-width:  240px; // recommended maximum width ~240px.
+$site-logo-height: 40px;
