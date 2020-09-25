@@ -4,18 +4,18 @@
         <txp:evaluate>
             <txp:images category="gallery" break="" sort="date desc" limit="24">
                 <div class="layout-3col">
-                    <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image"></li>
+                    <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image">
                 </div>
             </txp:images>
         <txp:else />
             <div class="layout-3col">
-                <img loading="lazy" src="<txp:page_url type="theme_path" />/img/placeholders/img-1080x1080-1.png" alt="Placeholder Image 1" itemprop="image"></li>
+                <img loading="lazy" src="<txp:page_url type="theme_path" />/img/placeholders/img-1080x1080-1.png" alt="Placeholder Image 1" itemprop="image">
             </div>
             <div class="layout-3col">
-                <img loading="lazy" src="<txp:page_url type="theme_path" />/img/placeholders/img-1080x1080-2.png" alt="Placeholder Image 2" itemprop="image"></li>
+                <img loading="lazy" src="<txp:page_url type="theme_path" />/img/placeholders/img-1080x1080-2.png" alt="Placeholder Image 2" itemprop="image">
             </div>
             <div class="layout-3col">
-                <img loading="lazy" src="<txp:page_url type="theme_path" />/img/placeholders/img-1080x1080-3.png" alt="Placeholder Image 3" itemprop="image"></li>
+                <img loading="lazy" src="<txp:page_url type="theme_path" />/img/placeholders/img-1080x1080-3.png" alt="Placeholder Image 3" itemprop="image">
             </div>
         </txp:evaluate>
     </div>
