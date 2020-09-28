@@ -1,0 +1,17 @@
+<section>
+    <h3 class="accessibility"><txp:text item="gallery" /></h3>
+    <div class="layout-text4col gallery">
+        <txp:evaluate>
+            <txp:images category="gallery" break="" sort="date desc" limit="24">
+                <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image">
+            </txp:images>
+        <txp:else />
+            <img loading="lazy" src="<txp:page_url type="theme_path" />/img/placeholders/img-1080x1080-6.png" alt="Placeholder Image 1" itemprop="image">
+            <img loading="lazy" src="<txp:page_url type="theme_path" />/img/placeholders//img-hd-1.png" alt="Placeholder Image 2" itemprop="image">
+            <img loading="lazy" src="<txp:page_url type="theme_path" />/img/placeholders//img-hd-2.png" alt="Placeholder Image 3" itemprop="image">
+            <img loading="lazy" src="<txp:page_url type="theme_path" />/img/placeholders/img-1080x1080-4.png" alt="Placeholder Image 4" itemprop="image">
+            <img loading="lazy" src="<txp:page_url type="theme_path" />/img/placeholders/img-1080x1080-5.png" alt="Placeholder Image 5" itemprop="image">
+            <img loading="lazy" src="<txp:page_url type="theme_path" />/img/placeholders//img-hd-3.png" alt="Placeholder Image 6" itemprop="image">
+        </txp:evaluate>
+    </div>
+</section>

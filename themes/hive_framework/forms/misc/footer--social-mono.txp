@@ -1,0 +1,23 @@
+<footer class="site-footer">
+    <p>
+        <small>
+            Copyright <txp:php>echo date('Y');</txp:php>
+            <span itemscope itemtype="https://schema.org/Organization">
+                <span itemprop="name">Organisation Name</span>.
+            </span>
+            <a href="<txp:site_url />contact">Contact us</a>.
+            <a href="<txp:site_url />privacy">Privacy</a>.
+        </small>
+    </p>
+    <ul class="social-channels monochrome">
+        <li><a rel="external" href="#" class="facebook">Facebook</a></li>
+        <li><a rel="external" href="#" class="github">GitHub</a></li>
+        <li><a rel="external" href="#" class="instagram">Instagram</a></li>
+        <li><a rel="external" href="#" class="linkedin">LinkedIn</a></li>
+        <li><a rel="external" href="#" class="pinterest">Pinterest</a></li>
+        <li><a rel="external" href="#" class="twitter">Twitter</a></li>
+        <li><a rel="external" href="#" class="youtube">YouTube</a></li>
+    </ul>
+</footer>
+<script async src="<txp:page_url type="theme_path" />/assets/js/app.js"></script>
+<noscript>JavaScript is currently disabled in your browser - please activate it for the best experience.</noscript>
