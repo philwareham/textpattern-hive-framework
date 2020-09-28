@@ -17,6 +17,6 @@
             <txp:output_form form="search--hero" />
         </div>
     </div>
-    <txp:output_form form="footer--default" />
+    <txp:output_form form="footer--social-mono-inverse" />
 </body>
 </html>

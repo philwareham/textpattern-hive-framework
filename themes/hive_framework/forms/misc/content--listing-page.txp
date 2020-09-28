@@ -1,1 +1,13 @@
-TODO
+<div class="wrapper">
+    <div class="container">
+        <main id="main" aria-label="<txp:text item="main_content" />">
+            <txp:if_author>
+                <h1 itemprop="name"><txp:text item="author" /> <txp:author /></h1>
+            <txp:else />
+                <h1 itemprop="name"><txp:text item="category" /> <txp:category title /></h1>
+            </txp:if_author>
+            <txp:article form="article_listing" limit="10" wraptag="ul" class="article-list" />
+            <txp:output_form form="pagination" />
+        </main>
+    </div>
+</div>

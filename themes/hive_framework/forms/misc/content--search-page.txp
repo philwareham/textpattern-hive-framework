@@ -1,1 +1,8 @@
-TODO
+<div class="wrapper">
+    <div class="container">
+        <main id="main" aria-label="<txp:text item="main_content" />">
+            TODO
+            <txp:output_form form="pagination" />
+        </main>
+    </div>
+</div>

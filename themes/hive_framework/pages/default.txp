@@ -16,6 +16,7 @@
                 <meta name="robots" content="noindex, follow">
                 <txp:variable name="page-type" value="listing-page" />
             <txp:else />
+                <txp:variable name="page-type" value="front-page" />
                 <txp:variable name="page" value='<txp:page_url type="pg" />' />
                 <txp:if_variable name="page" value="1">
                     <txp:meta_description />
@@ -33,7 +34,6 @@
                 <txp:else />
                     <meta name="robots" content="noindex, follow">
                 </txp:if_variable>
-                <txp:variable name="page-type" value="front-page" />
             </txp:if_category>
         </txp:if_author>
     </txp:if_search>
@@ -56,8 +56,7 @@
         <txp:else />
             <txp:output_form form="content--listing-page" />
         </txp:if_variable>
-        <txp:output_form form="pagination" />
     </txp:if_variable>
-    <txp:output_form form="footer--default" />
+    <txp:output_form form="footer--social-mono-inverse" />
 </body>
 </html>
