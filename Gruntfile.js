@@ -14,13 +14,15 @@ module.exports = function (grunt)
                 sass: 'scss/',
                 fonts: 'node_modules/hive-framework/src/assets/fonts/',
                 images: 'img/',
-                js: 'node_modules/hive-framework/src/assets/js/'
+                js: 'node_modules/hive-framework/src/assets/js/',
+                templates: 'templates/'
             },
             dest: {
                 css: 'themes/hive_framework/assets/css/',
                 fonts: 'themes/hive_framework/assets/fonts/',
                 images: 'themes/hive_framework/assets/img/',
-                js: 'themes/hive_framework/assets/js/'
+                js: 'themes/hive_framework/assets/js/',
+                templates: 'themes/hive_framework/'
             }
         },
 
@@ -53,8 +55,7 @@ module.exports = function (grunt)
         concurrent: {
             dist: [
                 'browserify',
-                'copy:fonts',
-                'copy:img',
+                'copy',
                 'css',
                 'jshint'
             ]
@@ -69,6 +70,17 @@ module.exports = function (grunt)
                         cwd: '<%= paths.src.fonts %>',
                         src: '**',
                         dest: '<%= paths.dest.fonts %>'
+                    }
+                ]
+            },
+            // Copy Textpattern templates.
+            html: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= paths.src.templates %>',
+                        src: '**',
+                        dest: '<%= paths.dest.templates %>'
                     }
                 ]
             },
@@ -180,6 +192,12 @@ module.exports = function (grunt)
                     'browserify',
                     'uglify'
                 ]
+            },
+            html: {
+                files: [
+                    '<%= paths.src.templates %>**'
+                ],
+                tasks: 'copy:html'
             }
         }
 
