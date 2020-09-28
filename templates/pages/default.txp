@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
+<head>
+    <txp:output_form form="head--default" />
+    <txp:if_search>
+        <title><txp:text item="search_results" /> | <txp:site_name /></title>
+        <meta name="description" content="<txp:text item="search_results" />">
+        <meta name="robots" content="none">
+        <txp:variable name="page-type" value="search-page" />
+    <txp:else />
+        <txp:if_author>
+            <meta name="robots" content="noindex, follow">
+            <txp:variable name="page-type" value="listing-page" />
+        <txp:else />
+            <txp:if_category>
+                <meta name="robots" content="noindex, follow">
+                <txp:variable name="page-type" value="listing-page" />
+            <txp:else />
+                <txp:variable name="page" value='<txp:page_url type="pg" />' />
+                <txp:if_variable name="page" value="1">
+                    <txp:meta_description />
+                    <meta name="robots" content="index, follow">
+                    <link rel="canonical" href="<txp:site_url />">
+                    <script type="application/ld+json">
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "WebSite",
+                            "headline": "<txp:site_name escape="json" />",
+                            <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>
+                            "url": "<txp:site_url escape="json" />"
+                        }
+                    </script>
+                <txp:else />
+                    <meta name="robots" content="noindex, follow">
+                </txp:if_variable>
+                <txp:variable name="page-type" value="front-page" />
+            </txp:if_category>
+        </txp:if_author>
+    </txp:if_search>
+</head>
+<txp:if_variable name="page-type" value="front-page">
+    <body class="front-page" itemscope itemtype="https://schema.org/WebPage">
+<txp:else />
+    <txp:if_variable name="page-type" value="search-page">
+        <body class="search-page" itemscope itemtype="https://schema.org/SearchResultsPage">
+    <txp:else />
+        <body class="listing-page" itemscope itemtype="https://schema.org/CollectionPage">
+    </txp:if_variable>
+</txp:if_variable>
+    <txp:output_form form="header--search" />
+    <div class="wrapper">
+        <div class="container">
+
+            <!-- Main content -->
+            <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">
+
+                <!-- is this the search result page? also omits the pagination links below (uses pagination format within search_display.txp instead) -->
+                <txp:if_search>
+                    <txp:output_form form="search_display" />
+
+                <txp:else />
+                    <!-- else is this the front page? -->
+                    <txp:if_variable name="front-page">
+                        <!-- links by default to form: 'default.txp' unless you specify a different form -->
+                        <txp:article limit="5" />
+
+                    <txp:else />
+                        <!-- else is this an article author list? -->
+                        <txp:if_author>
+                            <h1 itemprop="name"><txp:text item="author" /> <txp:author /></h1>
+
+                        <txp:else />
+                            <!-- else is this an article category list? -->
+                            <txp:if_category>
+                                <h1 itemprop="name"><txp:text item="category" /> <txp:category title /></h1>
+                            </txp:if_category>
+                        </txp:if_author>
+                        <txp:article form="article_listing" limit="10" wraptag="ul" class="article-list" />
+                    </txp:if_variable>
+
+                    <!-- add pagination links to foot of front page/author listings/category listings if there are more articles available -->
+                    <txp:evaluate test="newer,older">
+                        <nav class="paginator" aria-label="<txp:text item="page_nav" />">
+                            <txp:newer rel="prev">
+                                <txp:text item="newer" />
+                            </txp:newer>
+                            <txp:older rel="next">
+                                <txp:text item="older" />
+                            </txp:older>
+                        </nav>
+                    </txp:evaluate>
+                </txp:if_search>
+
+            </main>
+
+            <txp:output_form form="body_aside" />
+
+        </div> <!-- /.container -->
+    </div> <!-- /.wrapper -->
+
+    <txp:output_form form="footer--default" />
+</body>
+</html>

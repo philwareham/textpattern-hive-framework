@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
+<head>
+    <txp:output_form form="head--default" />
+    <title><txp:error_status /></title>
+    <meta name="robots" content="none">
+    <txp:variable name="page-type" value="error-page" />
+</head>
+<body class="error-page" itemscope itemtype="https://schema.org/WebPage">
+    <txp:output_form form="header--search" />
+    <div class="wrapper">
+        <div class="container">
+            <main id="main" aria-label="<txp:text item="main_content" />">
+                <h1 class="error-status"><txp:error_status /></h1>
+                <p class="error-msg"><txp:error_message /></p>
+            </main>
+            <txp:output_form form="search--hero" />
+        </div>
+    </div>
+    <txp:output_form form="footer--default" />
+</body>
+</html>

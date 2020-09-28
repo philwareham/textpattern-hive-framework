@@ -20,13 +20,15 @@
                 </txp:if_section>
             </txp:section_list>
         </nav>
-        <div class="search-form" itemscope itemtype="https://schema.org/WebSite">
-            <meta itemprop="url" content="<txp:site_url />">
-            <form id="search" role="search" method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
-                <meta itemprop="target" content="<txp:site_url />?q={q}">
-                <label class="accessibility" for="q"><txp:text item="search" /></label>
-                <input id="q" name="q" type="search" itemprop="query-input" placeholder="<txp:text item="search" />"<txp:if_search> value="<txp:search_term />"</txp:if_search>>
-            </form>
-        </div>
+        <txp:variable name="page-type" not match="any" value="error-page,search-page">
+            <div class="search-form" itemscope itemtype="https://schema.org/WebSite">
+                <meta itemprop="url" content="<txp:site_url />">
+                <form id="search" role="search" method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+                    <meta itemprop="target" content="<txp:site_url />?q={q}">
+                    <label class="accessibility" for="q"><txp:text item="search" /></label>
+                    <input id="q" name="q" type="search" itemprop="query-input" placeholder="<txp:text item="search" />"<txp:if_search> value="<txp:search_term />"</txp:if_search>>
+                </form>
+            </div>
+        </txp:variable>
     </div>
 </div>
