@@ -156,6 +156,9 @@ module.exports = function (grunt)
         // Minify `app.js`.
         uglify: {
             dist: {
+                options: {
+                    sourceMap: true
+                },
                 files: [
                     {
                         '<%= paths.dest.js %>app.js': ['<%= paths.dest.js %>app.js']
