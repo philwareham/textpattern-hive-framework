@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
+<head>
+    <txp:output_form form="head--default" />
+    <title><txp:page_title /></title>
+    <txp:meta_description />
+    <txp:if_article_list>
+        <txp:article pgonly limit="12" />
+        <txp:variable name="page" value='<txp:page_url type="pg" />' />
+        <txp:if_variable name="page" value="1">
+            <meta name="robots" content="index, follow">
+            <link rel="canonical" href="<txp:section url />">
+            <meta property="og:site_name" content="<txp:site_name />">
+            <meta property="og:type" content="website">
+            <meta property="og:title" content="<txp:section title />">
+            <txp:if_description><meta property="og:description" content="<txp:meta_description format="" escape="json" />"></txp:if_description>
+            <meta property="og:image" content="<txp:page_url type="theme_path" />/assets/img/site-logo-opengraph.png">
+            <meta property="og:image:width" content="1200">
+            <meta property="og:image:height" content="630">
+            <meta property="og:image:alt" content="<txp:site_name />">
+            <meta property="og:url" content="<txp:section url />">
+            <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "Blog",
+                    "headline": "<txp:section title escape="json" />",
+                    <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>
+                    "url": "<txp:section url escape="json" />"
+                }
+            </script>
+        <txp:else />
+            <meta name="robots" content="noindex, follow">
+        </txp:if_variable>
+        <txp:evaluate test>
+            <link rel="prev" href="<txp:newer />">
+        </txp:evaluate>
+        <txp:evaluate test>
+            <link rel="next" href="<txp:older />">
+        </txp:evaluate>
+    <txp:else />
+        <txp:meta_author title />
+        <meta name="robots" content="<txp:if_expires>unavailable_after: <txp:expires gmt format="%d-%b-%y %T" /> GMT<txp:else />index, follow</txp:if_expires>">
+        <link rel="canonical" href="<txp:permlink />">
+        <meta property="og:site_name" content="<txp:site_name />">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="<txp:title />">
+        <txp:if_description><meta property="og:description" content="<txp:meta_description format="" escape="json" />"></txp:if_description>
+        <txp:if_article_image>
+            <txp:images limit="1">
+                <meta property="og:image" content="<txp:image_url />">
+                <meta property="og:image:width" content="<txp:image_info type="w" />">
+                <meta property="og:image:height" content="<txp:image_info type="h" />">
+                <meta property="og:image:alt" content="<txp:image_info type="alt" />">
+            </txp:images>
+        <txp:else />
+            <meta property="og:image" content="<txp:page_url type="theme_path" />/assets/img/site-logo-opengraph.png">
+            <meta property="og:image:width" content="1200">
+            <meta property="og:image:height" content="630">
+            <meta property="og:image:alt" content="<txp:site_name />">
+        </txp:if_article_image>
+        <meta property="og:url" content="<txp:permlink />">
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Blog",
+                "blogPost": [{
+                    "@type": "BlogPosting",
+                    "headline": "<txp:title escape="json" />",
+                    <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>
+                    "url": "<txp:permlink escape="json" />",
+                    "mainEntityOfPage": "<txp:permlink escape="json" />",
+                    "datePublished": "<txp:posted format="iso8601" />",
+                    "dateModified": "<txp:modified format="iso8601" />",
+                    "author": {
+                        "@type": "Person",
+                        "name": "<txp:author escape="json" />"
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "Textpattern CMS",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://textpattern.com/assets/img/branding/textpattern/textpattern.png"
+                        }
+                    },
+                    "image": {
+                        "@type": "ImageObject",
+                        "url": "<txp:if_article_image><txp:images limit="1"><txp:image_url escape="json" /></txp:images><txp:else />https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png</txp:if_article_image>"
+                    }
+                }]
+            }
+        </script>
+    </txp:if_article_list>
+</head>
+<body <txp:if_article_list>class="blog-listing-page"<txp:else />class="blog-article-page"</txp:if_article_list> itemscope itemtype="https://schema.org/WebPage">
+    <txp:output_form form="header--search" />
+    <div class="wrapper">
+        <div class="container">
+            <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">
+                <txp:output_form form="breadcrumbs--default" />
+                <txp:if_article_list>
+                    <txp:article form="article_listing_blog" limit="12" />
+                    <txp:output_form form="pagination" />
+                <txp:else />
+                    <txp:article form="blog" />
+                </txp:if_article_list>
+            </main>
+        </div>
+    </div>
+    <txp:output_form form="footer--social-mono-inverse" />
+</body>
+</html>
