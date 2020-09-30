@@ -41,7 +41,7 @@
         </txp:if_author>
     </txp:if_search>
 </head>
-<txp:if_variable name="page-type" value="front-page"><body class="front-page" itemscope itemtype="https://schema.org/WebPage"><txp:else /><txp:if_variable name="page-type" value="search-page"><body class="search-page" itemscope itemtype="https://schema.org/SearchResultsPage"><txp:else /><body class="listing-page" itemscope itemtype="https://schema.org/CollectionPage"></txp:if_variable></txp:if_variable>
+<body class="<txp:variable name="page-type" />" itemscope itemtype="<txp:if_variable name="page-type" value="front-page">https://schema.org/WebPage<txp:else /><txp:if_variable name="page-type" value="search-page">https://schema.org/SearchResultsPage<txp:else />https://schema.org/CollectionPage</txp:if_variable></txp:if_variable>">
     <txp:output_form form="header--search" />
     <txp:if_variable name="page-type" value="front-page">
         <txp:output_form form="content--front-page" />
