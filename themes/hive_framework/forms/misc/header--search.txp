@@ -1,5 +1,5 @@
 <a class="a--skip-link" href="#main"><txp:text item="go_content" /></a>
-<a class="a--skip-link" href="#search"><txp:text item="go_search" /></a>
+<a class="a--skip-link" href="#q"><txp:text item="go_search" /></a>
 <div id="dynamic-header">
     <header class="site-header">
         <h2><txp:site_name /></h2>
@@ -23,7 +23,7 @@
         <txp:if_variable name="page-type" not match="any" value="error-page,search-page">
             <div class="search-form" itemscope itemtype="https://schema.org/WebSite">
                 <meta itemprop="url" content="<txp:site_url />">
-                <form id="search" role="search" method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+                <form role="search" method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                     <meta itemprop="target" content="<txp:site_url />?q={q}">
                     <label class="accessibility" for="q"><txp:text item="search" /></label>
                     <input id="q" name="q" type="search" itemprop="query-input" placeholder="<txp:text item="search" />"<txp:if_search> value="<txp:search_term />"</txp:if_search>>
