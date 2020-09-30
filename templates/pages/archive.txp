@@ -14,7 +14,7 @@
                 {
                     "@context": "https://schema.org",
                     "@type": "Blog",
-                    "headline": "<txp:section title escape="json" />",
+                    "headline": "<txp:page_title escape="json" />",
                     <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>
                     "url": "<txp:section url escape="json" />"
                 }
@@ -22,10 +22,10 @@
         <txp:else />
             <meta name="robots" content="noindex, follow">
         </txp:if_variable>
-        <txp:evaluate test>
+        <txp:evaluate>
             <link rel="prev" href="<txp:newer />">
         </txp:evaluate>
-        <txp:evaluate test>
+        <txp:evaluate>
             <link rel="next" href="<txp:older />">
         </txp:evaluate>
     <txp:else />
@@ -39,7 +39,7 @@
                 "@type": "Blog",
                 "blogPost": [{
                     "@type": "BlogPosting",
-                    "headline": "<txp:title escape="json" />",
+                    "headline": "<txp:page_title escape="json" />",
                     <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>
                     "url": "<txp:permlink escape="json" />",
                     "mainEntityOfPage": "<txp:permlink escape="json" />",
@@ -51,29 +51,29 @@
                     },
                     "publisher": {
                         "@type": "Organization",
-                        "name": "Textpattern CMS",
+                        "name": "<txp:site_name escape="json" />",
                         "logo": {
                             "@type": "ImageObject",
-                            "url": "https://textpattern.com/assets/img/branding/textpattern/textpattern.png"
+                            "url": "<txp:page_url type="theme_path" escape="json" />\/assets\/img\/site-logo@2x.png"
                         }
                     },
                     "image": {
                         "@type": "ImageObject",
-                        "url": "<txp:if_article_image><txp:images limit="1"><txp:image_url escape="json" /></txp:images><txp:else />https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png</txp:if_article_image>"
+                        "url": "<txp:if_article_image><txp:images limit="1"><txp:image_url escape="json" /></txp:images><txp:else /><txp:page_url type="theme_path" />\/assets\/img\/site-logo-opengraph.png</txp:if_article_image>"
                     }
                 }]
             }
         </script>
     </txp:if_article_list>
 </head>
-<body <txp:if_article_list>class="blog-listing-page"<txp:else />class="blog-article-page"</txp:if_article_list> itemscope itemtype="https://schema.org/WebPage">
+<body class="<txp:if_article_list>blog-listing-page<txp:else />blog-article-page</txp:if_article_list>" itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="header--search" />
     <div class="wrapper">
         <div class="container">
             <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">
                 <txp:output_form form="breadcrumbs--default" />
                 <txp:if_article_list>
-                    <txp:article form="article_listing_blog" limit="12" />
+                    <txp:article form="article_listing" limit="12" />
                     <txp:output_form form="pagination" />
                 <txp:else />
                     <txp:article form="blog" />
