@@ -9,13 +9,16 @@
         <txp:variable name="page-type" value="search-page" />
     <txp:else />
         <txp:if_author>
+            <title><txp:page_title /></title>
             <meta name="robots" content="noindex, follow">
             <txp:variable name="page-type" value="listing-page" />
         <txp:else />
             <txp:if_category>
+                <title><txp:page_title /></title>
                 <meta name="robots" content="noindex, follow">
                 <txp:variable name="page-type" value="listing-page" />
             <txp:else />
+                <title><txp:evaluate><txp:site_slogan /> | </txp:evaluate><txp:site_name /></title>
                 <txp:variable name="page-type" value="front-page" />
                 <txp:variable name="page" value='<txp:page_url type="pg" />' />
                 <txp:if_variable name="page" value="1">
@@ -26,7 +29,7 @@
                         {
                             "@context": "https://schema.org",
                             "@type": "WebSite",
-                            "headline": "<txp:site_name escape="json" />",
+                            "headline": "<txp:evaluate><txp:site_slogan escape="json" /> | </txp:evaluate><txp:site_name escape="json" />",
                             <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>
                             "url": "<txp:site_url escape="json" />"
                         }
@@ -38,15 +41,7 @@
         </txp:if_author>
     </txp:if_search>
 </head>
-<txp:if_variable name="page-type" value="front-page">
-    <body class="front-page" itemscope itemtype="https://schema.org/WebPage">
-<txp:else />
-    <txp:if_variable name="page-type" value="search-page">
-        <body class="search-page" itemscope itemtype="https://schema.org/SearchResultsPage">
-    <txp:else />
-        <body class="listing-page" itemscope itemtype="https://schema.org/CollectionPage">
-    </txp:if_variable>
-</txp:if_variable>
+<txp:if_variable name="page-type" value="front-page"><body class="front-page" itemscope itemtype="https://schema.org/WebPage"><txp:else /><txp:if_variable name="page-type" value="search-page"><body class="search-page" itemscope itemtype="https://schema.org/SearchResultsPage"><txp:else /><body class="listing-page" itemscope itemtype="https://schema.org/CollectionPage"></txp:if_variable></txp:if_variable>
     <txp:output_form form="header--search" />
     <txp:if_variable name="page-type" value="front-page">
         <txp:output_form form="content--front-page" />

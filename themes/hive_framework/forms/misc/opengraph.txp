@@ -1,6 +1,6 @@
 <meta property="og:site_name" content="<txp:site_name />">
 <meta property="og:type" content="article">
-<meta property="og:title" content="<txp:title />">
+<meta property="og:title" content="<txp:page_title />">
 <txp:if_description><meta property="og:description" content="<txp:meta_description format="" />"></txp:if_description>
 <txp:if_article_image>
     <txp:images limit="1">
