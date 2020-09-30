@@ -10,15 +10,6 @@
         <txp:if_variable name="page" value="1">
             <meta name="robots" content="index, follow">
             <link rel="canonical" href="<txp:section url />">
-            <meta property="og:site_name" content="<txp:site_name />">
-            <meta property="og:type" content="website">
-            <meta property="og:title" content="<txp:section title />">
-            <txp:if_description><meta property="og:description" content="<txp:meta_description format="" escape="json" />"></txp:if_description>
-            <meta property="og:image" content="<txp:page_url type="theme_path" />/assets/img/site-logo-opengraph.png">
-            <meta property="og:image:width" content="1200">
-            <meta property="og:image:height" content="630">
-            <meta property="og:image:alt" content="<txp:site_name />">
-            <meta property="og:url" content="<txp:section url />">
             <script type="application/ld+json">
                 {
                     "@context": "https://schema.org",
@@ -41,24 +32,7 @@
         <txp:meta_author title />
         <meta name="robots" content="<txp:if_expires>unavailable_after: <txp:expires gmt format="%d-%b-%y %T" /> GMT<txp:else />index, follow</txp:if_expires>">
         <link rel="canonical" href="<txp:permlink />">
-        <meta property="og:site_name" content="<txp:site_name />">
-        <meta property="og:type" content="article">
-        <meta property="og:title" content="<txp:title />">
-        <txp:if_description><meta property="og:description" content="<txp:meta_description format="" escape="json" />"></txp:if_description>
-        <txp:if_article_image>
-            <txp:images limit="1">
-                <meta property="og:image" content="<txp:image_url />">
-                <meta property="og:image:width" content="<txp:image_info type="w" />">
-                <meta property="og:image:height" content="<txp:image_info type="h" />">
-                <meta property="og:image:alt" content="<txp:image_info type="alt" />">
-            </txp:images>
-        <txp:else />
-            <meta property="og:image" content="<txp:page_url type="theme_path" />/assets/img/site-logo-opengraph.png">
-            <meta property="og:image:width" content="1200">
-            <meta property="og:image:height" content="630">
-            <meta property="og:image:alt" content="<txp:site_name />">
-        </txp:if_article_image>
-        <meta property="og:url" content="<txp:permlink />">
+        <txp:output_form form="opengraph" />
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
