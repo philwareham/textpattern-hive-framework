@@ -1,0 +1,30 @@
+<meta itemprop="mainEntityOfPage" content="<txp:permlink />">
+<span itemprop="author" itemscope itemtype="https://schema.org/Person">
+    <span class="article-author" itemprop="name"><txp:author /></span>
+</span>
+<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="<txp:site_name />">
+    <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url contentUrl" content="<txp:page_url type="theme_path" escape="json" />/assets/img/site-logo@2x.png">
+    </span>
+</span>
+<h1 itemprop="headline"><txp:title /></h1>
+<meta itemprop="datePublished" content="<txp:posted format="iso8601" />">
+<meta itemprop="dateModified" content="<txp:modified format="iso8601" />">
+<txp:if_excerpt>
+    <div class="article-description" itemprop="description">
+        <txp:excerpt />
+    </div>
+</txp:if_excerpt>
+<txp:if_article_image>
+    <txp:images form="images" break="" />
+<txp:else />
+    <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url contentUrl" content="<txp:page_url type="theme_path" />/assets/img/site-logo-opengraph.png">
+        <meta itemprop="width" content="1200">
+        <meta itemprop="height" content="630">
+    </span>
+</txp:if_article_image>
+<div class="article-body" itemprop="articleBody">
+    <txp:body />
+</div>

@@ -1,0 +1,31 @@
+<article class="teaser" itemscope itemtype="https://schema.org/Article">
+    <h2 id="headline_<txp:article_id />" itemprop="headline"><a itemprop="url mainEntityOfPage" href="<txp:permlink />" title="<txp:text item="read_more" />"><txp:title /></a></h2>
+    <meta itemprop="author" content="<txp:author />">
+    <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="<txp:site_name />">
+        <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url contentUrl" content="<txp:page_url type="theme_path" escape="json" />/assets/img/site-logo@2x.png">
+        </span>
+    </span>
+    <meta itemprop="datePublished" content="<txp:posted format="iso8601" />">
+    <meta itemprop="dateModified" content="<txp:modified format="iso8601" />">
+    <txp:if_excerpt>
+        <div class="article-description" itemprop="description">
+            <txp:excerpt />
+        </div>
+    </txp:if_excerpt>
+    <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <txp:if_article_image>
+            <txp:images limit="1">
+                <meta itemprop="url contentUrl" content="<txp:image_url />">
+                <meta itemprop="width" content="<txp:image_info type="w" />">
+                <meta itemprop="height" content="<txp:image_info type="h" />">
+            </txp:images>
+        <txp:else />
+            <meta itemprop="url contentUrl" content="<txp:page_url type="theme_path" />/assets/img/site-logo-opengraph.png">
+            <meta itemprop="width" content="1200">
+            <meta itemprop="height" content="630">
+        </txp:if_article_image>
+    </span>
+    <p><a id="more_<txp:article_id />" href="<txp:permlink />" aria-labelledby="more_<txp:article_id /> headline_<txp:article_id />"><txp:text item="read_more" /></a></p>
+</article>

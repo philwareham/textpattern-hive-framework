@@ -73,7 +73,7 @@
             <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">
                 <txp:output_form form="breadcrumbs--default" />
                 <txp:if_article_list>
-                    <txp:article form="article_listing" limit="12" />
+                    <txp:article form="article_listing_blog" limit="12" />
                     <txp:output_form form="pagination" />
                 <txp:else />
                     <txp:article form="blog" />
