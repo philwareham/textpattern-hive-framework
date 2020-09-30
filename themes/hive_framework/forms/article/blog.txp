@@ -41,6 +41,7 @@
                     <txp:category title link />
                 </txp:category_list>
             </span>
+        </txp:if_article_category>
         <txp:if_comments>
             <span class="separator" role="separator">|</span>
             <span class="ui-icon ui-icon-comment"><txp:text item="comments" /></span>
