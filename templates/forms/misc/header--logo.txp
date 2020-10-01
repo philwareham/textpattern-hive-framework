@@ -4,6 +4,7 @@
         <h2 class="site-logo"><txp:site_name /></h2>
     </header>
     <div class="site-navigation">
+        <a id="lightswitch" href="#" role="button"><txp:text item="lightswitch" /></a>
         <a id="site-navigation-toggle" href="#" role="button" aria-controls="site-navigation"><txp:text item="navigation" /></a>
         <nav id="site-navigation" aria-label="<txp:text item="site_nav" />" itemscope itemtype="https://schema.org/SiteNavigationElement">
             <txp:section_list include_default default_title='<txp:text item="home" />' html_id="site-navigation-list" wraptag="ul" break="">
