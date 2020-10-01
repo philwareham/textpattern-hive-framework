@@ -26,7 +26,7 @@
     <footer class="article-footer">
         <span class="ui-icon ui-icon-pencil"><txp:text item="posted_by" /></span>
         <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-            <span class="article-author" itemprop="name"><txp:author /></span>
+            <span class="article-author" itemprop="name"><txp:if_variable name="published-authors" value="1"><txp:author /><txp:else /><txp:author link this_section /></txp:if_variable></span>
         </span>
         <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
             <meta itemprop="name" content="<txp:site_name />">

@@ -4,6 +4,7 @@
     <txp:output_form form="head--default" />
     <title><txp:page_title /></title>
     <txp:meta_description />
+    <txp:variable name="published-authors" value='<txp:article_custom pgonly="AuthorID" />' />
     <txp:if_article_list>
         <txp:article pgonly limit="12" />
         <txp:variable name="page" value='<txp:page_url type="pg" />' />
@@ -47,6 +48,7 @@
                     "dateModified": "<txp:modified format="iso8601" />",
                     "author": {
                         "@type": "Person",
+                        <txp:if_variable name="published-authors" not value="1">"url": "<txp:author format="url" this_section escape="json" />",</txp:if_variable>
                         "name": "<txp:author escape="json" />"
                     },
                     "publisher": {
