@@ -48,7 +48,7 @@
                     "dateModified": "<txp:modified format="iso8601" />",
                     "author": {
                         "@type": "Person",
-                        <txp:if_variable name="published-authors" not value="1">"url": "<txp:author format="url" this_section escape="json" />",</txp:if_variable>
+                        <txp:if_variable name="published-authors" not value="1">"url": "<txp:hide process="1" escape="json"><txp:author format="url" this_section /></txp:hide>",</txp:if_variable>
                         "name": "<txp:author escape="json" />"
                     },
                     "publisher": {

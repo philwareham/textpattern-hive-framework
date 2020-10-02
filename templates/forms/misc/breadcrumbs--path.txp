@@ -13,7 +13,7 @@
         <txp:else />
             <txp:if_author>
                 <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <b itemprop="name" aria-current="location"><txp:category title /></b>
+                    <b itemprop="name" aria-current="location"><txp:author /></b>
                     <meta itemprop="item" content="<txp:author format="url" />">
                     <meta itemprop="position" content="2">
                 </li>

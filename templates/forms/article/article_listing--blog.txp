@@ -38,8 +38,8 @@
             <span class="separator" role="separator">|</span>
             <span class="ui-icon ui-icon-tag"><txp:text item="categories" /></span>
             <span itemprop="keywords">
-                <txp:category_list categories='<txp:category1 />,<txp:category2 />' children="0" break=", " trim>
-                    <txp:category title link />
+                <txp:category_list categories='<txp:category1 />,<txp:category2 />' children="0" break=" / " trim>
+                    <txp:category title link this_section />
                 </txp:category_list>
             </span>
         </txp:if_article_category>
