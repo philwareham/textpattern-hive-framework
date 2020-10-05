@@ -4,16 +4,16 @@
 </txp:if_comments_error>
 <div class="layout-container">
     <p class="layout-2col">
-        <label for="name"><txp:text item="comment_name" /> <abbr class="required" title="<txp:text item="required" />" aria-label="<txp:text item="required" />">●</abbr></label><br>
+        <label for="name"><txp:text item="comment_name" /> <abbr class="required" title="<txp:text item="required" />" aria-label="<txp:text item="required" />">*</abbr></label><br>
         <txp:comment_name_input class="large" size="32" />
     </p>
     <p class="layout-2col">
-        <label for="email"><txp:text item="comment_email" /> <abbr class="required" title="<txp:text item="required" />" aria-label="<txp:text item="required" />">●</abbr></label><br>
+        <label for="email"><txp:text item="comment_email" /> <abbr class="required" title="<txp:text item="required" />" aria-label="<txp:text item="required" />">*</abbr></label><br>
         <txp:comment_email_input class="large" size="32" />
     </p>
 </div>
 <p>
-    <label for="message"><txp:text item="comment_message" /> <abbr class="required" title="<txp:text item="required" />" aria-label="<txp:text item="required" />">●</abbr></label><br>
+    <label for="message"><txp:text item="comment_message" /> <abbr class="required" title="<txp:text item="required" />" aria-label="<txp:text item="required" />">*</abbr></label><br>
     <txp:comment_message_input cols="64" rows="4" />
 </p>
 <p class="field layout-1col">
