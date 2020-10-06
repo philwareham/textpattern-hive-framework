@@ -48,7 +48,7 @@
     "stylelint-scss": "3.18.0"
   },
   "dependencies": {
-    "hive-framework": "0.17.13"
+    "hive-framework": "0.17.14"
   },
   "optionalDependencies": {
     "fibers": "5.0.0"
