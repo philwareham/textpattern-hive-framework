@@ -1,4 +1,5 @@
 <txp:if_comments>
+    <txp:variable name="article-comments-section" value="1" />
     <hr class="flourish">
     <section id="comments-head" class="article-comments">
         <h3><txp:text item="comments" /></h3>
@@ -6,24 +7,26 @@
             <txp:comments wraptag="" break="li" />
             <txp:if_comments_preview>
                 <li>
-                    <p id="cpreview">This is a preview of what your comment will look like. Please don’t forget to scroll down and actually press the <strong><a href="#txpCommentSubmit" title="Go to the submit button">submit</a></strong> button!</p>
+                    <p id="cpreview"><txp:text item="press_preview_then_submit" /></p>
                     <txp:comments_preview wraptag="" />
                 </li>
             </txp:if_comments_preview>
         </ol>
 <txp:else />
     <txp:if_comments_preview>
+        <txp:variable name="article-comments-section" value="1" />
         <hr class="flourish">
         <section id="comments-head" class="article-comments">
             <h3><txp:text item="comments" /></h3>
             <ol class="list--comments">
                 <li>
-                    <p id="cpreview">This is a preview of what your comment will look like. Please don’t forget to scroll down and actually press the <strong><a href="#txpCommentSubmit" title="Go to the submit button">submit</a></strong> button!</p>
+                    <p id="cpreview"><txp:text item="press_preview_then_submit" /></p>
                     <txp:comments_preview wraptag="" />
                 </li>
             </ol>
     <txp:else />
         <txp:if_comments_allowed>
+            <txp:variable name="article-comments-section" value="1" />
             <hr class="flourish">
             <section id="comments-head" class="article-comments">
                 <h3><txp:text item="comments" /></h3>
@@ -33,7 +36,7 @@
 </txp:if_comments>
 <txp:if_comments_allowed>
     <section id="comments-form">
-        <h3>Leave a comment</h3>
+        <h3><txp:comments_invite showcount="0" textonly showalways /></h3>
         <txp:comments_form />
     </section>
 <txp:else />
@@ -41,10 +44,6 @@
         <p class="alert-block information footnote"><txp:text item="comments_expired" /></p>
     </txp:if_comments>
 </txp:if_comments_allowed>
-<txp:if_comments>
+<txp:if_variable name="article-comments-section">
     </section>
-<txp:else />
-    <txp:if_comments_allowed>
-        </section>
-    </txp:if_comments_allowed>
-</txp:if_comments>
+</txp:if_variable>
