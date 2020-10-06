@@ -8,7 +8,7 @@
             <txp:if_comments_preview>
                 <li>
                     <p id="cpreview"><txp:text item="press_preview_then_submit" /></p>
-                    <txp:comments_preview wraptag="" />
+                    <txp:comments_preview form="comments_preview" wraptag="" />
                 </li>
             </txp:if_comments_preview>
         </ol>
@@ -21,7 +21,7 @@
             <ol class="list--comments">
                 <li>
                     <p id="cpreview"><txp:text item="press_preview_then_submit" /></p>
-                    <txp:comments_preview wraptag="" />
+                    <txp:comments_preview form="comments_preview" wraptag="" />
                 </li>
             </ol>
     <txp:else />

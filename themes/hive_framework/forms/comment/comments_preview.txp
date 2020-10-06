@@ -1,0 +1,12 @@
+<txp:variable name="commenter-email" value='<txp:comment_email />' />
+<article class="comments" itemscope itemtype="https://schema.org/Comment">
+    <header>
+        <h4 class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name"><txp:comment_name /></span>
+            <txp:if_variable name="commenter-email" value='<txp:author_email />'><small class="is-author alert-block alert-pill information"><txp:text item="author" /></small></txp:if_variable>
+        </h4>
+    </header>
+    <div itemprop="text">
+        <txp:comment_message />
+    </div>
+</article>
