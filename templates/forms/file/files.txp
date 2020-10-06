@@ -1,0 +1,32 @@
+<section itemscope itemtype="https://schema.org/DataDownload">
+    <h6 class="accessibility"><txp:text item="file_download" /></h6>
+    <p><a class="button<txp:if_yield name="primary-button"> button-primary</txp:if_yield><txp:if_yield name="large-button"> button-large</txp:if_yield>" href="<txp:file_download_link />" itemprop="url contentUrl"><span class="ui-icon ui-extra-icon-download"></span> <span itemprop="name"><txp:evaluate><txp:file_download_name title /><txp:else /><txp:file_download_name /></txp:evaluate></span></a></p>
+    <txp:evaluate test>
+        <div itemprop="description">
+            <txp:file_download_description />
+        </div>
+    </txp:evaluate>
+    <footer class="footnote">
+        <p>
+            <txp:evaluate test="file_download_category">
+                <txp:text item="category" />
+                <span itemprop="keywords">
+                    <txp:file_download_category title />
+                </span>
+                <span class="separator" role="separator">|</span>
+            </txp:evaluate>
+            <txp:text item="file_size" />
+            <span itemprop="contentSize"><txp:file_download_size format="k" decimals="0" /></span>
+            <span class="separator" role="separator">|</span>
+            <meta itemprop="dateCreated" content="<txp:file_download_created format="iso8601" />">
+            <txp:text item="last_modified" />
+            <time datetime="<txp:file_download_modified format="iso8601" />" itemprop="dateModified"><txp:file_download_modified /></time>
+            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="<txp:file_download_author />">
+            </span>
+            <span itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+                <meta itemprop="interactionType" content="https://schema.org/DownloadAction">
+                <meta itemprop="userInteractionCount" content="<txp:file_download_downloads />">
+            </span>
+    </footer>
+</section>

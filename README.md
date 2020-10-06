@@ -33,7 +33,19 @@ For example:
 
 ### File
 
-TBC
+To create a file download snippet:
+
+    <txp::media_file category="" filename="" primary-button="" large-button="" />
+
+`category` and `filename` are interchangeable (use one or the other, where appropriate) - if both are provided then `category` is used in preference and `filename` is ignored.
+
+`primary-button` is optional. If set to `1`, this will render a more prominent button.
+
+`large-button` is optional. If set to `1`, this will render a larger style button.
+
+For example:
+
+    <txp::media_file category="current-release-zip" primary-button="1" large-button="1" />
 
 ## License
 
