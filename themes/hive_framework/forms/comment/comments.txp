@@ -1,11 +1,12 @@
-<txp:variable name="this_comment" value='<txp:comment_email />' />
-<txp:if_variable name="this_comment" value='<txp:author_email />'>
-    <article class="comments article-author" itemscope itemtype="https://schema.org/Comment">
-<txp:else />
-    <article class="comments" itemscope itemtype="https://schema.org/Comment">
-</txp:if_variable>
-    <h4 class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name"><txp:comment_name /></span></h4>
-    <p class="comment-date"><time datetime="<txp:comment_time format="iso8601" />" itemprop="dateCreated"><txp:comment_time /></time></p>
+<txp:variable name="commenter-email" value='<txp:comment_email />' />
+<article id="<txp:comment_id />" class="comments" itemscope itemtype="https://schema.org/Comment">
+    <header>
+        <h4 class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name"><txp:comment_name /></span>
+            <txp:if_variable name="commenter-email" value='<txp:author_email />'><small class="is-author alert-block alert-pill information"><txp:text item="author" /></small></txp:if_variable>
+        </h4>
+        <p class="comment-date"><time datetime="<txp:comment_time format="iso8601" />" itemprop="dateCreated"><a itemprop="url" href="<txp:permlink />#<txp:comment_id />" title="<txp:text item="permlink" />"><txp:comment_time /></a></time></p>
+    </header>
     <div itemprop="text">
         <txp:comment_message />
     </div>
