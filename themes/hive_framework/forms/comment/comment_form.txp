@@ -18,5 +18,5 @@
 </p>
 <p class="field layout-1col">
     <txp:comment_preview />
-    <txp:comment_submit />
+    <txp:comment_submit class="button-primary" />
 </p>
