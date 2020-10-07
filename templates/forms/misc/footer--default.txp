@@ -1,7 +1,7 @@
 <footer class="site-footer">
     <p>
         <small>
-            Copyright <txp:php>echo date('Y');</txp:php>
+            Copyright
             <span itemscope itemtype="https://schema.org/Organization">
                 <span itemprop="name">Organisation Name</span>.
             </span>
@@ -11,4 +11,4 @@
     </p>
 </footer>
 <script async src="<txp:page_url type="theme_path" />/assets/js/app.js"></script>
-<noscript>JavaScript is currently disabled in your browser - please activate it for the best experience.</noscript>
+<noscript><txp:text item="noscript" /></noscript>
