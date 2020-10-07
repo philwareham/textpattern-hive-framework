@@ -1,2 +1,66 @@
-<txp:output_form form="gallery--grid-3-col-no-gaps" />
-TODO
+<div class="wrapper">
+    <div class="container">
+
+        <main id="main" aria-label="Main content">
+            <div class="align-center py-2">
+                <h3>Preamble heading</h3>
+                <h1>A main h1 heading about our service offering, and some general statements about how great we are, basically.</h1>
+            </div>
+        </main>
+
+    </div>
+
+    <txp:output_form form="gallery--grid-3-col-no-gaps" />
+
+    <div class="container">
+
+        <div class="align-center py-2">
+            <h2>Here’s just a little of what we do</h2>
+            <div class="layout-container">
+                <div class="layout-3col">
+                    <img src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-320x320-1.png" width="160" height="160" alt="Placeholder Image 1" itemprop="image">
+                    <h5>Service 1</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="layout-3col">
+                    <img src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-320x320-2.png" width="160" height="160" alt="Placeholder Image 2" itemprop="image">
+                    <h5>Service 2</h5>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="layout-3col">
+                    <img src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-320x320-3.png" width="160" height="160" alt="Placeholder Image 3" itemprop="image">
+                    <h5>Service 3</h5>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                </div>
+                <div class="layout-3col">
+                    <img src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-320x320-4.png" width="160" height="160" alt="Placeholder Image 4" itemprop="image">
+                    <h5>Service 4</h5>
+                    <p>Laboris nisi ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt.</p>
+                </div>
+                <div class="layout-3col">
+                    <img src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-320x320-5.png" width="160" height="160" alt="Placeholder Image 5" itemprop="image">
+                    <h5>Service 5</h5>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="layout-3col">
+                    <img src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-320x320-6.png" width="160" height="160" alt="Placeholder Image 6" itemprop="image">
+                    <h5>Service 6</h5>
+                    <p>Excepteur sint occaecat cupidatat non proident.</p>
+                </div>
+            </div>
+            <h3>Take a browse through our portfolio</h3>
+            <p><a class="button button-large">This way please</a></p>
+        </div>
+
+    </div>
+</div>
+
+<div class="wrapper zebra--subtle">
+    <div class="container">
+        <div class="align-center py-2 pb-4">
+            <h2>A list of our partners, clients or customers</h2>
+            <p>A snappy aside.</p>
+            <txp:output_form form="logo-wall--grid-4-col" />
+        </div>
+    </div>
+</div>
