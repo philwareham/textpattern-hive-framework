@@ -11,6 +11,13 @@ A collection of Textpattern CMS website theme modules using [Hive Framework](htt
 
 Older versions of the above and other browsers may work, but these are the ones we verify.
 
+## Image categories
+
+For some of the images modules, you will need to create image categories within Textpattern and assign to the images you want to appear in the module. As follows:
+
+1. `gallery` category, for images that are to appear in `gallery--xxx` image modules types.
+2. `logo-wall` category, for images that are to appear in `logo-wall--xxx` image modules types.
+
 ## Shortcodes
 
 Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes (and also the short tags syntax `<txp::...>`), allowing for our own version of 'shortcodes' within articles (**note:** remember to also use `notextile.` when within Textile content). This site uses the following tags:
