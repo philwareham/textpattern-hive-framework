@@ -1,0 +1,22 @@
+<div class="layout-container">
+    <txp:evaluate>
+        <txp:images category="logo-wall" break="" sort="date desc" limit="24">
+            <div class="layout-4col py-1">
+                <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image">
+            </div>
+        </txp:images>
+    <txp:else />
+        <div class="layout-4col py-1">
+            <img loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-logo-wall-1.png" alt="Placeholder Image 1" itemprop="image">
+        </div>
+        <div class="layout-4col py-1">
+            <img loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-logo-wall-2.png" alt="Placeholder Image 2" itemprop="image">
+        </div>
+        <div class="layout-4col py-1">
+            <img loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-logo-wall-3.png" alt="Placeholder Image 3" itemprop="image">
+        </div>
+        <div class="layout-4col py-1">
+            <img loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-logo-wall-4.png" alt="Placeholder Image 4" itemprop="image">
+        </div>
+    </txp:evaluate>
+</div>
