@@ -1,6 +1,6 @@
 <section>
     <h3 class="accessibility"><txp:text item="gallery" /></h3>
-    <div class="layout-text3col gallery no-gaps">
+    <div class="layout-text3col gallery gap-0">
         <txp:evaluate>
             <txp:images category="gallery" break="" sort="date desc" limit="24">
                 <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image">
