@@ -6,6 +6,7 @@
             </div>
         </txp:images>
     <txp:else />
+        <txp:variable name="logo-wall-fallback" value="1" />
         <div class="layout-4col py-1">
             <img loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-logo-wall-1.png" alt="Placeholder Image 1" itemprop="image">
         </div>
@@ -20,3 +21,4 @@
         </div>
     </txp:evaluate>
 </div>
+<txp:if_variable name="logo-wall-fallback"><txp:output_form form="instructions">To use this module, please create an an image category named <code>logo-wall</code> and assign one of more images to that category.</txp:output_form></txp:if_variable>
