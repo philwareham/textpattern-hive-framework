@@ -36,7 +36,7 @@ To create a HTML5 image snippet:
 
 `dark-option` is optional (for a single image ID only), for if you need to provide an alternative image when website is in Dark Mode.
 
-`set-width` and `set-height` are optional (for a single image ID), for if you need to provide explicit maximum dimensions (in pixels) for the image(s). Otherwise (when not set), images default to being fully responsive, expanding to fill their container, or up to 100% of their size (unless a class of `overstetch` is applied, in which case an image can expand beyond 100% if the container allows).
+`set-width` and `set-height` are optional (for a single image ID), for if you need to provide explicit maximum dimensions (in pixels) for the image(s). Otherwise (when not set), images default to being fully responsive, expanding to fill their container, or up to 100% of their size—whichever is reached first (unless a class of `overstetch` is applied, in which case an image can expand beyond 100% if the container allows).
 
 For example, comma separated image IDs:
 
