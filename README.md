@@ -20,7 +20,7 @@ For some of the images modules, you will need to create image categories within 
 
 ## Shortcodes
 
-Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes (and also the short tags syntax `<txp::...>`), allowing for our own version of 'shortcodes' within articles (**note:** remember to also use `notextile.` when these tags are used within Textile content).
+Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes (and also the short tags syntax `<txp::...>`), allowing for 'shortcodes' within articles and templates (**note:** remember to also use `notextile.` when these tags are used within Textile content).
 
 This site uses the following tags:
 
