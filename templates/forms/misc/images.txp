@@ -1,0 +1,12 @@
+<txp:evaluate test="image_info">
+    <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <txp:yield />
+        <figcaption itemprop="caption">
+            <txp:image_info />
+        </figcaption>
+    </figure>
+<txp:else />
+    <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <txp:yield />
+    </p>
+</txp:evaluate>
