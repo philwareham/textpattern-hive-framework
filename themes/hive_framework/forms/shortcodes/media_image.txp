@@ -1,3 +1,0 @@
-<txp:images id='<txp:yield name="id" />' break="">
-    <txp:output_form form="images" />
-</txp:images>
