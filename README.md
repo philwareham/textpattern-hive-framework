@@ -20,11 +20,31 @@ For some of the images modules, you will need to create image categories within 
 
 ## Shortcodes
 
-Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes (and also the short tags syntax `<txp::...>`), allowing for our own version of 'shortcodes' within articles (**note:** remember to also use `notextile.` when within Textile content). This site uses the following tags:
+Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes (and also the short tags syntax `<txp::...>`), allowing for our own version of 'shortcodes' within articles (**note:** remember to also use `notextile.` when these tags are used within Textile content).
+
+This site uses the following tags:
 
 ### Image
 
-TBC
+To create a HTML5 image snippet:
+
+    <txp::media_image id="" class="" dark-option="" set-width="" set-height="" />
+
+`id` accepts either a single image ID, or comma separated image IDs if you want multiple images.
+
+`class` is optional, for if you need to provide specific CSS class for the image(s).
+
+`dark-option` is optional (for a single image ID only), for if you need to provide an alternative image when website is in Dark Mode.
+
+`set-width` and `set-height` are optional (for a single image ID), for if you need to provide explicit maximum dimensions (in pixels) for the image(s). Otherwise (when not set), images default to being fully responsive, expanding to fill their container, or up to 100% of their size (unless a class of `overstetch` is applied, in which case an image can expand beyond 100% if the container allows).
+
+For example, comma separated image IDs:
+
+    <txp::media_image id="41, 42, 50" />
+
+For example, image with an alternative dark theme version and a set width and height in pixels:
+
+    <txp::media_image id="51" dark-option="52" set-width="400" set-height="125" />
 
 ### Video
 
