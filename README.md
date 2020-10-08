@@ -74,6 +74,28 @@ For example:
 
     <txp::media_file category="current-release-zip" primary-button="1" large-button="1" />
 
+### Links
+
+To create a link or list of links:
+
+    <txp::links id="" category="" class="" rel="" target="" referrerpolicy="" />
+
+`id` accepts either a single link ID, or comma separated link IDs if you want multiple links listed.
+
+`id` and `category` are interchangeable (use one or the other, where appropriate)—if both are provided then `id` is used in preference and `category` is ignored.
+
+`class` is optional, for if you need to provide specific CSS class names for the link anchors(s). For example, `class="button"` would render any links in the style of a button.
+
+`rel` is optional, for if you need to provide a [rel attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel) for the link anchors(s). For example, `rel="external"`.
+
+`target` is optional, for if you need to provide a [target attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target) for the link anchors(s). For example, `target="_blank"`.
+
+`referrerpolicy` is optional, for if you need to provide a [referrerpolicy attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#referrerpolicy) for the link anchors(s). For example, `referrerpolicy="no-referrer"`.
+
+For example:
+
+    <txp::links id="1,3,11,12" class="button button-primary" rel="external nofollow" />
+
 ## License
 
 Textpattern templates licensed under GPLv2 license. Hive Framework licensed under MIT license.

@@ -1,0 +1,2 @@
+<a <txp:if_yield name="class"><txp:yield name="class" /> </txp:if_yield><txp:if_yield name="rel"><txp:yield name="rel" /> </txp:if_yield><txp:if_yield name="target"><txp:yield name="target" /> </txp:if_yield><txp:if_yield name="referrerpolicy"><txp:yield name="referrerpolicy" /> </txp:if_yield>href="<txp:link_url />"><txp:link_name /></a>
+<txp:link_description />
