@@ -32,7 +32,7 @@ To create a HTML5 image snippet:
 
 `id` accepts either a single image ID, or comma separated image IDs if you want multiple images.
 
-`class` is optional, for if you need to provide specific CSS class for the image(s).
+`class` is optional, for if you need to provide specific CSS class names for the image(s).
 
 `dark-option` is optional (for a single image ID only), for if you need to provide an alternative image when website is in Dark Mode.
 
