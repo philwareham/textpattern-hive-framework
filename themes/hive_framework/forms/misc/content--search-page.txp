@@ -1,9 +1,9 @@
 <div class="wrapper">
     <div class="container">
         <txp:output_form form="breadcrumbs--default" />
+        <txp:output_form form="search--hero" />
         <main id="main" aria-label="<txp:text item="main_content" />">
-            <txp:output_form form="search--hero" />
-            <h1 itemprop="name"><txp:text item="search_results" /></h1>
+            <h2 itemprop="name"><txp:text item="search_results" /></h2>
             <txp:if_search_results>
                 <txp:if_search_results max="200">
                     <h3><txp:search_result_count /> <txp:text item="matching_search_request" /> <q><txp:search_term /></q></h3>
