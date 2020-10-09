@@ -58,5 +58,8 @@
     "Firefox ESR",
     "not IE 11"
   ],
+  "scripts": {
+    "test": "grunt travis --verbose"
+  },
   "license": "(MIT AND GPL-2.0)"
 }

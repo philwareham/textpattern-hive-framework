@@ -94,7 +94,7 @@ To create a link or list of links:
 
 For example:
 
-    <txp::links id="1,3,11,12" class="button button-primary" rel="external nofollow" />
+    <txp::links id="1, 3, 11, 12" class="button button-primary" rel="external nofollow" />
 
 ## License
 
