@@ -47,8 +47,15 @@
         <txp:output_form form="content--front-page" />
     <txp:else />
         <div class="wrapper">
+            <txp:output_form form="breadcrumbs--default" />
+            <txp:if_variable name="page-type" value="search-page">
+                <div class="zebra--subtle">
+                    <div class="container">
+                        <txp:output_form form="search--hero" />
+                    </div>
+                </div>
+            </txp:if_variable>
             <div class="container">
-                <txp:output_form form="breadcrumbs--default" />
                 <txp:if_variable name="page-type" value="search-page">
                     <txp:output_form form="content--search-page" />
                 <txp:else />

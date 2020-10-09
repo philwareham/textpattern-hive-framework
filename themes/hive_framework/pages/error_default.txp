@@ -9,8 +9,8 @@
 <body class="error-page" itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="header--search" />
     <div class="wrapper">
+        <txp:output_form form="breadcrumbs--default" />
         <div class="container">
-            <txp:output_form form="breadcrumbs--default" />
             <main id="main" aria-label="<txp:text item="main_content" />">
                 <h1 class="error-status"><txp:error_status /></h1>
                 <p class="error-msg"><txp:error_message /></p>

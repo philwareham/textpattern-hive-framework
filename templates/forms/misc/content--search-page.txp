@@ -1,4 +1,3 @@
-<txp:output_form form="search--hero" />
 <main id="main" aria-label="<txp:text item="main_content" />">
     <h1 itemprop="name"><txp:text item="search_results" /></h1>
     <txp:if_search_results>
