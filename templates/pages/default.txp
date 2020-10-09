@@ -46,11 +46,17 @@
     <txp:if_variable name="page-type" value="front-page">
         <txp:output_form form="content--front-page" />
     <txp:else />
-        <txp:if_variable name="page-type" value="search-page">
-            <txp:output_form form="content--search-page" />
-        <txp:else />
-            <txp:output_form form="content--listing-page" />
-        </txp:if_variable>
+        <div class="wrapper">
+            <div class="container">
+                <txp:output_form form="breadcrumbs--default" />
+                <txp:if_variable name="page-type" value="search-page">
+                    <txp:output_form form="content--search-page" />
+                <txp:else />
+                    <txp:output_form form="content--listing-page" />
+                </txp:if_variable>
+                <txp:output_form form="pagination" />
+            </div>
+        </div>
     </txp:if_variable>
     <txp:output_form form="footer--social-mono-inverse" />
 </body>

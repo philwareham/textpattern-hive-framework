@@ -1,22 +1,14 @@
-<div class="wrapper">
-    <div class="container">
-        <txp:output_form form="breadcrumbs--default" />
-        <txp:output_form form="search--hero" />
-        <main id="main" aria-label="<txp:text item="main_content" />">
-            <h2 itemprop="name"><txp:text item="search_results" /></h2>
-            <txp:if_search_results>
-                <txp:if_search_results max="200">
-                    <h3><txp:search_result_count /> <txp:text item="matching_search_request" /> <q><txp:search_term /></q></h3>
-                <txp:else />
-                    <h3><txp:text item="too_common_search_term" /> <q><txp:search_term /></q></h3>
-                </txp:if_search_results>
-            <txp:else />
-                <h3><txp:text item="no_search_matches" /></h3>
-            </txp:if_search_results>
-
-            TODO
-
-            <txp:output_form form="pagination" />
-        </main>
-    </div>
-</div>
+<txp:output_form form="search--hero" />
+<main id="main" aria-label="<txp:text item="main_content" />">
+    <h1 itemprop="name"><txp:text item="search_results" /></h1>
+    <txp:if_search_results>
+        <txp:if_search_results max="200">
+            <h3><txp:search_result_count /> <txp:text item="matching_search_request" /> <q><txp:search_term /></q></h3>
+        <txp:else />
+            <h3><txp:text item="too_common_search_term" /> <q><txp:search_term /></q></h3>
+        </txp:if_search_results>
+    <txp:else />
+        <h3><txp:text item="no_search_matches" /></h3>
+    </txp:if_search_results>
+    <txp:article form="article_listing" limit="12" wraptag="ul" class="article-list" />
+</main>
