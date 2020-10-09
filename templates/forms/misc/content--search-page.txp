@@ -9,5 +9,5 @@
     <txp:else />
         <h3><txp:text item="no_search_matches" /></h3>
     </txp:if_search_results>
-    <txp:article form="article_listing" limit="12" wraptag="ul" class="article-list" />
+    <txp:article searchform="article_listing" limit="12" wraptag="ul" class="article-list" />
 </main>
