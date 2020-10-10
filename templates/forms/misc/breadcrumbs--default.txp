@@ -12,18 +12,42 @@
             </li>
         <txp:else />
             <txp:if_author>
-                <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <b itemprop="name" aria-current="location"><txp:category title /></b>
-                    <meta itemprop="item" content="<txp:author format="url" />">
-                    <meta itemprop="position" content="2">
-                </li>
-            <txp:else />
-                <txp:if_category>
-                    <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <b itemprop="name" aria-current="location"><txp:category title /></b>
-                        <meta itemprop="item" content="<txp:category url />">
+                <txp:if_section>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" href="<txp:section url />"><span itemprop="name"><txp:section title /></span></a>
                         <meta itemprop="position" content="2">
                     </li>
+                    <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <b itemprop="name" aria-current="location"><txp:author /></b>
+                        <meta itemprop="item" content="<txp:author format="url" />">
+                        <meta itemprop="position" content="3">
+                    </li>
+                <txp:else />
+                    <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <b itemprop="name" aria-current="location"><txp:author /></b>
+                        <meta itemprop="item" content="<txp:author format="url" />">
+                        <meta itemprop="position" content="2">
+                    </li>
+                <txp:if_section>
+            <txp:else />
+                <txp:if_category>
+                    <txp:if_section>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="<txp:section url />"><span itemprop="name"><txp:section title /></span></a>
+                            <meta itemprop="position" content="2">
+                        </li>
+                        <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <b itemprop="name" aria-current="location"><txp:category title /></b>
+                            <meta itemprop="item" content="<txp:category url />">
+                            <meta itemprop="position" content="3">
+                        </li>
+                    <txp:else />
+                        <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <b itemprop="name" aria-current="location"><txp:category title /></b>
+                            <meta itemprop="item" content="<txp:category url />">
+                            <meta itemprop="position" content="2">
+                        </li>
+                    <txp:if_section>
                 <txp:else />
                     <txp:if_article_list>
                         <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
