@@ -1,19 +1,60 @@
 <article class="teaser" itemscope itemtype="https://schema.org/Article">
-    <h2 id="headline_<txp:article_id />" itemprop="headline"><a itemprop="url mainEntityOfPage" href="<txp:permlink />" title="<txp:text item="read_more" />"><txp:title /></a></h2>
-    <meta itemprop="author" content="<txp:author />">
-    <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-        <meta itemprop="name" content="<txp:site_name />">
-        <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url contentUrl" content="<txp:page_url type="theme_path" escape="json" />/assets/img/site-logo@2x.png">
-        </span>
-    </span>
-    <meta itemprop="datePublished" content="<txp:posted format="iso8601" />">
-    <meta itemprop="dateModified" content="<txp:modified format="iso8601" />">
+    <header class="article-header">
+        <txp:if_article_category>
+            <p>
+                <span class="ui-icon ui-icon-tag"><txp:text item="category" /></span>
+                <span itemprop="keywords"><txp:category_list categories='<txp:category1 />,<txp:category2 />' children="0" break=" / " trim><txp:category title link this_section /></txp:category_list></span>
+            </p>
+        </txp:if_article_category>
+        <h2 itemprop="headline"><a itemprop="url mainEntityOfPage" href="<txp:permlink />" title="<txp:text item="read_more" />"><txp:title /></a></h2>
+        <p>
+            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <txp:if_variable name="published-authors" value="1">
+                    <meta itemprop="name" content="<txp:author />">
+                <txp:else />
+                    <span class="ui-icon ui-icon-pencil"><txp:text item="posted_by" /></span>
+                    <a itemprop="url" href="<txp:author format="url" this_section />"><span class="article-author" itemprop="name"><txp:author /></span></a>
+                    <span class="separator" role="separator">|</span>
+                </txp:if_variable>
+            </span>
+            <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="name" content="<txp:site_name />">
+                <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                    <meta itemprop="url contentUrl" content="<txp:page_url type="theme_path" escape="json" />/assets/img/site-logo@2x.png">
+                </span>
+            </span>
+            <span class="ui-icon ui-icon-clock"><txp:text item="posted" /></span>
+            <time datetime="<txp:posted format="iso8601" />" itemprop="datePublished"><txp:posted format="%d %B %Y" /></time>
+            <meta itemprop="dateModified" content="<txp:modified format="iso8601" />">
+            <txp:if_comments>
+                <span class="separator" role="separator">|</span>
+                <span class="ui-icon ui-icon-comment"><txp:text item="comments" /></span>
+                <a href="<txp:permlink />#comments-head" title="<txp:text item="go_comments" />" itemprop="discussionUrl">
+                    <span itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+                        <meta itemprop="interactionType" content="https://schema.org/CommentAction">
+                        <span itemprop="userInteractionCount"><txp:comments_count /></span>
+                    </span>
+                </a>
+            <txp:else />
+                <txp:if_comments_allowed>
+                    <span class="separator" role="separator">|</span>
+                    <span class="ui-icon ui-icon-comment"><txp:text item="comments" /></span>
+                    <a href="<txp:permlink />#comments-head" title="<txp:text item="go_comments" />" itemprop="discussionUrl">
+                        <span itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+                            <meta itemprop="interactionType" content="https://schema.org/CommentAction">
+                            <span itemprop="userInteractionCount">0</span>
+                        </span>
+                    </a>
+                </txp:if_comments_allowed>
+            </txp:if_comments>
+        </p>
+    </header>
     <txp:if_excerpt>
         <div class="article-description" itemprop="description">
             <txp:excerpt />
         </div>
     </txp:if_excerpt>
+    <p><a href="<txp:permlink />"><txp:text item="continue_reading" /></a></p>
     <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <txp:if_article_image>
             <txp:images limit="1">
@@ -27,5 +68,4 @@
             <meta itemprop="height" content="630">
         </txp:if_article_image>
     </span>
-    <p><a id="more_<txp:article_id />" href="<txp:permlink />" aria-labelledby="more_<txp:article_id /> headline_<txp:article_id />"><txp:text item="read_more" /></a></p>
 </article>

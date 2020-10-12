@@ -20,7 +20,7 @@
                     </li>
                 </txp:if_section>
                 <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <b itemprop="name" aria-current="location"><txp:author /></b>
+                    <b itemprop="name" aria-current="location"><txp:text item="author" /> | <txp:author /></b>
                     <meta itemprop="item" content="<txp:author format="url" />">
                     <meta itemprop="position" content="<txp:variable name="breadcrumb-counter" add="1" output />">
                 </li>
@@ -33,7 +33,7 @@
                         </li>
                     </txp:if_section>
                     <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <b itemprop="name" aria-current="location"><txp:category title /></b>
+                        <b itemprop="name" aria-current="location"><txp:text item="category" /> | <txp:category title /></b>
                         <meta itemprop="item" content="<txp:category url />">
                         <meta itemprop="position" content="<txp:variable name="breadcrumb-counter" add="1" output />">
                     </li>

@@ -1,8 +1,8 @@
 <main id="main" aria-label="<txp:text item="main_content" />">
     <txp:if_author>
-        <h1 itemprop="name"><txp:text item="author" /> <txp:author /></h1>
+        <h1 itemprop="name"><txp:text item="author" /> | <txp:author /></h1>
     <txp:else />
-        <h1 itemprop="name"><txp:text item="category" /> <txp:category title /></h1>
+        <h1 itemprop="name"><txp:text item="category" /> | <txp:category title /></h1>
     </txp:if_author>
     <txp:article form="article_listing" limit="12" wraptag="ul" class="article-list" />
 </main>
