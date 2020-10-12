@@ -44,7 +44,7 @@
 <body class="<txp:variable name="page-type" />" itemscope itemtype="<txp:if_variable name="page-type" value="front-page">https://schema.org/WebPage<txp:else /><txp:if_variable name="page-type" value="search-page">https://schema.org/SearchResultsPage<txp:else />https://schema.org/CollectionPage</txp:if_variable></txp:if_variable>">
     <txp:output_form form="header--search" />
     <txp:if_variable name="page-type" value="front-page">
-        <txp:output_form form="content--front-page" />
+        <txp:output_form form="homepage-content" />
     <txp:else />
         <div class="wrapper">
             <txp:output_form form="breadcrumbs--default" />
@@ -54,15 +54,35 @@
                         <txp:output_form form="search--hero" />
                     </div>
                 </div>
+                <div class="container">
+                    <main id="main" aria-label="<txp:text item="main_content" />">
+                        <h1 itemprop="name"><txp:text item="search_results" /></h1>
+                        <txp:if_search_results>
+                            <txp:if_search_results max="200">
+                                <h3><txp:search_result_count /> <txp:text item="matching_search_request" /> <q><txp:search_term /></q></h3>
+                            <txp:else />
+                                <h3><txp:text item="too_common_search_term" /> <q><txp:search_term /></q></h3>
+                            </txp:if_search_results>
+                        <txp:else />
+                            <h3><txp:text item="no_search_matches" /></h3>
+                        </txp:if_search_results>
+                        <txp:article searchform="article_listing" limit="12" wraptag="ul" break="" class="article-list" />
+                    </main>
+                    <txp:output_form form="pagination" />
+                </div>
+            <txp:else />
+                <div class="container">
+                    <main id="main" aria-label="<txp:text item="main_content" />">
+                        <txp:if_author>
+                            <h1 itemprop="name"><txp:text item="author" /> | <txp:author /></h1>
+                        <txp:else />
+                            <h1 itemprop="name"><txp:text item="category" /> | <txp:category title /></h1>
+                        </txp:if_author>
+                        <txp:article form="article_listing" limit="12" wraptag="ul" break="" class="article-list" />
+                    </main>
+                    <txp:output_form form="pagination" />
+                </div>
             </txp:if_variable>
-            <div class="container">
-                <txp:if_variable name="page-type" value="search-page">
-                    <txp:output_form form="content--search-page" />
-                <txp:else />
-                    <txp:output_form form="content--listing-page" />
-                </txp:if_variable>
-                <txp:output_form form="pagination" />
-            </div>
         </div>
     </txp:if_variable>
     <txp:output_form form="footer--social-mono-inverse" />

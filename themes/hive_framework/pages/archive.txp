@@ -15,7 +15,7 @@
             <txp:meta_description />
             <txp:variable name="published-authors" value='<txp:article_custom pgonly="AuthorID" />' />
             <txp:if_article_list>
-                <txp:article pgonly limit="2" />
+                <txp:article pgonly limit="12" />
                 <txp:variable name="page" value='<txp:page_url type="pg" />' />
                 <txp:if_variable name="page" value="1">
                     <meta name="robots" content="index, follow">
@@ -84,8 +84,8 @@
     <div class="wrapper">
         <txp:output_form form="breadcrumbs--default" />
         <div class="container">
-            <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">
-                <txp:if_article_list>
+            <txp:if_article_list>
+                <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">
                     <txp:if_author>
                         <h1 itemprop="name"><txp:text item="author" /> | <txp:author /></h1>
                     <txp:else />
@@ -95,12 +95,14 @@
                             <h1 itemprop="name"><txp:section title /></h1>
                         </txp:if_category>
                     </txp:if_author>
-                    <txp:article form="article_listing--blog" limit="2" wraptag="ul" class="article-list" />
-                    <txp:output_form form="pagination" />
-                <txp:else />
+                    <txp:article form="article_listing--blog" limit="12" wraptag="ul" break="" class="article-list" />
+                </main>
+                <txp:output_form form="pagination" />
+            <txp:else />
+                <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">
                     <txp:article form="blog" />
-                </txp:if_article_list>
-            </main>
+                </main>
+            </txp:if_article_list>
         </div>
     </div>
     <txp:output_form form="footer--social-mono-inverse" />
