@@ -15,7 +15,7 @@
 
 
     <div class="container">
-        <div class="align-center py-2">
+        <div class="align-center my-4">
             <h2>Here’s just a little of what we do</h2>
             <div class="layout-container">
                 <div class="layout-3col">
