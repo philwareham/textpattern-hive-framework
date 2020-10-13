@@ -1,4 +1,4 @@
-<txp:pages pg link="" showalways="2" evaluate="5,2,8,4,6">
+<txp:pages pg link="" showalways="2" evaluate="6,3,9,5,7">
     <nav class="paginator" aria-label="<txp:text item="page_nav" />">
         <txp:newer showalways><a rel="prev" href="<txp:yield item="url" />"><txp:text item="prev" /></a></txp:newer>
         <ul class="pagination">
