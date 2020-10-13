@@ -13,7 +13,6 @@
     <txp:output_form form="gallery--grid-3-col-no-gaps" />
 
     <div class="container">
-
         <div class="align-center py-2">
             <h2>Here’s just a little of what we do</h2>
             <div class="layout-container">
@@ -57,10 +56,44 @@
 
 <div class="wrapper zebra--subtle">
     <div class="container">
+
+        <div class="align-center py-2">
+            <h2>Meet the team</h2>
+            <div class="layout-container">
+                <div class="layout-4col">
+                    <img class="img--circular" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-320x320-1.png" width="160" height="160" alt="Placeholder Image 1" itemprop="image">
+                    <h5>Person 1</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="layout-4col">
+                    <img class="img--circular" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-320x320-2.png" width="160" height="160" alt="Placeholder Image 2" itemprop="image">
+                    <h5>Person 2</h5>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="layout-4col">
+                    <img class="img--circular" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-320x320-3.png" width="160" height="160" alt="Placeholder Image 3" itemprop="image">
+                    <h5>Person 3</h5>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                </div>
+                <div class="layout-4col">
+                    <img class="img--circular" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-320x320-4.png" width="160" height="160" alt="Placeholder Image 4" itemprop="image">
+                    <h5>Person 4</h5>
+                    <p>Laboris nisi ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="wrapper zebra--strong">
+    <div class="container">
+
         <div class="align-center py-2 pb-4">
             <h2>A list of our partners, clients or customers</h2>
             <p>A snappy aside.</p>
             <txp:output_form form="logo-wall--grid-4-col" />
         </div>
+
     </div>
 </div>
