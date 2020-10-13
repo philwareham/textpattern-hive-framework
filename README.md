@@ -4,12 +4,18 @@
 
 A collection of Textpattern CMS website theme modules using [Hive Framework](https://github.com/philwareham/hive-framework) as a scaffold.
 
+**Currently in development - not ready for production use yet!**
+
 ## Supported web browsers
 
 * Chrome, Edge, Firefox, Safari and Opera the last two recent stable releases.
 * Firefox ESR latest major point release.
 
 Older versions of the above and other browsers may work, but these are the ones we verify.
+
+## Instructions/installation/help/etc
+
+TODO
 
 ## Image categories
 
