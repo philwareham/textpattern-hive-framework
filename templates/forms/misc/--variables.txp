@@ -19,8 +19,8 @@ Value of '0' for no, '1' for yes.
 
 <txp:hide>
 OVERRIDE DEFAULT BREADCRUMB SEPARATOR STYLE ------------------------------------
-By default, breadcrumbs are separated by an arrow symbol. Add 'path' or to the
-'value' attribute to override the default style.
+By default, breadcrumbs are separated by arrow symbols. Add 'path' to the
+'value' attribute to override the default style with path-like (/) symbols.
 </txp:hide>
 <txp:variable name="--breadcrumb-style" value="" />
 
