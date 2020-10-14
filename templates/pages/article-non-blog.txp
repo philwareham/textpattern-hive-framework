@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
+<head>
+    <txp:output_form form="head" />
+    <txp:if_author>
+        <title><txp:page_title /></title>
+        <meta name="robots" content="noindex, follow">
+    <txp:else />
+        <txp:if_category>
+            <title><txp:page_title /></title>
+            <meta name="robots" content="noindex, follow">
+        <txp:else />
+            <title><txp:page_title /></title>
+            <txp:variable name="page" value='<txp:page_url type="pg" />' />
+            <txp:meta_description />
+            <txp:if_article_list>
+                <txp:article pgonly limit="12" />
+                <txp:variable name="page" value='<txp:page_url type="pg" />' />
+                <txp:if_variable name="page" value="1">
+                    <meta name="robots" content="index, follow">
+                    <link rel="canonical" href="<txp:section url />">
+                    <script type="application/ld+json">
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "WebPage",
+                            "headline": "<txp:page_title escape="json" />",
+                            <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>
+                            "url": "<txp:section url escape="json" />"
+                        }
+                    </script>
+                <txp:else />
+                    <meta name="robots" content="noindex, follow">
+                </txp:if_variable>
+                <txp:evaluate>
+                    <link rel="prev" href="<txp:newer />">
+                </txp:evaluate>
+                <txp:evaluate>
+                    <link rel="next" href="<txp:older />">
+                </txp:evaluate>
+            <txp:else />
+                <txp:meta_author title />
+                <meta name="robots" content="<txp:if_expires>unavailable_after: <txp:expires gmt format="%d-%b-%y %T" /> GMT<txp:else />index, follow</txp:if_expires>">
+                <link rel="canonical" href="<txp:permlink />">
+                <txp:output_form form="opengraph" />
+                <script type="application/ld+json">
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "WebPage",
+                        "headline": "<txp:title escape="json" />",
+                        "description": "<txp:meta_description format="" escape="json" />",
+                        "url": "<txp:permlink escape="json" />"
+                    }
+                </script>
+            </txp:if_article_list>
+        </txp:if_category>
+    </txp:if_author>
+</head>
+<body class="<txp:if_article_list>listing-page<txp:else />article-page</txp:if_article_list>" itemscope itemtype="https://schema.org/WebPage">
+    <txp:output_form form="header" />
+    <div class="wrapper">
+        <txp:output_form form="breadcrumbs" />
+        <div class="container">
+            <txp:if_article_list>
+                <main id="main" aria-label="<txp:text item="main_content" />">
+                    <txp:if_author>
+                        <h1 itemprop="name"><txp:text item="author" /> | <txp:author /></h1>
+                    <txp:else />
+                        <txp:if_category>
+                            <h1 itemprop="name"><txp:text item="category" /> | <txp:category title /></h1>
+                        <txp:else />
+                            <h1 itemprop="name"><txp:section title /></h1>
+                        </txp:if_category>
+                    </txp:if_author>
+                    <txp:article form="article_listing" limit="12" wraptag="ul" break="" class="article-list" />
+                </main>
+                <txp:output_form form="pagination" />
+            <txp:else />
+                <main id="main" aria-label="<txp:text item="main_content" />">
+                    <txp:article />
+                </main>
+            </txp:if_article_list>
+        </div>
+    </div>
+    <txp:output_form form="footer" />
+</body>
+</html>
