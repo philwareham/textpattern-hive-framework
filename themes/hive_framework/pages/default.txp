@@ -51,7 +51,7 @@
             <txp:if_variable name="page-type" value="search-page">
                 <div class="zebra--subtle">
                     <div class="container">
-                        <txp:output_form form="search--hero" />
+                        <txp:output_form form="search-hero" />
                     </div>
                 </div>
                 <div class="container">
