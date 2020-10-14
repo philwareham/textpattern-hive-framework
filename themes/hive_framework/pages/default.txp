@@ -85,6 +85,6 @@
             </txp:if_variable>
         </div>
     </txp:if_variable>
-    <txp:output_form form="footer--social-mono-inverse" />
+    <txp:output_form form="footer" />
 </body>
 </html>

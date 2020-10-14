@@ -25,6 +25,6 @@
             </div>
         </div>
     </div>
-    <txp:output_form form="footer--social-mono-inverse" />
+    <txp:output_form form="footer" />
 </body>
 </html>

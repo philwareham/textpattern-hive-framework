@@ -6,12 +6,21 @@ For the contact page, if used.
 <txp:variable name="--contact-email" value="recipient@example.com" />
 
 <txp:hide>
-SOCIAL MEDIA CHANNELS
-Add URLs to the 'value' attribute for each required channel.
+OVERRIDE DEFAULT SOCIAL MEDIA ICON STYLE
+By default, social media icons are full colour.
+Add either 'monochrome' or 'monochrome--inverse' to the 'value' attribute to
+override the default style.
 </txp:hide>
 
-<txp:variable name="--url-facebook" value="#" />
-<txp:variable name="--url-github" value="#" />
+<txp:variable name="--social-media-icons" value="" />
+
+<txp:hide>
+SOCIAL MEDIA CHANNEL URLS
+Add full URLs to the 'value' attribute for each required channel.
+</txp:hide>
+
+<txp:variable name="--url-facebook" value="" />
+<txp:variable name="--url-github" value="" />
 <txp:variable name="--url-instagram" value="" />
 <txp:variable name="--url-linkedin" value="" />
 <txp:variable name="--url-pinterest" value="" />
