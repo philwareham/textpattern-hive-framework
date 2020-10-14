@@ -7,7 +7,7 @@
         <meta property="og:image" content="<txp:image_url />">
         <meta property="og:image:width" content="<txp:image_info type="w" />">
         <meta property="og:image:height" content="<txp:image_info type="h" />">
-        <meta property="og:image:alt" content="<txp:image_info type="alt" />">
+        <txp:evaluate><meta property="og:image:alt" content="<txp:image_info type="alt" />"></txp:evaluate>
     </txp:images>
 <txp:else />
     <meta property="og:image" content="<txp:page_url type="theme_path" />/assets/img/site-logo-opengraph.png">
