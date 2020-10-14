@@ -7,7 +7,7 @@
     <txp:variable name="page-type" value="error-page" />
 </head>
 <body class="error-page" itemscope itemtype="https://schema.org/WebPage">
-    <txp:output_form form="header--search" />
+    <txp:output_form form="header" />
     <div class="wrapper">
         <txp:output_form form="breadcrumbs--default" />
         <div class="container">

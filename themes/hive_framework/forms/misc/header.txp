@@ -1,8 +1,8 @@
 <a class="a--skip-link" href="#main"><txp:text item="go_content" /></a>
-<a class="a--skip-link" href="#q"><txp:text item="go_search" /></a>
+<txp:if_variable name="--site-header-search" value="1"><a class="a--skip-link" href="#q"><txp:text item="go_search" /></a></txp:if_variable>
 <div id="dynamic-header">
     <header class="site-header">
-        <h2 class="site-logo"><txp:site_name /></h2>
+        <txp:if_variable name="--site-header-logo" value="1"><h2 class="site-logo"><txp:site_name /></h2><txp:else /><h2><txp:site_name /></h2></txp:if_variable>
     </header>
     <div class="site-navigation">
         <a id="site-navigation-toggle" href="#" role="button" aria-controls="site-navigation" title="<txp:text item="navigation" />"><txp:text item="navigation" /></a>
@@ -21,15 +21,17 @@
             </txp:section_list>
         </nav>
         <a id="lightswitch" href="#" role="button" title="<txp:text item="lightswitch" />"><span class="ui-icon ui-icon-medium ui-icon-lightbulb"><txp:text item="lightswitch" /></span></a>
-        <txp:if_variable name="page-type" not match="any" value="error-page,search-page">
-            <div class="search-form" itemscope itemtype="https://schema.org/WebSite">
-                <meta itemprop="url" content="<txp:site_url />">
-                <form role="search" method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
-                    <meta itemprop="target" content="<txp:site_url />?q={q}">
-                    <label class="accessibility" for="q"><txp:text item="search" /></label>
-                    <input id="q" name="q" type="search" itemprop="query-input" placeholder="<txp:text item="search" />"<txp:if_search> value="<txp:search_term />"</txp:if_search>>
-                </form>
-            </div>
+        <txp:if_variable name="--site-header-search" value="1">
+            <txp:if_variable name="page-type" not match="any" value="error-page,search-page">
+                <div class="search-form" itemscope itemtype="https://schema.org/WebSite">
+                    <meta itemprop="url" content="<txp:site_url />">
+                    <form role="search" method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+                        <meta itemprop="target" content="<txp:site_url />?q={q}">
+                        <label class="accessibility" for="q"><txp:text item="search" /></label>
+                        <input id="q" name="q" type="search" itemprop="query-input" placeholder="<txp:text item="search" />"<txp:if_search> value="<txp:search_term />"</txp:if_search>>
+                    </form>
+                </div>
+            </txp:if_variable>
         </txp:if_variable>
     </div>
 </div>

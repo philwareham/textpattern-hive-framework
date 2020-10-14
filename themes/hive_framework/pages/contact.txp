@@ -21,7 +21,7 @@
     </txp:if_article_list>
 </head>
 <body class="contact-page" itemscope itemtype="https://schema.org/WebPage">
-    <txp:output_form form="header--search" />
+    <txp:output_form form="header" />
     <div class="wrapper">
         <txp:output_form form="breadcrumbs--default" />
         <div class="container">

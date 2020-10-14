@@ -1,24 +1,31 @@
 <txp:hide>
-CONTACT EMAIL ADDRESS
+SITE LOGO IN HEADER? -----------------------------------------------------------
+Enter a value of '0' for no, '1' for yes.
+</txp:hide>
+<txp:variable name="--site-header-logo" value="0" />
+
+SITE SEARCH IN HEADER? ---------------------------------------------------------
+Enter a value of '0' for no, '1' for yes.
+</txp:hide>
+<txp:variable name="--site-header-search" value="1" />
+
+<txp:hide>
+CONTACT EMAIL ADDRESS ----------------------------------------------------------
 For the contact page, if used.
 </txp:hide>
-
 <txp:variable name="--contact-email" value="recipient@example.com" />
 
 <txp:hide>
-OVERRIDE DEFAULT SOCIAL MEDIA ICON STYLE
-By default, social media icons are full colour.
-Add either 'monochrome' or 'monochrome--inverse' to the 'value' attribute to
-override the default style.
+OVERRIDE DEFAULT SOCIAL MEDIA ICON STYLE ---------------------------------------
+By default, social media icons are full colour. Add either 'monochrome' or
+'monochrome--inverse' to the 'value' attribute to override the default style.
 </txp:hide>
-
 <txp:variable name="--social-media-icons" value="" />
 
 <txp:hide>
-SOCIAL MEDIA CHANNEL URLS
+SOCIAL MEDIA CHANNEL URLS ------------------------------------------------------
 Add full URLs to the 'value' attribute for each required channel.
 </txp:hide>
-
 <txp:variable name="--url-facebook" value="" />
 <txp:variable name="--url-github" value="" />
 <txp:variable name="--url-instagram" value="" />
