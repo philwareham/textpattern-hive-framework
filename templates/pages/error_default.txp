@@ -9,7 +9,7 @@
 <body class="error-page" itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="header" />
     <div class="wrapper">
-        <txp:output_form form="breadcrumbs--default" />
+        <txp:output_form form="breadcrumbs" />
         <div class="container">
             <main id="main" aria-label="<txp:text item="main_content" />">
                 <h1 class="error-status"><txp:error_status /></h1>

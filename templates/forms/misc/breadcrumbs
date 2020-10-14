@@ -1,5 +1,5 @@
 <nav class="breadcrumbs-container" aria-label="<txp:text item="breadcrumb_nav" />">
-    <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <ol class="breadcrumbs<txp:if_variable name="--breadcrumb-style" not value="">--<txp:variable name="--breadcrumb-style" /></txp:if_variable>" itemscope itemtype="https://schema.org/BreadcrumbList">
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
             <a itemprop="item" href="<txp:site_url />"><span itemprop="name"><txp:text item="home" /></span></a>
             <meta itemprop="position" content="1">

@@ -82,7 +82,7 @@
 <body class="<txp:if_article_list>blog-listing-page<txp:else />blog-article-page</txp:if_article_list>" itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="header" />
     <div class="wrapper">
-        <txp:output_form form="breadcrumbs--default" />
+        <txp:output_form form="breadcrumbs" />
         <div class="container">
             <txp:if_article_list>
                 <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">

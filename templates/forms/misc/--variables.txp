@@ -18,6 +18,13 @@ Value of '0' for no, '1' for yes.
 <txp:variable name="--site-header-search" value="1" />
 
 <txp:hide>
+OVERRIDE DEFAULT BREADCRUMB SEPARATOR STYLE ------------------------------------
+By default, breadcrumbs are separated by an arrow symbol. Add 'path' or to the
+'value' attribute to override the default style.
+</txp:hide>
+<txp:variable name="--breadcrumb-style" value="" />
+
+<txp:hide>
 CONTACT EMAIL ADDRESS ----------------------------------------------------------
 For contact page, if used.
 </txp:hide>
@@ -28,7 +35,7 @@ OVERRIDE DEFAULT SOCIAL MEDIA ICON STYLE ---------------------------------------
 By default, social media icons are full colour. Add either 'monochrome' or
 'monochrome--inverse' to the 'value' attribute to override the default style.
 </txp:hide>
-<txp:variable name="--social-media-icons" value="" />
+<txp:variable name="--social-media-icon-style" value="" />
 
 <txp:hide>
 SOCIAL MEDIA CHANNEL URLS ------------------------------------------------------

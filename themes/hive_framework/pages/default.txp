@@ -47,7 +47,7 @@
         <txp:output_form form="homepage-content" />
     <txp:else />
         <div class="wrapper">
-            <txp:output_form form="breadcrumbs--default" />
+            <txp:output_form form="breadcrumbs" />
             <txp:if_variable name="page-type" value="search-page">
                 <div class="zebra--subtle">
                     <div class="container">

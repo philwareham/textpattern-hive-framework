@@ -23,7 +23,7 @@
 <body class="contact-page" itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="header" />
     <div class="wrapper">
-        <txp:output_form form="breadcrumbs--default" />
+        <txp:output_form form="breadcrumbs" />
         <div class="container">
             <txp:if_plugin name="com_connect" version="4.6">
                 <txp:com_connect to='<txp:variable name="contact" />' />
