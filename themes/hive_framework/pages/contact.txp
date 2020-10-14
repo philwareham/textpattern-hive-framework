@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
+<head>
+    <txp:output_form form="head--default" />
+    <title><txp:page_title /></title>
+    <txp:meta_description />
+    <txp:if_article_list>
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="<txp:section url />">
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "headline": "<txp:page_title escape="json" />",
+                <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>
+                "url": "<txp:section url escape="json" />"
+            }
+        </script>
+    <txp:else />
+        <meta name="robots" content="none">
+    </txp:if_article_list>
+</head>
+<body class="contact-page" itemscope itemtype="https://schema.org/WebPage">
+    <txp:output_form form="header--search" />
+    <div class="wrapper">
+        <txp:output_form form="breadcrumbs--default" />
+        <div class="container">
+            <txp:if_plugin name="com_connect" version="4.6">
+                <txp:com_connect to='<txp:variable name="contact" />' />
+                TODO
+            <txp:else />
+                TODO
+            </txp:if_plugin>
+        </div>
+    </div>
+    <txp:output_form form="footer--social-mono-inverse" />
+</body>
+</html>

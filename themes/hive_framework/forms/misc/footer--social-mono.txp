@@ -14,13 +14,13 @@
         </div>
         <div class="layout-2col">
             <ul class="social-channels monochrome">
-                <li><a rel="external" href="#" class="facebook">Facebook</a></li>
-                <li><a rel="external" href="#" class="github">GitHub</a></li>
-                <li><a rel="external" href="#" class="instagram">Instagram</a></li>
-                <li><a rel="external" href="#" class="linkedin">LinkedIn</a></li>
-                <li><a rel="external" href="#" class="pinterest">Pinterest</a></li>
-                <li><a rel="external" href="#" class="twitter">Twitter</a></li>
-                <li><a rel="external" href="#" class="youtube">YouTube</a></li>
+                <txp:if_variable name="--url-facebook" not value=""><li><a rel="external" href="<txp:variable name="--url-facebook" />" class="facebook">Facebook</a></li></txp:if_variable>
+                <txp:if_variable name="--url-github" not value=""><li><a rel="external" href="<txp:variable name="--url-github" />" class="github">GitHub</a></li></txp:if_variable>
+                <txp:if_variable name="--url-instagram" not value=""><li><a rel="external" href="<txp:variable name="--url-instagram" />" class="instagram">Instagram</a></li></txp:if_variable>
+                <txp:if_variable name="--url-linkedin" not value=""><li><a rel="external" href="<txp:variable name="--url-linkedin" />" class="linkedin">LinkedIn</a></li></txp:if_variable>
+                <txp:if_variable name="--url-pinterest" not value=""><li><a rel="external" href="<txp:variable name="--url-pinterest" />" class="pinterest">Pinterest</a></li></txp:if_variable>
+                <txp:if_variable name="--url-twitter" not value=""><li><a rel="external" href="<txp:variable name="--url-twitter" />" class="twitter">Twitter</a></li></txp:if_variable>
+                <txp:if_variable name="--url-youtube" not value=""><li><a rel="external" href="<txp:variable name="--url-youtube" />" class="youtube">YouTube</a></li></txp:if_variable>
             </ul>
         </div>
     </div>
