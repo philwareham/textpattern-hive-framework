@@ -57,7 +57,8 @@ module.exports = function (grunt)
                 'browserify',
                 'copy',
                 'css',
-                'jshint'
+                'jshint',
+                'replace'
             ]
         },
 
@@ -79,7 +80,7 @@ module.exports = function (grunt)
                     {
                         expand: true,
                         cwd: '<%= paths.src.templates %>',
-                        src: '**',
+                        src: ['**', '!manifest.json'],
                         dest: '<%= paths.dest.templates %>'
                     }
                 ]
@@ -143,6 +144,23 @@ module.exports = function (grunt)
             }
         },
 
+        // Generate version number automatically in theme manifest.json file.
+        replace: {
+            theme: {
+                options: {
+                    patterns: [
+                        {
+                            match: 'version',
+                            replacement: '<%= pkg.version %>'
+                        }
+                    ]
+                },
+                files: [
+                    {'<%= paths.dest.templates %>manifest.json': '<%= paths.src.templates %>manifest.json'}
+                ]
+            }
+        },
+
         // Sass configuration.
         sass: {
             options: {
@@ -197,7 +215,10 @@ module.exports = function (grunt)
                 files: [
                     '<%= paths.src.templates %>**'
                 ],
-                tasks: 'copy:html'
+                tasks: [
+                    'copy:html',
+                    'replace'
+                ]
             }
         }
 
