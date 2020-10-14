@@ -1,5 +1,18 @@
 <article class="article" itemscope itemtype="https://schema.org/Article">
     <meta itemprop="mainEntityOfPage" content="<txp:permlink />">
+    <txp:if_article_image>
+        <txp:images break="">
+            <img loading="lazy" width="<txp:image_info type="w" />" height="<txp:image_info type="h" />" itemprop="url contentUrl"<txp:evaluate> alt="<txp:image_info type="alt" />"</txp:evaluate> src="<txp:image_url />">
+            <meta itemprop="width" content="<txp:image_info type="w" />">
+            <meta itemprop="height" content="<txp:image_info type="h" />">
+        </txp:images>
+    <txp:else />
+        <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url contentUrl" content="<txp:page_url type="theme_path" />/assets/img/site-logo-opengraph.png">
+            <meta itemprop="width" content="1200">
+            <meta itemprop="height" content="630">
+        </span>
+    </txp:if_article_image>
     <header class="article-header">
         <txp:if_article_category>
             <p>
@@ -25,15 +38,6 @@
             <txp:excerpt />
         </div>
     </txp:if_excerpt>
-    <txp:if_article_image>
-        <txp:images form="images" break="" />
-    <txp:else />
-        <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url contentUrl" content="<txp:page_url type="theme_path" />/assets/img/site-logo-opengraph.png">
-            <meta itemprop="width" content="1200">
-            <meta itemprop="height" content="630">
-        </span>
-    </txp:if_article_image>
     <div class="article-body" itemprop="articleBody">
         <txp:body />
     </div>
