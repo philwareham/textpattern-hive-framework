@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
 <head>
-    <txp:output_form form="head--default" />
+    <txp:output_form form="head" />
     <title><txp:error_status /> | <txp:site_name /></title>
     <meta name="robots" content="none">
     <txp:variable name="page-type" value="error-page" />

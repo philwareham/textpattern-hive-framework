@@ -2,4 +2,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="stylesheet" href="<txp:page_url type="theme_path" />/assets/css/style.css">
+<txp:if_variable name="--site-head-rss" value="1"><txp:feed_link flavor="rss" format="link" label="RSS" /></txp:if_variable>
+<txp:if_variable name="--site-head-atom" value="1"><txp:feed_link flavor="atom" format="link" label="Atom" /></txp:if_variable>
 <meta name="generator" content="Textpattern CMS">

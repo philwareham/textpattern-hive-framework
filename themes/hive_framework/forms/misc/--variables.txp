@@ -1,17 +1,25 @@
 <txp:hide>
+RSS AND/OR ATOM FEEDS? ---------------------------------------------------------
+Value of '0' for no, '1' for yes.
+</txp:hide>
+<txp:variable name="--site-head-rss" value="0" />
+<txp:variable name="--site-head-atom" value="0" />
+
+<txp:hide>
 SITE LOGO IN HEADER? -----------------------------------------------------------
-Enter a value of '0' for no, '1' for yes.
+Value of '0' for no, '1' for yes.
 </txp:hide>
 <txp:variable name="--site-header-logo" value="0" />
 
+<txp:hide>
 SITE SEARCH IN HEADER? ---------------------------------------------------------
-Enter a value of '0' for no, '1' for yes.
+Value of '0' for no, '1' for yes.
 </txp:hide>
 <txp:variable name="--site-header-search" value="1" />
 
 <txp:hide>
 CONTACT EMAIL ADDRESS ----------------------------------------------------------
-For the contact page, if used.
+For contact page, if used.
 </txp:hide>
 <txp:variable name="--contact-email" value="recipient@example.com" />
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
 <head>
-    <txp:output_form form="head--default" />
+    <txp:output_form form="head" />
     <title><txp:page_title /></title>
     <txp:meta_description />
     <txp:if_article_list>
