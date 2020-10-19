@@ -1,5 +1,5 @@
 {
-  "title": "Textpattern Hive Framework",
+  "title": "Textpattern Hive Framework @@version",
   "txp-type": "textpattern-theme",
   "version": "@@version",
   "description": "A Textpattern website theme development framework.",
