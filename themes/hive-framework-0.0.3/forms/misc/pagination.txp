@@ -1,14 +1,14 @@
-<txp:pages pg link="" showalways="2" evaluate="6,3,9,5,7">
+<txp:pages pg link="" showalways="2">
     <nav class="paginator" aria-label="<txp:text item="page_nav" />">
         <txp:newer showalways><a rel="prev" href="<txp:yield item="url" />"><txp:text item="prev" /></a></txp:newer>
         <ul class="pagination">
-            <txp:newer shift><li><a href="<txp:yield item="url" />"><txp:yield item="page" /></a></li></txp:newer>
+            <txp:newer[2] shift><li><a href="<txp:yield item="url" />"><txp:yield item="page" /></a></li></txp:newer>
             <txp:newer shift="-2"><li role="separator" aria-label="<txp:text item="more_pages" />">…</li></txp:newer>
-            <txp:newer total shift="2"><li><a href="<txp:yield item="url" />"><txp:yield item="page" /></a></li></txp:newer>
-            <txp:pages><li class="current"><b aria-current="page"><txp:yield item="page" /></b></li></txp:pages>
-            <txp:older total shift="2"><li><a href="<txp:yield item="url" />"><txp:yield item="page" /></a></li></txp:older>
+            <txp:newer[3] total shift="2"><li><a href="<txp:yield item="url" />"><txp:yield item="page" /></a></li></txp:newer>
+            <txp:pages[1]><li class="current"><b aria-current="page"><txp:yield item="page" /></b></li></txp:pages>
+            <txp:older[3] total shift="2"><li><a href="<txp:yield item="url" />"><txp:yield item="page" /></a></li></txp:older>
             <txp:older shift="-2"><li role="separator" aria-label="<txp:text item="more_pages" />">…</li></txp:older>
-            <txp:older shift><li><a href="<txp:yield item="url" />"><txp:yield item="page" /></a></li></txp:older>
+            <txp:older[2] shift><li><a href="<txp:yield item="url" />"><txp:yield item="page" /></a></li></txp:older>
         </ul>
         <txp:older showalways><a rel="next" href="<txp:yield item="url" />"><txp:text item="next" /></a></txp:older>
     </nav>
