@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
 <head>
+    <txp:output_form form="--variables--contact" />
     <txp:output_form form="head" />
     <title><txp:page_title /></title>
     <txp:meta_description />
@@ -16,6 +17,9 @@
                 "url": "<txp:section url escape="json" />"
             }
         </script>
+        <txp:if_variable name="--contact-map" value="1">
+            <link rel="stylesheet" href="<txp:page_url type="theme_path" />/assets/css/map.css">
+        </txp:if_variable>
     <txp:else />
         <meta name="robots" content="none">
     </txp:if_article_list>
@@ -26,13 +30,19 @@
         <txp:output_form form="breadcrumbs" />
         <div class="container">
             <txp:if_plugin name="com_connect" version="4.6">
-                <txp:com_connect to='<txp:variable name="contact" />' />
+                <txp:com_connect to='<txp:variable name="--contact-email" />' />
                 TODO
             <txp:else />
                 TODO
             </txp:if_plugin>
+
+            <txp:if_variable name="--contact-map" value="1"><div id="map"></div></txp:if_variable>
         </div>
     </div>
     <txp:output_form form="footer" />
+    <txp:if_article_list><txp:if_variable name="--contact-map" value="1">
+        <script src="<txp:page_url type="theme_path" />/assets/js/map.js"></script>
+        <script>var mymap = L.map('mapid').setView([51.505, -0.09], 13);</script>
+    </txp:if_variable></txp:if_article_list>
 </body>
 </html>

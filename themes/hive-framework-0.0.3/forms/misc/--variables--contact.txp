@@ -1,0 +1,30 @@
+<txp:hide>
+CONTACT EMAIL ADDRESS ----------------------------------------------------------
+For contact page, if used.
+</txp:hide>
+<txp:variable name="--contact-email" value="recipient@example.com" />
+
+<txp:hide>
+CONTACT PHONE NUMBER -----------------------------------------------------------
+Provide a contact telephone number for the site (optional).
+</txp:hide>
+<txp:variable name="--contact-phone" value="" />
+
+<txp:hide>
+LOCATION MAP ON CONTACT PAGE? --------------------------------------------------
+Value of '0' for no, '1' for yes.
+</txp:hide>
+<txp:variable name="--contact-map" value="0" />
+
+<txp:hide>
+LOCATION MAP LATITUDE AND LONGITUDE --------------------------------------------
+If a location map is displayed (see above), provide valid latitude and longitude
+coordinates. For example, '51.505, -0.09'.
+</txp:hide>
+<txp:variable name="--contact-map-lat-long" value="" />
+
+<txp:hide>
+LOCATION MAP ZOOM LEVEL --------------------------------------------------------
+If a location map is displayed (see above), provide an initial zoom level.
+</txp:hide>
+<txp:variable name="--contact-map-zoom" value="13" />
