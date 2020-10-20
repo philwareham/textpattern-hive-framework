@@ -30,19 +30,38 @@
         <txp:output_form form="breadcrumbs" />
         <div class="container">
             <txp:if_plugin name="com_connect" version="4.6">
-                <txp:com_connect to='<txp:variable name="--contact-email" />' />
+                <txp:com_connect class="" label="" to='<txp:variable name="--contact-email" />' body_form="email">
+                    <div class="layout-container">
+                        <div class="layout-2col">
+                            <txp:com_connect_text class="" name="name" size="32" label='<txp:text item="name" />' />
+                        </div>
+                        <div class="layout-2col">
+                            <txp:com_connect_email class="" name="email" size="32" label='<txp:text item="email" />' />
+                        </div>
+                        <div class="layout-2col">
+                            <txp:com_connect_text class="" name="organization" size="32" label='<txp:text item="organization" />' required="0" />
+                        </div>
+                        <div class="layout-2col">
+                            <txp:com_connect_text class="" type="tel" name="tel" size="32" label='<txp:text item="tel" />' required="0" />
+                        </div>
+                        <div class="layout-1col">
+                            <txp:com_connect_textarea class="" name="message" cols="64" rows="8" label='<txp:text item="message" />' />
+                        </div>
+                        <div class="layout-1col">
+                            <input type="submit" value="<txp:text item="submit" />" />
+                        </div>
+                    </div>
+                </txp:com_connect>
                 TODO
             <txp:else />
                 TODO
             </txp:if_plugin>
-
             <txp:if_variable name="--contact-map" value="1"><div id="map"></div></txp:if_variable>
         </div>
     </div>
     <txp:output_form form="footer" />
     <txp:if_article_list><txp:if_variable name="--contact-map" value="1">
         <script src="<txp:page_url type="theme_path" />/assets/js/map.js"></script>
-        <script>var mymap = L.map('mapid').setView([51.505, -0.09], 13);</script>
     </txp:if_variable></txp:if_article_list>
 </body>
 </html>

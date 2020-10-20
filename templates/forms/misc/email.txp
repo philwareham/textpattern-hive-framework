@@ -1,0 +1,8 @@
+<txp:text item="message" /> | <txp:site_name />
+———————————————————————————————————————————————————————————————
+
+<txp:text item="name" /> : <txp:com_connect_value name="name" />
+<txp:com_connect_if name="organization"><txp:text item="organization" /> : <txp:com_connect_value name="organization" /></txp:com_connect_if>
+<txp:com_connect_if name="tel"><txp:text item="tel" /> : <txp:com_connect_value name="tel" /></txp:com_connect_if>
+
+<txp:com_connect_value name="message" />
