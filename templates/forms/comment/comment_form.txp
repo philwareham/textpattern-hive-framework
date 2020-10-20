@@ -1,22 +1,21 @@
-<p><txp:text item="enter_comment_here" /></p>
 <txp:if_comments_error>
     <txp:comments_error class="error" wraptag="ol" break="li" />
 </txp:if_comments_error>
 <div class="layout-container">
     <p class="layout-2col">
-        <label for="name"><txp:text item="comment_name" /> <abbr class="required" title="<txp:text item="required" />" aria-label="<txp:text item="required" />">*</abbr></label><br>
-        <txp:comment_name_input class="large" size="32" />
+        <label for="name"><txp:text item="comment_name" /></label><br>
+        <txp:comment_name_input class="large" size="32" placeholder='<txp:text item="required" />' />
     </p>
     <p class="layout-2col">
-        <label for="email"><txp:text item="comment_email" /> <abbr class="required" title="<txp:text item="required" />" aria-label="<txp:text item="required" />">*</abbr></label><br>
-        <txp:comment_email_input class="large" size="32" />
+        <label for="email"><txp:text item="comment_email" /></label><br>
+        <txp:comment_email_input class="large" size="32" placeholder='<txp:text item="required" />' />
     </p>
 </div>
 <p>
-    <label for="message"><txp:text item="comment_message" /> <abbr class="required" title="<txp:text item="required" />" aria-label="<txp:text item="required" />">*</abbr></label><br>
-    <txp:comment_message_input cols="64" rows="4" />
+    <label for="message"><txp:text item="comment_message" /></label><br>
+    <txp:comment_message_input cols="64" rows="4" placeholder='<txp:text item="required" />' />
 </p>
-<p class="field layout-1col">
+<p>
     <txp:comment_preview />
     <txp:comment_submit class="button-primary" />
 </p>

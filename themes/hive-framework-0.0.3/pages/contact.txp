@@ -32,25 +32,25 @@
             <txp:if_plugin name="com_connect" version="4.6">
                 <txp:com_connect class="" label="" to='<txp:variable name="--contact-email" />' body_form="email">
                     <div class="layout-container">
-                        <div class="layout-2col">
-                            <txp:com_connect_text class="" name="name" size="32" label='<txp:text item="name" />' />
-                        </div>
-                        <div class="layout-2col">
-                            <txp:com_connect_email class="" name="email" size="32" label='<txp:text item="email" />' />
-                        </div>
-                        <div class="layout-2col">
+                        <p class="layout-2col">
+                            <txp:com_connect_text class="" name="name" size="32" label='<txp:text item="name" />' placeholder='<txp:text item="required" />' />
+                        </p>
+                        <p class="layout-2col">
+                            <txp:com_connect_email class="" name="email" size="32" label='<txp:text item="email" />' placeholder='<txp:text item="required" />' />
+                        </p>
+                        <p class="layout-2col">
                             <txp:com_connect_text class="" name="organization" size="32" label='<txp:text item="organization" />' required="0" />
-                        </div>
-                        <div class="layout-2col">
+                        </p>
+                        <p class="layout-2col">
                             <txp:com_connect_text class="" type="tel" name="tel" size="32" label='<txp:text item="tel" />' required="0" />
-                        </div>
-                        <div class="layout-1col">
-                            <txp:com_connect_textarea class="" name="message" cols="64" rows="8" label='<txp:text item="message" />' />
-                        </div>
-                        <div class="layout-1col">
-                            <input type="submit" value="<txp:text item="send" />" />
-                        </div>
+                        </p>
                     </div>
+                    <p>
+                        <txp:com_connect_textarea class="" name="message" cols="64" rows="8" label='<txp:text item="message" />' placeholder='<txp:text item="required" />' />
+                    </p>
+                    <p>
+                        <input class="button-primary" type="submit" value="<txp:text item="send" />" />
+                    </p>
                 </txp:com_connect>
                 TODO
             <txp:else />
