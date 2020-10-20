@@ -95,6 +95,15 @@ module.exports = function (grunt)
                         dest: '<%= paths.dest.images %>'
                     }
                 ]
+            },
+            // Copy Leaflet (open-source interactive maps) files.
+            leaflet: {
+                files: [
+                    {
+                        '<%= paths.dest.js %>map.js': ['node_modules/leaflet/dist/leaflet.js'],
+                        '<%= paths.dest.css %>map.css': ['node_modules/leaflet/dist/leaflet.css']
+                    }
+                ]
             }
         },
 
