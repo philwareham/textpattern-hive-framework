@@ -24,39 +24,50 @@
         <meta name="robots" content="none">
     </txp:if_article_list>
 </head>
-<body class="contact-page" itemscope itemtype="https://schema.org/WebPage">
+<body class="contact-page" itemscope itemtype="https://schema.org/ContactPage">
     <txp:output_form form="header" />
     <div class="wrapper">
         <txp:output_form form="breadcrumbs" />
         <div class="container">
-            <txp:if_plugin name="com_connect" version="4.6">
-                <txp:com_connect class="" label="" to='<txp:variable name="--contact-email" />' body_form="email">
-                    <div class="layout-container">
-                        <p class="layout-2col">
-                            <txp:com_connect_text class="large" name="name" size="32" label='<txp:text item="name" />' placeholder='<txp:text item="required" />' />
-                        </p>
-                        <p class="layout-2col">
-                            <txp:com_connect_email class="large" name="email" size="32" label='<txp:text item="email" />' placeholder='<txp:text item="required" />' />
-                        </p>
-                        <p class="layout-2col">
-                            <txp:com_connect_text class="large" name="organization" size="32" label='<txp:text item="organization" />' required="0" />
-                        </p>
-                        <p class="layout-2col">
-                            <txp:com_connect_text class="large" type="tel" name="tel" size="32" label='<txp:text item="tel" />' required="0" />
-                        </p>
+            <article class="article">
+                <header class="article-header">
+                    <h1 itemprop="headline"><txp:section title /></h1>
+                </header>
+                <txp:if_description>
+                    <div class="article-description" itemprop="description">
+                        <p><txp:meta_description format="" /></p>
                     </div>
-                    <p>
-                        <txp:com_connect_textarea class="" name="message" cols="64" rows="8" label='<txp:text item="message" />' placeholder='<txp:text item="required" />' />
-                    </p>
-                    <p>
-                        <input class="button-primary" type="submit" value="<txp:text item="send" />" />
-                    </p>
-                </txp:com_connect>
-                TODO
-            <txp:else />
-                TODO
-            </txp:if_plugin>
-            <txp:if_variable name="--contact-map" value="1"><div id="map"></div></txp:if_variable>
+                </txp:if_description>
+                <div class="article-body" itemprop="articleBody">
+                    <txp:if_plugin name="com_connect" version="4.6">
+                        <txp:com_connect class="" label="" to='<txp:variable name="--contact-email" />' body_form="email">
+                            <div class="layout-container">
+                                <p class="layout-2col">
+                                    <txp:com_connect_text class="large" name="name" size="32" label='<txp:text item="name" />' placeholder='<txp:text item="required" />' />
+                                </p>
+                                <p class="layout-2col">
+                                    <txp:com_connect_email class="large" name="email" size="32" label='<txp:text item="email" />' placeholder='<txp:text item="required" />' />
+                                </p>
+                                <p class="layout-2col">
+                                    <txp:com_connect_text class="large" name="organization" size="32" label='<txp:text item="organization" />' required="0" />
+                                </p>
+                                <p class="layout-2col">
+                                    <txp:com_connect_text class="large" type="tel" name="tel" size="32" label='<txp:text item="tel" />' required="0" />
+                                </p>
+                            </div>
+                            <p>
+                                <txp:com_connect_textarea class="" name="message" cols="64" rows="8" label='<txp:text item="message" />' placeholder='<txp:text item="required" />' />
+                            </p>
+                            <p>
+                                <input class="button-primary" type="submit" value="<txp:text item="send" />" />
+                            </p>
+                        </txp:com_connect>
+                    <txp:else />
+                        TODO
+                    </txp:if_plugin>
+                    <txp:if_variable name="--contact-map" value="1"><div id="map"></div></txp:if_variable>
+                </div>
+            </article>
         </div>
     </div>
     <txp:output_form form="footer" />

@@ -1,4 +1,4 @@
-<footer class="site-footer">
+<footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter">
     <div class="layout-container flex-container-justified">
         <div class="layout-2col">
             <p>
