@@ -175,7 +175,7 @@ module.exports = function (grunt)
             options: {
                 implementation: require('sass'),
                 outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
-                sourceMap: true
+                sourceMap: false
             },
             dist: {
                 files: [
@@ -196,7 +196,7 @@ module.exports = function (grunt)
         uglify: {
             dist: {
                 options: {
-                    sourceMap: true
+                    sourceMap: false
                 },
                 files: [
                     {
