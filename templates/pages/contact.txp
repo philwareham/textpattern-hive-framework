@@ -33,16 +33,16 @@
                 <txp:com_connect class="" label="" to='<txp:variable name="--contact-email" />' body_form="email">
                     <div class="layout-container">
                         <p class="layout-2col">
-                            <txp:com_connect_text class="" name="name" size="32" label='<txp:text item="name" />' placeholder='<txp:text item="required" />' />
+                            <txp:com_connect_text class="large" name="name" size="32" label='<txp:text item="name" />' placeholder='<txp:text item="required" />' />
                         </p>
                         <p class="layout-2col">
-                            <txp:com_connect_email class="" name="email" size="32" label='<txp:text item="email" />' placeholder='<txp:text item="required" />' />
+                            <txp:com_connect_email class="large" name="email" size="32" label='<txp:text item="email" />' placeholder='<txp:text item="required" />' />
                         </p>
                         <p class="layout-2col">
-                            <txp:com_connect_text class="" name="organization" size="32" label='<txp:text item="organization" />' required="0" />
+                            <txp:com_connect_text class="large" name="organization" size="32" label='<txp:text item="organization" />' required="0" />
                         </p>
                         <p class="layout-2col">
-                            <txp:com_connect_text class="" type="tel" name="tel" size="32" label='<txp:text item="tel" />' required="0" />
+                            <txp:com_connect_text class="large" type="tel" name="tel" size="32" label='<txp:text item="tel" />' required="0" />
                         </p>
                     </div>
                     <p>
