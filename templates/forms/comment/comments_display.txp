@@ -2,7 +2,7 @@
     <txp:variable name="article-comments-section" value="1" />
     <hr class="flourish">
     <section id="comments-head" class="article-comments">
-        <h3><txp:text item="comments" /></h3>
+        <h2><txp:text item="comments" /></h2>
         <ol class="list--comments">
             <txp:comments wraptag="" break="li" />
             <txp:if_comments_preview>
@@ -35,10 +35,8 @@
     </txp:if_comments_preview>
 </txp:if_comments>
 <txp:if_comments_allowed>
-    <section id="comments-form">
-        <h3><txp:comments_invite showcount="0" textonly showalways /></h3>
-        <txp:comments_form />
-    </section>
+    <h3><txp:comments_invite showcount="0" textonly showalways /></h3>
+    <txp:comments_form />
 <txp:else />
     <txp:if_comments>
         <p class="alert-block information footnote"><txp:text item="comments_expired" /></p>
