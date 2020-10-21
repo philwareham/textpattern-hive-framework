@@ -1,5 +1,5 @@
 <a class="a--skip-link" href="#main"><txp:text item="go_content" /></a>
-<txp:if_variable name="--site-header-search" value="1"><a class="a--skip-link" href="#q"><txp:text item="go_search" /></a></txp:if_variable>
+<txp:if_variable name="--site-header-search" value="1"><a class="a--skip-link" href="#search"><txp:text item="go_search" /></a></txp:if_variable>
 <div id="dynamic-header">
     <header class="site-header" itemscope itemtype="https://schema.org/WPHeader">
         <txp:if_variable name="--site-header-logo" value="1"><h2 class="site-logo"><txp:site_name /></h2><txp:else /><h2><txp:site_name /></h2></txp:if_variable>
@@ -28,7 +28,7 @@
                     <form role="search" method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                         <meta itemprop="target" content="<txp:site_url />?q={q}">
                         <label class="accessibility" for="q"><txp:text item="search" /></label>
-                        <input id="q" name="q" type="search" itemprop="query-input" placeholder="<txp:text item="search" />"<txp:if_search> value="<txp:search_term />"</txp:if_search>>
+                        <input id="search" name="q" type="search" itemprop="query-input" placeholder="<txp:text item="search" />"<txp:if_search> value="<txp:search_term />"</txp:if_search>>
                     </form>
                 </div>
             </txp:if_variable>
