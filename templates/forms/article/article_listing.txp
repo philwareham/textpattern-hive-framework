@@ -1,4 +1,4 @@
-<li class="py-1">
+<li class="pb-1">
     <article class="teaser" itemscope itemtype="https://schema.org/Article">
         <header class="article-header">
             <txp:if_article_category>
