@@ -2,6 +2,7 @@
     <meta itemprop="url" content="<txp:site_url />">
     <form class="search-hero" role="search" method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
         <meta itemprop="target" content="<txp:site_url />?q={q}">
+        <label class="accessibility" for="search"><txp:text item="search" /></label>
         <input id="search" name="q" type="search" size="28" itemprop="query-input"<txp:if_search> value="<txp:search_term />"</txp:if_search>>
         <input type="submit" value="<txp:text item="search" />">
     </form>
