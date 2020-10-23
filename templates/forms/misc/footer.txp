@@ -4,7 +4,7 @@
             <p>
                 <small>
                     Copyright
-                    <span itemscope itemtype="https://schema.org/Organization">
+                    <span itemscope itemtype="https://schema.org/<txp:variable name="--site-org-type" />">
                         <span itemprop="name">Organisation Name</span>.
                     </span>
                     <a href="<txp:site_url />contact">Contact us</a>.

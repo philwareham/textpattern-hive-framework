@@ -61,7 +61,7 @@
                                 "name": "<txp:author escape="json" />"
                             },
                             "publisher": {
-                                "@type": "Organization",
+                                "@type": "<txp:variable name="--site-org-type" />",
                                 "name": "<txp:site_name escape="json" />",
                                 "logo": {
                                     "@type": "ImageObject",

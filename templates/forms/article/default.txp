@@ -24,7 +24,7 @@
         <span itemprop="author" itemscope itemtype="https://schema.org/Person">
             <meta itemprop="name" content="<txp:author />">
         </span>
-        <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="publisher" itemscope itemtype="https://schema.org/<txp:variable name="--site-org-type" />">
             <meta itemprop="name" content="<txp:site_name />">
             <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
                 <meta itemprop="url contentUrl" content="<txp:page_url type="theme_path" escape="json" />/assets/img/site-logo@2x.png">

@@ -1,4 +1,11 @@
 <txp:hide>
+SCHEMA.ORG ORGANIZATION TYPE ---------------------------------------------------
+Default is 'Organization' but see https://schema.org/Organization#subtypes for
+more specific organization types, if required.
+</txp:hide>
+<txp:variable name="--site-org-type" value="Organization" />
+
+<txp:hide>
 RSS AND/OR ATOM FEEDS? ---------------------------------------------------------
 Value of '0' for no, '1' for yes.
 </txp:hide>
