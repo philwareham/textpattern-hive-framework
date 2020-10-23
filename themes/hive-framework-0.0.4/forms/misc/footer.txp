@@ -4,7 +4,8 @@
             <p>
                 <small>
                     <span itemscope itemtype="https://schema.org/<txp:variable name="--site-org-type" />">
-                        © <span itemprop="name"><txp:variable name="--site-org" /></span>.
+                        ©<txp:evaluate query='<txp:php />'><txp:php>echo date('Y');</txp:php><txp:else /><txp:article_custom sort="Posted DESC" limit="1"><txp:posted format="%Y" /></txp:article_custom></txp:evaluate>
+                        <span itemprop="name"><txp:variable name="--site-org" /></span>.
                     </span>
                 </small>
             </p>
