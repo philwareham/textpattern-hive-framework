@@ -62,7 +62,7 @@
                             },
                             "publisher": {
                                 "@type": "<txp:variable name="--site-org-type" />",
-                                "name": "<txp:variable name="--site-org" escape="json" />",
+                                "name": "<txp:variable name="--site-org" />",
                                 "logo": {
                                     "@type": "ImageObject",
                                     "url": "<txp:page_url type="theme_path" escape="json" />\/assets\/img\/site-logo@2x.png"
