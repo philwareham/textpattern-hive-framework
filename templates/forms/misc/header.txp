@@ -24,7 +24,7 @@
                 </txp:if_section>
             </txp:section_list>
         </nav>
-        <a id="lightswitch" href="#" role="button" title="<txp:text item="lightswitch" />"><span class="ui-icon ui-icon-medium ui-icon-lightbulb"><txp:text item="lightswitch" /></span></a>
+        <txp:if_variable name="--site-header-light-switch" value="1"><a id="lightswitch" href="#" role="button" title="<txp:text item="lightswitch" />"><span class="ui-icon ui-icon-medium ui-icon-lightbulb"><txp:text item="lightswitch" /></span></a></txp:if_variable>
         <txp:if_variable name="--site-header-search" value="1">
             <txp:if_variable name="page-type" not match="any" value="error-page,search-page">
                 <div class="search-form" itemscope itemtype="https://schema.org/WebSite">
