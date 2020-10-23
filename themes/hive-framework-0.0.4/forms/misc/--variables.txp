@@ -12,6 +12,12 @@ Value of '0' for no, '1' for yes.
 <txp:variable name="--site-header-logo" value="0" />
 
 <txp:hide>
+HOME LINK IN HEADER NAVIGATION? ------------------------------------------------
+Value of '0' for no, '1' for yes.
+</txp:hide>
+<txp:variable name="--site-nav-home" value="1" />
+
+<txp:hide>
 SITE SEARCH IN HEADER? ---------------------------------------------------------
 Value of '0' for no, '1' for yes.
 </txp:hide>

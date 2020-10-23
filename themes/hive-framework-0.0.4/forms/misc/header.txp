@@ -2,12 +2,16 @@
 <txp:if_variable name="--site-header-search" value="1"><a class="a--skip-link" href="#search"><txp:text item="go_search" /></a></txp:if_variable>
 <div id="dynamic-header">
     <header class="site-header" itemscope itemtype="https://schema.org/WPHeader">
-        <txp:if_variable name="--site-header-logo" value="1"><h2 class="site-logo"><txp:site_name /></h2><txp:else /><h2><txp:site_name /></h2></txp:if_variable>
+        <txp:if_variable name="--site-header-logo" value="1">
+             <txp:if_variable name="--site-nav-home" value="1"><h2 class="site-logo"><txp:site_name /></h2><txp:else /><h2 class="site-logo"><a href="<txp:site_url />"><txp:site_name /></a></h2></txp:if_variable>
+        <txp:else />
+             <txp:if_variable name="--site-nav-home" value="1"><h2><txp:site_name /></h2><txp:else /><h2><a href="<txp:site_url />"><txp:site_name /></a></h2></txp:if_variable>
+        </txp:if_variable>
     </header>
     <div class="site-navigation">
         <a id="site-navigation-toggle" href="#" role="button" aria-controls="site-navigation" title="<txp:text item="navigation" />"><txp:text item="navigation" /></a>
         <nav id="site-navigation" aria-label="<txp:text item="site_nav" />" itemscope itemtype="https://schema.org/SiteNavigationElement">
-            <txp:section_list include_default default_title='<txp:text item="home" />' html_id="site-navigation-list" wraptag="ul" break="">
+            <txp:section_list include_default='<txp:variable name="--site-nav-home" />' default_title='<txp:text item="home" />' html_id="site-navigation-list" wraptag="ul" break="">
                 <txp:if_section name='<txp:section />'>
                     <li class="active">
                         <a itemprop="url" href="<txp:section url />" aria-current="page"><txp:section title /></a>
