@@ -1,4 +1,10 @@
 <txp:hide>
+ORGANIZATION NAME --------------------------------------------------------------
+The name of your Organization/Company/Whatever, default is the site's name.
+</txp:hide>
+<txp:variable name="--site-org" value="<txp:site_name />" />
+
+<txp:hide>
 SCHEMA.ORG ORGANIZATION TYPE ---------------------------------------------------
 Default is 'Organization' but see https://schema.org/Organization#subtypes for
 more specific organization types, if required.

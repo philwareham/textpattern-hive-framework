@@ -3,12 +3,9 @@
         <div class="layout-2col">
             <p>
                 <small>
-                    Copyright
                     <span itemscope itemtype="https://schema.org/<txp:variable name="--site-org-type" />">
-                        <span itemprop="name">Organisation Name</span>.
+                        © <span itemprop="name"><txp:variable name="--site-org" /></span>.
                     </span>
-                    <a href="<txp:site_url />contact">Contact us</a>.
-                    <a href="<txp:site_url />privacy">Privacy</a>.
                 </small>
             </p>
         </div>
