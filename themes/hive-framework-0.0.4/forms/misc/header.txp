@@ -3,9 +3,9 @@
 <div id="dynamic-header">
     <header class="site-header" itemscope itemtype="https://schema.org/WPHeader">
         <txp:if_variable name="--site-header-logo" value="1">
-             <txp:if_variable name="--site-nav-home" value="1"><h2 class="site-logo"><txp:site_name /></h2><txp:else /><h2 class="site-logo"><a href="<txp:site_url />"><txp:site_name /></a></h2></txp:if_variable>
+             <txp:if_variable name="--site-nav-home" value="1"><h2 class="site-logo"><txp:site_name /></h2><txp:else /><h2><a class="site-logo" href="<txp:site_url />" title="<txp:text item="home" />"><txp:site_name /></a></h2></txp:if_variable>
         <txp:else />
-             <txp:if_variable name="--site-nav-home" value="1"><h2><txp:site_name /></h2><txp:else /><h2><a href="<txp:site_url />"><txp:site_name /></a></h2></txp:if_variable>
+             <txp:if_variable name="--site-nav-home" value="1"><h2><txp:site_name /></h2><txp:else /><h2><a href="<txp:site_url />" title="<txp:text item="home" />"><txp:site_name /></a></h2></txp:if_variable>
         </txp:if_variable>
     </header>
     <div class="site-navigation">
