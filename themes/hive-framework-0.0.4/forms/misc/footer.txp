@@ -4,7 +4,11 @@
             <p>
                 <small>
                     <span itemscope itemtype="https://schema.org/<txp:variable name="--site-org-type" />">
-                        ©<txp:evaluate query='<txp:php />'><txp:php>echo date('Y');</txp:php><txp:else /><txp:article_custom sort="Posted DESC" limit="1"><txp:posted format="%Y" /></txp:article_custom></txp:evaluate>
+                        &copy;
+                        <txp:variable name="year"><txp:evaluate query='<txp:php />'><txp:php>echo date('Y');</txp:php><txp:else /><txp:article_custom fields="max(posted)"><txp:posted format="%Y" /></txp:article_custom></txp:evaluate></txp:variable>
+                        <txp:article_custom fields="min(posted)">
+                            <txp:evaluate query='<txp:posted format="%Y" /> = <txp:variable name="year" />'><txp:posted format="%Y" /><txp:else /><txp:posted format="%Y" />&ndash;<txp:variable name="year" /></txp:evaluate>
+                        </txp:article_custom>
                         <span itemprop="name"><txp:variable name="--site-org" /></span>.
                     </span>
                 </small>
