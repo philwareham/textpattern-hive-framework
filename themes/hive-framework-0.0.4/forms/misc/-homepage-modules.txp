@@ -11,7 +11,7 @@
     </div>
 
 
-    <txp:output_form form="gallery--grid" />
+    <txp:output_form form="-module--gallery--grid" />
 
 
     <div class="container">
@@ -171,7 +171,7 @@
         <div class="align-center py-2 pb-4">
             <h2>A list of our partners, clients or customers</h2>
             <p>A snappy aside.</p>
-            <txp:output_form form="logo-wall" />
+            <txp:output_form form="-module--logo-wall" />
         </div>
 
     </div>
