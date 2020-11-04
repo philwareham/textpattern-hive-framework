@@ -10,14 +10,23 @@
             </txp:images>
         <txp:else />
             <txp:variable name="gallery-fallback" value="1" />
-            <div class="layout-3col">
+            <div class="layout-<txp:variable name="--gallery-columns" />col">
                 <img loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-1080x1080-1.png" alt="Placeholder Image 1" itemprop="image">
             </div>
-            <div class="layout-3col">
+            <div class="layout-<txp:variable name="--gallery-columns" />col">
                 <img loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-1080x1080-2.png" alt="Placeholder Image 2" itemprop="image">
             </div>
-            <div class="layout-3col">
+            <div class="layout-<txp:variable name="--gallery-columns" />col">
                 <img loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-1080x1080-3.png" alt="Placeholder Image 3" itemprop="image">
+            </div>
+            <div class="layout-<txp:variable name="--gallery-columns" />col">
+                <img loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-1080x1080-4.png" alt="Placeholder Image 4" itemprop="image">
+            </div>
+            <div class="layout-<txp:variable name="--gallery-columns" />col">
+                <img loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-1080x1080-5.png" alt="Placeholder Image 5" itemprop="image">
+            </div>
+            <div class="layout-<txp:variable name="--gallery-columns" />col">
+                <img loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-1080x1080-6.png" alt="Placeholder Image 6" itemprop="image">
             </div>
         </txp:evaluate>
     </div>

@@ -1,6 +1,6 @@
 <txp:hide>
 GALLERY GRID COLUMNS -----------------------------------------------------------
-Possible values: '2' (2 column), '3' (2 column), '4' (2 column).
+Possible values: '2' (2 column), '3' (3 column), '4' (4 column).
 </txp:hide>
 <txp:variable name="--gallery-columns" value="3" />
 
