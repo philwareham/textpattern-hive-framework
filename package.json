@@ -50,7 +50,7 @@
     "stylelint-scss": "3.18.0"
   },
   "dependencies": {
-    "hive-framework": "0.18.6",
+    "hive-framework": "0.18.7",
     "leaflet": "1.7.1"
   },
   "browserslist": [
