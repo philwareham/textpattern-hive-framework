@@ -171,7 +171,7 @@
         <div class="align-center py-2 pb-4">
             <h2>A list of our partners, clients or customers</h2>
             <p>A snappy aside.</p>
-            <txp:output_form form="logo-wall--grid-4-col" />
+            <txp:output_form form="logo-wall" />
         </div>
 
     </div>

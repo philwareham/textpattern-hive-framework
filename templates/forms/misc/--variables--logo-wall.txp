@@ -1,0 +1,5 @@
+<txp:hide>
+LOGO WALL COLUMNS -----------------------------------------------------------
+Possible values: '2' (2 column), '3' (3 column), '4' (4 column).
+</txp:hide>
+<txp:variable name="--logo-wall-columns" value="4" />
