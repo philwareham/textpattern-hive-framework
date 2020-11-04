@@ -1,6 +1,7 @@
+<txp:output_form form="--variables--gallery" />
 <section>
     <h3 class="accessibility"><txp:text item="gallery" /></h3>
-    <div class="layout-text4col gallery gap-0">
+    <div class="layout-text<txp:variable name="--gallery-columns" />col gallery<txp:if_variable name="--gallery-gap" not value=""> gap-<txp:variable name="--gallery-gap" /><txp:if_variable>">
         <txp:evaluate>
             <txp:images category="gallery" break="" sort="date desc" limit="24">
                 <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image">

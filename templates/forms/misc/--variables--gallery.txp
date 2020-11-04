@@ -1,0 +1,12 @@
+<txp:hide>
+GALLERY GRID COLUMNS -----------------------------------------------------------
+Possible values: '2' (2 column), '3' (2 column), '4' (2 column).
+</txp:hide>
+<txp:variable name="--gallery-columns" value="3" />
+
+<txp:hide>
+GALLERY GRID GAP ---------------------------------------------------------------
+Possible values: '0' (no gap), '1' (2px), '2' (4px), '3' (0.5rem), '4' (1rem).
+Default (undefined) is 2rem gap between grid cells.
+</txp:hide>
+<txp:variable name="--gallery-gap" value="" />
