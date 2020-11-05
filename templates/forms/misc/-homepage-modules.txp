@@ -2,10 +2,7 @@
     <div class="container">
 
         <main id="main" aria-label="Main content">
-            <div class="align-center py-2">
-                <h3>Preamble heading</h3>
-                <h1>A main h1 heading about our service offering, and some general statements about how great we are, basically.</h1>
-            </div>
+            <txp:output_form form="-module--text--heading01" />
         </main>
 
     </div>
