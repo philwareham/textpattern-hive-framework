@@ -1,7 +1,8 @@
 <div class="align-center py-2">
-    <txp:article_custom
-        section='pageless-content'
-        category='test'>
+    <txp:article_custom limit="1"
+        id=''
+        section='<txp:yield name="section" default="null" />'
+        category='<txp:yield name="category" default="null" />'>
         <txp:if_excerpt><h3><txp:excerpt escape="tidy, p, h1, h2, h3, h4, h5, h6" /></h3></txp:if_excerpt>
         <h1><txp:title /></h1>
         <txp:if_yield name="call-to-action"><txp:yield name="call-to-action" /></txp:if_yield>
