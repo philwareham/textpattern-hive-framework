@@ -2,7 +2,7 @@
     <div class="container">
 
         <main id="main" aria-label="Main content">
-            <txp:output_form form="-module--text--heading01" id="null" section="null" category="null" />
+            <txp:output_form form="-module--text--heading01" id="null" />
         </main>
 
     </div>

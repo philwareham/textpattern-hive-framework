@@ -16,5 +16,5 @@
             <img loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders//img-hd-3.png" alt="Placeholder Image 6" itemprop="image">
         </txp:evaluate>
     </div>
-    <txp:if_variable name="gallery-fallback"><txp:output_form form="instructions">To use this module, please create an an image category named <code>gallery</code> and assign one of more images to that category.</txp:output_form></txp:if_variable>
+    <txp:if_variable name="gallery-fallback"><txp:output_form form="instructions">To use this module, please create an an image category named <code>gallery</code> and assign one of more images to that category. Grid layout options can be adjusted by editing the <code>--variables--gallery</code> form template.</txp:output_form></txp:if_variable>
 </section>

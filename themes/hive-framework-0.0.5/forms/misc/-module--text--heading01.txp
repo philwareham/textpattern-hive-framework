@@ -1,13 +1,14 @@
 <div class="align-center py-2">
     <txp:article_custom limit="1"
-        id=''
-        section='<txp:yield name="section" default="null" />'
-        category='<txp:yield name="category" default="null" />'>
+        id='<txp:yield name="id" default="" />'
+        section='<txp:yield name="section" default="" />'
+        category='<txp:yield name="category" default="" />'>
         <txp:if_excerpt><h3><txp:excerpt escape="tidy, p, h1, h2, h3, h4, h5, h6" /></h3></txp:if_excerpt>
         <h1><txp:title /></h1>
         <txp:if_yield name="call-to-action"><txp:yield name="call-to-action" /></txp:if_yield>
     <txp:else />
         <h3>Preamble heading</h3>
         <h1>A main h1 heading about our service offering, and some general statements about how great we are, basically.</h1>
+        <txp:output_form form="instructions">To use this module, please create an article within a <a target="_blank" rel="noopener" href="https://textpattern.com/weblog/426/feature-focus-live-pageless-sections-for-hidden-content">pageless section</a> and call it from the <code>&lt;txp:output_form /&gt;</code> tag it via its unique article <code>id</code>, or via a combination of <code>section</code> and <code>category</code> attributes.<br>For example, either <code>&lt;txp:output_form form="-module--text--heading01" id="2" /&gt;</code> or <code>&lt;txp:output_form form="-module--text--heading01" section="pageless-content" category="my-intro" /&gt;</code>.</txp:output_form>
     </txp:article_custom>
 </div>

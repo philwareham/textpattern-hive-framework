@@ -30,5 +30,5 @@
             </div>
         </txp:evaluate>
     </div>
-    <txp:if_variable name="gallery-fallback"><txp:output_form form="instructions">To use this module, please create an an image category named <code>gallery</code> and assign one of more images to that category.</txp:output_form></txp:if_variable>
+    <txp:if_variable name="gallery-fallback"><txp:output_form form="instructions">To use this module, please create an an image category named <code>gallery</code> and assign one of more images to that category. Grid layout options can be adjusted by editing the <code>--variables--gallery</code> form template.</txp:output_form></txp:if_variable>
 </section>

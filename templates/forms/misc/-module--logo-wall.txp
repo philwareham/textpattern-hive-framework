@@ -28,4 +28,4 @@
         </div>
     </txp:evaluate>
 </div>
-<txp:if_variable name="logo-wall-fallback"><txp:output_form form="instructions">To use this module, please create an an image category named <code>logo-wall</code> and assign one of more images to that category.</txp:output_form></txp:if_variable>
+<txp:if_variable name="logo-wall-fallback"><txp:output_form form="instructions">To use this module, please create an an image category named <code>logo-wall</code> and assign one of more images to that category. Logo wall layout options can be adjusted by editing the <code>--variables--logo-wall</code> form template.</txp:output_form></txp:if_variable>
