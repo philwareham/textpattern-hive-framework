@@ -1,1 +1,1 @@
-<div class="align-center"><p class="alert-block alert-bubble information"><txp:yield /></p></div>
+<div class="align-center contain"><p class="alert-block alert-bubble information"><txp:yield /></p></div>
