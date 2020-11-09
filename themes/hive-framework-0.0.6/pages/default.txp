@@ -44,7 +44,7 @@
 <body class="<txp:variable name="page-type" />" itemscope itemtype="<txp:if_variable name="page-type" value="front-page">https://schema.org/WebPage<txp:else /><txp:if_variable name="page-type" value="search-page">https://schema.org/SearchResultsPage<txp:else />https://schema.org/CollectionPage</txp:if_variable></txp:if_variable>">
     <txp:output_form form="header" />
     <txp:if_variable name="page-type" value="front-page">
-        <txp:output_form form="-homepage-modules" />
+        <txp:output_form form="-content-homepage" />
     <txp:else />
         <div class="wrapper">
             <txp:output_form form="breadcrumbs" />

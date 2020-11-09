@@ -9,4 +9,4 @@ GALLERY GRID GAP ---------------------------------------------------------------
 Possible values: '0' (no gap), '1' (2px), '2' (4px), '3' (0.5rem), '4' (1rem).
 Default (undefined) is 2rem gap between grid cells.
 </txp:hide>
-<txp:variable name="--gallery-gap" value="" />
+<txp:variable name="--gallery-gap" value="2" />
