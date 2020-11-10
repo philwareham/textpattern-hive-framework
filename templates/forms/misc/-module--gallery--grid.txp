@@ -1,7 +1,7 @@
 <txp:output_form form="--variables--gallery" />
 <section<txp:evaluate> class="<txp:if_yield name="align">align-<txp:yield name="align" /> </txp:if_yield><txp:if_yield name="y-padding">py-<txp:yield name="y-padding" /></txp:if_yield>"</txp:evaluate>>
     <txp:if_yield><txp:yield /><txp:else /><h3 class="accessibility"><txp:text item="gallery" /></h3></txp:if_yield>
-    <div class="layout-container layout-align-block-center gallery<txp:if_variable name="--gallery-gap" not value=""> gap-<txp:variable name="--gallery-gap" /></txp:if_variable>">
+    <div class="layout-container <txp:if_yield name="align-vertical">layout-align-<txp:yield name="align-vertical" /><txp:else />layout-align-block-center</txp:if_yield><txp:if_yield name="align"> layout-align-<txp:yield name="align" /></txp:if_yield> gallery<txp:if_variable name="--gallery-gap" not value=""> gap-<txp:variable name="--gallery-gap" /></txp:if_variable>">
         <txp:evaluate>
             <txp:images category="gallery" break="" sort="date desc" limit="24">
                 <div class="layout-<txp:variable name="--gallery-columns" />col">
@@ -30,5 +30,5 @@
             </div>
         </txp:evaluate>
     </div>
-    <txp:if_variable name="gallery-fallback"><txp:output_form form="instructions">To use this module, please create an an image category named <code>gallery</code> and assign one of more images to that category. Grid layout options can be adjusted by editing the <code>--variables--gallery</code> form template.</txp:output_form></txp:if_variable>
+    <txp:if_variable name="gallery-fallback"><txp:output_form form="instructions">To use this module, please create an an image category named <code>gallery</code> and assign one of more images to that category. Grid layout options can be adjusted by editing the <code>--variables--gallery</code> form template. Module also accepts <code>align=""</code> (allowed values: <code>left</code>, <code>right</code>, <code>center</code>, <code>inline-start</code>, <code>inline-end</code>), <code>align-vertical=""</code> (allowed values: <code>top</code>, <code>middle</code>, <code>bottom</code>, <code>block-start</code>, <code>block-end</code>) and <code>y-padding=""</code> (allowed values: <code>0</code> to <code>5</code>). If used as a container tag, any contained content is yielded above gallery content.</txp:output_form></txp:if_variable>
 </section>
