@@ -18,3 +18,12 @@ Thumbs.db
 /npm-debug.log
 /yarn.lock
 /yarn-error.log
+
+# Textpattern files  #
+######################
+/css.php
+/files
+/images
+/index.php
+/textpattern
+/vendor
