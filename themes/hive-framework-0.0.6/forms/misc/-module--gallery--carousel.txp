@@ -1,4 +1,4 @@
-<section<txp:evaluate> class="<txp:if_yield name="align">align-<txp:yield name="align" /> </txp:if_yield><txp:if_yield name="y-padding">py-<txp:yield name="y-padding" /></txp:if_yield>"</txp:evaluate>>
+<section<txp:evaluate> class="<txp:if_yield name="align">align-<txp:yield name="align" /> </txp:if_yield><txp:if_yield name="padding-y">py-<txp:yield name="padding-y" /></txp:if_yield>"</txp:evaluate>>
     <txp:if_yield><txp:yield /><txp:else /><h3 class="accessibility"><txp:text item="gallery" /></h3></txp:if_yield>
     <div class="glide">
         <div class="glide__track" data-glide-el="track">
@@ -32,5 +32,5 @@
             </txp:evaluate>
         </div>
     </div>
-    <txp:if_variable name="gallery-fallback"><txp:output_form form="instructions">To use this module, please create an an image category named <code>gallery</code> and assign one of more images to that category. Module also accepts <code>align=""</code> (allowed values: <code>left</code>, <code>right</code>, <code>center</code>, <code>inline-start</code>, <code>inline-end</code>) and <code>y-padding=""</code> (allowed values: <code>0</code> to <code>5</code>). If used as a container tag, any contained content is yielded above gallery content.</txp:output_form></txp:if_variable>
+    <txp:if_variable name="gallery-fallback"><txp:output_form form="instructions">To use this module, please create an an image category named <code>gallery</code> and assign one of more images to that category. Module also accepts <code>align=""</code> (allowed values: <code>left</code>, <code>right</code>, <code>center</code>, <code>inline-start</code>, <code>inline-end</code>) and <code>padding-y=""</code> (allowed values: <code>0</code> to <code>5</code>). If used as a container tag, any contained content is yielded above gallery content.</txp:output_form></txp:if_variable>
 </section>
