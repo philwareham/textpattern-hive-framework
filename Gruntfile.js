@@ -14,7 +14,7 @@ module.exports = function (grunt)
                 sass: 'scss/',
                 fonts: 'node_modules/hive-framework/src/assets/fonts/',
                 images: 'img/',
-                js: 'node_modules/hive-framework/src/assets/js/',
+                js: 'js/',
                 templates: 'templates/'
             },
             dest: {
