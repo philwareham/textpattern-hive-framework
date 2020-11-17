@@ -1,0 +1,27 @@
+<txp:article_custom limit="1" id='<txp:yield name="id" default="null" />'>
+    <div class="layout-container<txp:if_yield name="align-vertical"> layout-align-<txp:yield name="align-vertical" /><txp:else /> layout-align-block-center</txp:if_yield><txp:if_article_image not> layout-align-inline-center</txp:if_article_image><txp:if_yield name="align"> align-<txp:yield name="align" /></txp:if_yield><txp:if_yield name="padding-y"> py-<txp:yield name="padding-y" /><txp:else /> py-2</txp:if_yield>">
+        <txp:if_article_image>
+            <div class="layout-2col<txp:if_yield name="padding-cell"> p-<txp:yield name="padding-cell" /><txp:else /> p-2</txp:if_yield>">
+                <txp:article_image class="overstretch" loading="lazy" />
+            </div>
+        </txp:if_article_image>
+        <div class="layout-2col<txp:if_yield name="padding-cell"> p-<txp:yield name="padding-cell" /><txp:else /> p-2</txp:if_yield>">
+            <h2><txp:title /></h2>
+            <txp:if_excerpt><h4><txp:excerpt escape="tidy, p, h1, h2, h3, h4, h5, h6" /></h4></txp:if_excerpt>
+            <txp:body />
+            <txp:yield />
+        </div>
+    </div>
+<txp:else />
+    <div class="layout-container<txp:if_yield name="align-vertical"> layout-align-<txp:yield name="align-vertical" /><txp:else /> layout-align-block-center</txp:if_yield><txp:if_yield name="align"> align-<txp:yield name="align" /></txp:if_yield><txp:if_yield name="padding-y"> py-<txp:yield name="padding-y" /><txp:else /> py-2</txp:if_yield>">
+        <div class="layout-2col<txp:if_yield name="padding-cell"> p-<txp:yield name="padding-cell" /><txp:else /> p-4</txp:if_yield>">
+            <img class="overstretch" loading="lazy" src="<txp:page_url type="theme_path" />/assets/img/placeholders/img-1080x1080-1.png" width="540" height="540" alt="Placeholder Image">
+        </div>
+        <div class="layout-2col<txp:if_yield name="padding-cell"> p-<txp:yield name="padding-cell" /><txp:else /> p-2</txp:if_yield>">
+            <h2>Duis aute irure dolor</h2>
+            <h4>Subheading</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+    <txp:output_form form="instructions">To use this module, please create an article within a <a target="_blank" rel="noopener" href="https://textpattern.com/weblog/426/feature-focus-live-pageless-sections-for-hidden-content">pageless section</a> and call it from the <code>&lt;txp:output_form /&gt;</code> tag it via its unique article <code>id</code>. Module also accepts <code>align=""</code> (allowed values: <code>left</code>, <code>right</code>, <code>center</code>, <code>inline-start</code>, <code>inline-end</code>), <code>align-vertical=""</code> (allowed values: <code>top</code>, <code>middle</code>, <code>bottom</code>, <code>block-start</code>, <code>block-end</code>), <code>padding-y=""</code> and <code>padding-cell=""</code> (allowed values: <code>0</code> to <code>5</code>). If used as a container tag, any contained content is yielded below article content.<br>For example: <code>&lt;txp:output_form form="-module--text--heading04" id="2" vertical-align="bottom" padding-y="0" padding-cell="4" /&gt;</code>.</txp:output_form>
+</txp:article_custom>
