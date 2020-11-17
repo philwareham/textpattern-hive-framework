@@ -3,7 +3,7 @@
         <txp:if_excerpt><h3><txp:excerpt escape="tidy, p, h1, h2, h3, h4, h5, h6" /></h3></txp:if_excerpt>
         <h1><txp:title /></h1>
         <txp:evaluate test="body">
-            <div class="<txp:if_yield name="align-body">align-<txp:yield name="align-body" /> </txp:if_yield>article-body">
+            <div class="article-body<txp:if_yield name="align-body"> align-<txp:yield name="align-body" /></txp:if_yield>">
                 <txp:body />
             </div>
         </txp:evaluate>

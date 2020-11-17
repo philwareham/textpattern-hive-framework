@@ -1,5 +1,5 @@
 <txp:article_custom limit="1" id='<txp:yield name="id" default="null" />'>
-    <div class="layout-container<txp:if_yield name="align-vertical"> layout-align-<txp:yield name="align-vertical" /><txp:else /> layout-align-block-center</txp:if_yield><txp:if_yield name="align"> align-<txp:yield name="align" /></txp:if_yield><txp:if_yield name="padding-y"> py-<txp:yield name="padding-y" /><txp:else /> py-2</txp:if_yield>">
+    <div class="layout-container<txp:if_yield name="align-vertical"> layout-align-<txp:yield name="align-vertical" /><txp:else /> layout-align-block-center</txp:if_yield><txp:if_excerpt not> layout-align-inline-center</txp:if_excerpt><txp:if_yield name="align"> align-<txp:yield name="align" /></txp:if_yield><txp:if_yield name="padding-y"> py-<txp:yield name="padding-y" /><txp:else /> py-2</txp:if_yield>">
         <div class="layout-2col<txp:if_yield name="padding-cell"> px-<txp:yield name="padding-cell" /><txp:else /> px-4</txp:if_yield>">
             <h2><txp:title /></h2>
         </div>
@@ -8,6 +8,11 @@
                 <h2><txp:excerpt escape="tidy, p, h1, h2, h3, h4, h5, h6" /></h2>
             </div>
         </txp:if_excerpt>
+        <txp:evaluate test="body">
+            <div class="layout-1col<txp:if_yield name="align-body"> align-<txp:yield name="align-body" /></txp:if_yield> article-body">
+                <txp:body />
+            </div>
+        </txp:evaluate>
     </div>
 <txp:else />
     <div class="layout-container<txp:if_yield name="align-vertical"> layout-align-<txp:yield name="align-vertical" /><txp:else /> layout-align-block-center</txp:if_yield><txp:if_yield name="align"> align-<txp:yield name="align" /></txp:if_yield><txp:if_yield name="padding-y"> py-<txp:yield name="padding-y" /><txp:else /> py-2</txp:if_yield>">
@@ -18,6 +23,6 @@
             <h2>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h2>
         </div>
     </div>
-    <txp:output_form form="instructions">To use this module, please create an article within a <a target="_blank" rel="noopener" href="https://textpattern.com/weblog/426/feature-focus-live-pageless-sections-for-hidden-content">pageless section</a> and call it from the <code>&lt;txp:output_form /&gt;</code> tag it via its unique article <code>id</code>. Module also accepts <code>align=""</code> (allowed values: <code>left</code>, <code>right</code>, <code>center</code>, <code>inline-start</code>, <code>inline-end</code>), <code>align-vertical=""</code> (allowed values: <code>top</code>, <code>middle</code>, <code>bottom</code>, <code>block-start</code>, <code>block-end</code>), <code>padding-y=""</code> and <code>padding-cell=""</code> (allowed values: <code>0</code> to <code>5</code>). If used as a container tag, any contained content is yielded below article content.<br>For example: <code>&lt;txp:output_form form="-module--text--heading03" id="2" vertical-align="middle" padding-y="2" padding-cell="3" /&gt;</code>.</txp:output_form>
+    <txp:output_form form="instructions">To use this module, please create an article within a <a target="_blank" rel="noopener" href="https://textpattern.com/weblog/426/feature-focus-live-pageless-sections-for-hidden-content">pageless section</a> and call it from the <code>&lt;txp:output_form /&gt;</code> tag it via its unique article <code>id</code>. Module also accepts <code>align=""</code>, <code>align-body=""</code> (allowed values: <code>left</code>, <code>right</code>, <code>center</code>, <code>inline-start</code>, <code>inline-end</code>), <code>align-vertical=""</code> (allowed values: <code>top</code>, <code>middle</code>, <code>bottom</code>, <code>block-start</code>, <code>block-end</code>), <code>padding-y=""</code> and <code>padding-cell=""</code> (allowed values: <code>0</code> to <code>5</code>). If used as a container tag, any contained content is yielded below article content.<br>For example: <code>&lt;txp:output_form form="-module--text--heading03" id="2" vertical-align="middle" padding-y="2" padding-cell="3" /&gt;</code>.</txp:output_form>
 </txp:article_custom>
 <txp:yield />
