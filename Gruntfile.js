@@ -18,11 +18,11 @@ module.exports = function (grunt)
                 templates: 'templates/'
             },
             dest: {
-                css: 'themes/hive-framework-<%= pkg.version %>/assets/css/',
-                fonts: 'themes/hive-framework-<%= pkg.version %>/assets/fonts/',
-                images: 'themes/hive-framework-<%= pkg.version %>/assets/img/',
-                js: 'themes/hive-framework-<%= pkg.version %>/assets/js/',
-                templates: 'themes/hive-framework-<%= pkg.version %>/'
+                css: 'themes/hive-framework/assets/css/',
+                fonts: 'themes/hive-framework/assets/fonts/',
+                images: 'themes/hive-framework/assets/img/',
+                js: 'themes/hive-framework/assets/js/',
+                templates: 'themes/hive-framework/'
             }
         },
 

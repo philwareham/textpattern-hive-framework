@@ -1,0 +1,31 @@
+<footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter">
+    <div class="layout-container layout-align-justify" itemscope itemtype="https://schema.org/<txp:variable name="--site-org-type" />">
+        <div class="layout-2col">
+            <p>
+                <small>
+                    &copy;
+                    <txp:variable name="year"><txp:evaluate query='<txp:php />'><txp:php>echo date('Y');</txp:php><txp:else /><txp:article_custom fields="max(posted)"><txp:posted format="%Y" /></txp:article_custom></txp:evaluate></txp:variable>
+                    <txp:article_custom fields="min(posted)">
+                        <txp:evaluate query='<txp:posted format="%Y" /> = <txp:variable name="year" />'><txp:posted format="%Y" /><txp:else /><txp:posted format="%Y" />&ndash;<txp:variable name="year" /></txp:evaluate>
+                    </txp:article_custom>
+                    <span itemprop="name"><txp:variable name="--site-org" /></span>.
+                </small>
+            </p>
+        </div>
+        <txp:evaluate>
+            <div class="layout-2col">
+                <ul class="social-channels<txp:if_variable name="--social-media-icon-style" not value=""> <txp:variable name="--social-media-icon-style" /></txp:if_variable>">
+                    <txp:if_variable name="--url-facebook" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-facebook" />" class="facebook">Facebook</a></li></txp:if_variable>
+                    <txp:if_variable name="--url-github" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-github" />" class="github">GitHub</a></li></txp:if_variable>
+                    <txp:if_variable name="--url-instagram" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-instagram" />" class="instagram">Instagram</a></li></txp:if_variable>
+                    <txp:if_variable name="--url-linkedin" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-linkedin" />" class="linkedin">LinkedIn</a></li></txp:if_variable>
+                    <txp:if_variable name="--url-pinterest" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-pinterest" />" class="pinterest">Pinterest</a></li></txp:if_variable>
+                    <txp:if_variable name="--url-twitter" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-twitter" />" class="twitter">Twitter</a></li></txp:if_variable>
+                    <txp:if_variable name="--url-youtube" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-youtube" />" class="youtube">YouTube</a></li></txp:if_variable>
+                </ul>
+            </div>
+        </txp:evaluate>
+    </div>
+</footer>
+<script async src="<txp:page_url type="theme_path" />/assets/js/app.js"></script>
+<noscript><txp:text item="noscript" /></noscript>

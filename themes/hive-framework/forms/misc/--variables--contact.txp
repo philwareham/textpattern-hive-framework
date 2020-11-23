@@ -7,8 +7,11 @@ For contact page, if used.
 <txp:hide>
 CONTACT PHONE NUMBER -----------------------------------------------------------
 Provide a contact telephone number for the site (optional).
+For '--contact-phone-rfc3966', please provide the number in RFC 3966 format (for
+example '+44-1234-567890'). See https://tools.ietf.org/html/rfc3966 for details.
 </txp:hide>
 <txp:variable name="--contact-phone" value="" />
+<txp:variable name="--contact-phone-rfc3966" value="" />
 
 <txp:hide>
 LOCATION MAP ON CONTACT PAGE? --------------------------------------------------
