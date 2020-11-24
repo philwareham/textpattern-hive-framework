@@ -21,7 +21,7 @@ CONTACT PHONE NUMBER -----------------------------------------------------------
 Provide a contact telephone number for the site (optional).
 For '--contact-phone' provide the visual number, i.e. '+44 (0)1234 567890'.
 For '--contact-phone-rfc3966' provide the number in RFC 3966 format,
-i.e. '+44-1234-567890'. See https://tools.ietf.org/html/rfc3966 for details.
+i.e. '+44-1234-567890'. See https://tools.ietf.org/html/rfc3966.
 </txp:hide>
 <txp:variable name="--contact-phone" value="" />
 <txp:variable name="--contact-phone-rfc3966" value="" />
