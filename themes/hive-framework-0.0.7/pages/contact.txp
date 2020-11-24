@@ -79,10 +79,12 @@
                             <span class="country" itemprop="addressCountry"><txp:variable name="--contact-country" /></span>
                         </span>
                         <txp:if_variable name="--contact-map-latitude" not value="">
-                            <span class="geo">
-                                <meta class="latitude" content="<txp:variable name="--contact-map-latitude" />">
-                                <meta class="longitude" content="<txp:variable name="--contact-map-longitude" />">
-                            </span>
+                            <txp:if_variable name="--contact-map-longitude" not value="">
+                                <span class="geo">
+                                    <meta class="latitude" content="<txp:variable name="--contact-map-latitude" />">
+                                    <meta class="longitude" content="<txp:variable name="--contact-map-longitude" />">
+                                </span>
+                            </txp:if_variable>
                         </txp:if_variable>
                         <txp:if_plugin not name="com_connect" version="4.6">
                             <br>
