@@ -82,7 +82,7 @@
                             <br>
                             <span class="faux-h1" itemprop="contactPoint" class="tel" itemscope itemtype="https://schema.org/contactPoint">
                                 <meta class="type" itemprop="contactType name" content="<txp:text item="tel" />">
-                                <a class="value" itemprop="telephone" href="tel:<txp:variable name="--contact-phone-rfc3966" />"><txp:variable name="--contact-phone" /></a>
+                                <span class="value" itemprop="telephone"><a href="tel:<txp:variable name="--contact-phone-rfc3966" />"><txp:variable name="--contact-phone" /></a></span>
                             </span>
                         </txp:if_variable>
                         <meta class="url" itemprop="url" content="<txp:site_url />">
