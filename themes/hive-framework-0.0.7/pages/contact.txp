@@ -40,7 +40,7 @@
                 </txp:if_description>
                 <div class="article-body" itemprop="articleBody">
                     <txp:if_plugin name="com_connect" version="4.6">
-                        <txp:com_connect class="" label="" to='<txp:variable name="--contact-email" />' body_form="email">
+                        <txp:com_connect class="mb-1" label="" to='<txp:variable name="--contact-email" />' body_form="email">
                             <div class="layout-container">
                                 <p class="layout-2col">
                                     <txp:com_connect_text class="large" name="name" size="32" label='<txp:text item="name" />' placeholder='<txp:text item="required" />' />
@@ -69,7 +69,8 @@
                         <strong class="org fn">
                             <span class="organization-name" itemprop="name"><txp:variable name="--site-org" /></span>
                             <txp:if_variable name="--contact-organization-unit" not value=""><span class="organization-unit extended-address"><txp:variable name="--contact-organization-unit" /></span></txp:if_variable>
-                        </strong>,
+                        </strong>
+                        <br>
                         <span class="adr" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                             <span class="street-address" itemprop="streetAddress"><txp:variable name="--contact-street-address" /></span>,
                             <span class="locality" itemprop="addressLocality"><txp:variable name="--contact-locality" /></span>,
@@ -85,7 +86,13 @@
                             <br>
                             <span class="faux-h1" itemprop="contactPoint" class="tel" itemscope itemtype="https://schema.org/contactPoint">
                                 <meta class="type" itemprop="contactType name" content="<txp:text item="tel" />">
-                                <span class="value" itemprop="telephone"><a href="tel:<txp:variable name="--contact-phone-rfc3966" />"><txp:variable name="--contact-phone" /></a></span>
+                                <span class="value" itemprop="telephone">
+                                    <txp:if_variable name="--contact-phone-rfc3966" not value="">
+                                        <a href="tel:<txp:variable name="--contact-phone-rfc3966" />"><txp:variable name="--contact-phone" /></a>
+                                    <txp:else />
+                                        <txp:variable name="--contact-phone" />
+                                    </txp:if_variable>
+                                </span>
                             </span>
                         </txp:if_variable>
                         <meta class="url" itemprop="url" content="<txp:site_url />">
