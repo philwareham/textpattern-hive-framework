@@ -78,6 +78,12 @@
                             <span class="postal-code" itemprop="postalCode"><txp:variable name="--contact-postal-code" /></span>,
                             <span class="country" itemprop="addressCountry"><txp:variable name="--contact-country" /></span>
                         </span>
+                        <txp:if_variable name="--contact-map-latitude" not value="">
+                            <span class="geo">
+                                <meta class="latitude" content="<txp:variable name="--contact-map-latitude" />">
+                                <meta class="longitude" content="<txp:variable name="--contact-map-longitude" />">
+                            </span>
+                        </txp:if_variable>
                         <txp:if_plugin not name="com_connect" version="4.6">
                             <br>
                             <a class="email" href="mailto:<txp:variable name="--contact-email" />" itemprop="email"><txp:variable name="--contact-email" /></a>

@@ -35,9 +35,10 @@ Value of '0' for no, '1' for yes.
 <txp:hide>
 LOCATION MAP LATITUDE AND LONGITUDE --------------------------------------------
 If a location map is displayed (see above), provide valid latitude and longitude
-coordinates. For example, '51.505, -0.09'.
+coordinates. For example, '51.505' and '-0.09'.
 </txp:hide>
-<txp:variable name="--contact-map-lat-long" value="" />
+<txp:variable name="--contact-map-latitude" value="" />
+<txp:variable name="--contact-map-longitude" value="" />
 
 <txp:hide>
 LOCATION MAP ZOOM LEVEL --------------------------------------------------------
