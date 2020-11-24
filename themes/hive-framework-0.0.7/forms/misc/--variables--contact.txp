@@ -6,8 +6,10 @@ For contact page, if used.
 
 <txp:hide>
 CONTACT ADDRESS ----------------------------------------------------------------
-Provide a contact address for the site.
+Provide a contact address for the site. Utilizes hCard microformat standard, see
+https://microformats.org/wiki/hcard-examples#Organizations_and_Departments.
 </txp:hide>
+<txp:variable name="--contact-organization-unit" value="" />
 <txp:variable name="--contact-street-address" value="13 Mystreet" />
 <txp:variable name="--contact-locality" value="Mytown" />
 <txp:variable name="--contact-region" value="Myshire" />

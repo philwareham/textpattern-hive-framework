@@ -66,7 +66,10 @@
                     </txp:if_plugin>
 
                     <address class="vcard align-center" role="group" itemprop="publisher" itemscope itemtype="https://schema.org/<txp:variable name="--site-org-type" />">
-                        <strong class="org fn" itemprop="name"><txp:variable name="--site-org" /></strong>,
+                        <strong class="org fn">
+                            <span class="organization-name" itemprop="name"><txp:variable name="--site-org" /></span>
+                            <txp:if_variable name="--contact-organization-unit" not value=""><span class="organization-unit extended-address"><txp:variable name="--contact-organization-unit" /></span></txp:if_variable>
+                        </strong>,
                         <span class="adr" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                             <span class="street-address" itemprop="streetAddress"><txp:variable name="--contact-street-address" /></span>,
                             <span class="locality" itemprop="addressLocality"><txp:variable name="--contact-locality" /></span>,
