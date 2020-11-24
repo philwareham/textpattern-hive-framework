@@ -62,9 +62,30 @@
                                 <input class="button-primary" type="submit" value="<txp:text item="send" />" />
                             </p>
                         </txp:com_connect>
-                    <txp:else />
-                        TODO
                     </txp:if_plugin>
+
+                    <div class="vcard" role="group" itemprop="publisher" itemscope itemtype="https://schema.org/<txp:variable name="--site-org-type" />">
+                        <p class="org fn" itemprop="name"><txp:variable name="--site-org" /></p>
+                        <address class="adr" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                            <span class="street-address" itemprop="streetAddress"><txp:variable name="--contact-street-address" /></span>,
+                            <span class="locality" itemprop="addressLocality"><txp:variable name="--contact-locality" /></span>,
+                            <span class="region" itemprop="addressRegion"><txp:variable name="--contact-region" /></span>,
+                            <span class="postal-code" itemprop="postalCode"><txp:variable name="--contact-postal-code" /></span>,
+                            <span class="country" itemprop="addressCountry"><txp:variable name="--contact-country" /></span>
+                        </address>
+                        <p><txp:text item="email" /> <a class="email" href="mailto:<txp:variable name="--contact-email" />" itemprop="email"><txp:variable name="--contact-email" /></a></p>
+                        <txp:if_variable name="--contact-phone" not value="">
+                            <p class="faux-h1" itemprop="contactPoint" class="tel" itemscope itemtype="https://schema.org/contactPoint">
+                                <meta class="type" itemprop="contactType name" content="<txp:text item="tel" />">
+                                <a class="value" itemprop="telephone" href="tel:<txp:variable name="--contact-phone-rfc3966" />"><txp:variable name="--contact-phone" /></a>
+                            </p>
+                        </txp:if_variable>
+                        <meta class="url" itemprop="url" content="<txp:site_url />">
+                        <span itemprop="logo" itemscope itemtype="https://schema.org/imageObject">
+                            <meta class="photo" itemprop="url" content="<txp:page_url type="theme_path" />/assets/img/site-logo-opengraph.png">
+                        </span>
+                    </div>
+
                     <txp:if_variable name="--contact-map" value="1"><div id="map"></div></txp:if_variable>
                 </div>
             </article>
