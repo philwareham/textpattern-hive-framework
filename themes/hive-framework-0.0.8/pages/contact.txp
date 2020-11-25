@@ -117,6 +117,7 @@
     <txp:output_form form="footer" />
     <txp:if_article_list><txp:if_variable name="--contact-map" value="1">
         <script src="<txp:page_url type="theme_path" />/assets/js/map.js"></script>
+        <script>var mymap = L.map('mapid').setView([<txp:variable name="--contact-map-latitude" />, <txp:variable name="--contact-map-longitude" />], <txp:variable name="--contact-map-zoom" />);</script>
     </txp:if_variable></txp:if_article_list>
 </body>
 </html>
