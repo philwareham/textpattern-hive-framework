@@ -109,15 +109,27 @@
                         </span>
                     </address>
 
-                    <txp:if_variable name="--contact-map" value="1"><div id="map"></div></txp:if_variable>
                 </div>
             </article>
+            <txp:if_variable name="--contact-map" value="1"><div id="map" role="region"></div></txp:if_variable>
         </div>
     </div>
     <txp:output_form form="footer" />
     <txp:if_article_list><txp:if_variable name="--contact-map" value="1">
         <script src="<txp:page_url type="theme_path" />/assets/js/map.js"></script>
-        <script>var mymap = L.map('mapid').setView([<txp:variable name="--contact-map-latitude" />, <txp:variable name="--contact-map-longitude" />], <txp:variable name="--contact-map-zoom" />);</script>
+        <script>
+var mymap = L.map('map').setView([<txp:variable name="--contact-map-latitude" />, <txp:variable name="--contact-map-longitude" />], <txp:variable name="--contact-map-zoom" />);
+var marker = L.marker([<txp:variable name="--contact-map-latitude" />, <txp:variable name="--contact-map-longitude" />]).addTo(mymap);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: '&copy; <a rel="external" href="https://www.openstreetmap.org/">OpenStreetMap</a> (<a rel="external" href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>) + &copy; <a rel="external" href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/light-v10',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: '<txp:variable name="--contact-map-api-key" />'
+}).addTo(mymap);
+        </script>
     </txp:if_variable></txp:if_article_list>
 </body>
 </html>
