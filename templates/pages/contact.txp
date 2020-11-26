@@ -112,21 +112,35 @@
 
                 </div>
             </article>
-            <txp:if_variable name="--contact-map" value="1">
-                <txp:if_variable name="longitude-latitude-defined" value="1">
-                    <div id="map" role="region"></div>
-                <txp:else />
-                    <div class="align-center contain"><p class="alert-block error">Please define longitude and latitude values in the <code>--variables--contact</code> form template.</p></div>
-                </txp:if_variable>
-            </txp:if_variable>
         </div>
+        <txp:if_variable name="--contact-map" value="1">
+            <txp:if_variable name="longitude-latitude-defined" value="1">
+                <div id="map" role="region"></div>
+            <txp:else />
+                <div class="align-center contain"><p class="alert-block error">Please define longitude and latitude values in the <code>--variables--contact</code> form template.</p></div>
+            </txp:if_variable>
+        </txp:if_variable>
     </div>
     <txp:output_form form="footer" />
     <txp:if_article_list><txp:if_variable name="--contact-map" value="1">
         <script src="<txp:page_url type="theme_path" />/assets/js/map.js"></script>
-        <script>
-var mymap = L.map('map').setView([<txp:variable name="--contact-map-latitude" />, <txp:variable name="--contact-map-longitude" />], <txp:variable name="--contact-map-zoom" />);
-var marker = L.marker([<txp:variable name="--contact-map-latitude" />, <txp:variable name="--contact-map-longitude" />]).addTo(mymap);
+        <txp:if_variable name="longitude-latitude-defined" value="1">
+            <script>
+var mapKey = '<txp:variable name="--contact-map-api-key" />',
+    mapLat = '<txp:variable name="--contact-map-latitude" />',
+    mapLong = '<txp:variable name="--contact-map-longitude" />',
+    mapZoom = '<txp:variable name="--contact-map-zoom" />';
+
+var myIcon = L.icon({
+    iconUrl: '<txp:page_url type="theme_path" />/assets/img/map/marker-icon.png',
+    iconRetinaUrl: '<txp:page_url type="theme_path" />/assets/img/map/marker-icon-2x.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    shadowUrl: '<txp:page_url type="theme_path" />/assets/img/map/marker-shadow.png'
+});
+
+var mymap = L.map('map').setView([mapLat, mapLong], mapZoom),
+    marker = L.marker([mapLat, mapLong], {icon: myIcon}).addTo(mymap);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: '&copy; <a rel="external" href="https://www.openstreetmap.org/">OpenStreetMap</a> (<a rel="external" href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>) + &copy; <a rel="external" href="https://www.mapbox.com/">Mapbox</a>',
@@ -134,9 +148,10 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     id: 'mapbox/light-v10',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: '<txp:variable name="--contact-map-api-key" />'
+    accessToken: mapKey
 }).addTo(mymap);
-        </script>
+            </script>
+        </txp:if_variable>
     </txp:if_variable></txp:if_article_list>
 </body>
 </html>
