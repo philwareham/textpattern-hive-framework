@@ -33,13 +33,6 @@ Value of '0' for no, '1' for yes.
 <txp:variable name="--contact-map" value="0" />
 
 <txp:hide>
-LOCATION MAP API KEY -----------------------------------------------------------
-The map utilizes Mapbox imagery, a Mapbox account and API key is required.
-See https://www.mapbox.com/studio/account/tokens/ for details.
-</txp:hide>
-<txp:variable name="--contact-map-api-key" value="" />
-
-<txp:hide>
 LOCATION MAP LATITUDE AND LONGITUDE --------------------------------------------
 If a location map is displayed (see above), provide valid latitude and longitude
 coordinates. For example, '51.505' and '-0.09'.
@@ -52,3 +45,17 @@ LOCATION MAP ZOOM LEVEL --------------------------------------------------------
 If a location map is displayed (see above), provide an initial zoom level.
 </txp:hide>
 <txp:variable name="--contact-map-zoom" value="13" />
+
+<txp:hide>
+LOCATION MAP MAPBOX API KEY ----------------------------------------------------
+The map uses Mapbox map tile imagery, a Mapbox account and API key is required.
+See https://www.mapbox.com/studio/account/tokens/ for details.
+</txp:hide>
+<txp:variable name="--contact-map-api-key" value="" />
+
+<txp:hide>
+LOCATION MAP MAPBOX STYLE ------------------------------------------------------
+Choose a style for the Mapbox imagery, either a preset or your own custom style.
+For a list of current preset styles, see https://www.mapbox.com/maps/.
+</txp:hide>
+<txp:variable name="--contact-map-style" value="mapbox/streets-v11" />
