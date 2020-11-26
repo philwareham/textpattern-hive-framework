@@ -80,6 +80,7 @@
                         </span>
                         <txp:if_variable name="--contact-map-latitude" not value="">
                             <txp:if_variable name="--contact-map-longitude" not value="">
+                                <txp:variable name="longitude-latitude-defined" value="1" />
                                 <span class="geo">
                                     <meta class="latitude" content="<txp:variable name="--contact-map-latitude" />">
                                     <meta class="longitude" content="<txp:variable name="--contact-map-longitude" />">
@@ -111,7 +112,13 @@
 
                 </div>
             </article>
-            <txp:if_variable name="--contact-map" value="1"><div id="map" role="region"></div></txp:if_variable>
+            <txp:if_variable name="--contact-map" value="1">
+                <txp:if_variable name="longitude-latitude-defined" value="1">
+                    <div id="map" role="region"></div>
+                <txp:else />
+                    <div class="align-center contain"><p class="alert-block error">Please define longitude and latitude values in the <code>--variables--contact</code> form template.</p></div>
+                </txp:if_variable>
+            </txp:if_variable>
         </div>
     </div>
     <txp:output_form form="footer" />
