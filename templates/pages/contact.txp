@@ -116,8 +116,12 @@
         <txp:if_variable name="--contact-map" value="1">
             <txp:if_variable name="longitude-latitude-defined" value="1">
                 <div id="map" role="region"></div>
+                <txp:if_variable name="--contact-map-api-key" value="">
+                    <txp:variable name="api-key-undefined" value="1" />
+                    <div class="align-center contain"><p class="alert-block alert-bubble warning"><strong>Warning:</strong> OpenStreetMap map tile imagery is provided for development use only. For production-ready sites, please define a <a target="_blank" rel="noopener" href="https://www.mapbox.com/">Mapbox</a> account API key in your <code>--variables--contact</code> form template.</p></div>
+                </txp:if_variable>
             <txp:else />
-                <div class="align-center contain"><p class="alert-block error">Please define longitude and latitude values in the <code>--variables--contact</code> form template.</p></div>
+                <div class="align-center contain"><p class="alert-block error"><strong>Error:</strong> To use the map, please define longitude and latitude values in your <code>--variables--contact</code> form template.</p></div>
             </txp:if_variable>
         </txp:if_variable>
     </div>
@@ -126,30 +130,40 @@
         <script src="<txp:page_url type="theme_path" />/assets/js/map.js"></script>
         <txp:if_variable name="longitude-latitude-defined" value="1">
             <script>
-var mapKey = '<txp:variable name="--contact-map-api-key" />',
-    mapLat = '<txp:variable name="--contact-map-latitude" />',
+var mapLat = '<txp:variable name="--contact-map-latitude" />',
     mapLong = '<txp:variable name="--contact-map-longitude" />',
     mapZoom = '<txp:variable name="--contact-map-zoom" />';
 
 var myIcon = L.icon({
-    iconUrl: '<txp:page_url type="theme_path" />/assets/img/map/marker-icon.png',
-    iconRetinaUrl: '<txp:page_url type="theme_path" />/assets/img/map/marker-icon-2x.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    shadowUrl: '<txp:page_url type="theme_path" />/assets/img/map/marker-shadow.png'
-});
+        iconUrl: '<txp:page_url type="theme_path" />/assets/img/map/marker-icon.png',
+        iconRetinaUrl: '<txp:page_url type="theme_path" />/assets/img/map/marker-icon-2x.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        shadowUrl: '<txp:page_url type="theme_path" />/assets/img/map/marker-shadow.png'
+    });
 
-var mymap = L.map('map').setView([mapLat, mapLong], mapZoom),
-    marker = L.marker([mapLat, mapLong], {icon: myIcon}).addTo(mymap);
+var myMap = L.map('map').setView([mapLat, mapLong], mapZoom),
+    marker = L.marker([mapLat, mapLong], {icon: myIcon}).addTo(myMap);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: '&copy; <a rel="external" href="https://www.openstreetmap.org/">OpenStreetMap</a> (<a rel="external" href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>) + &copy; <a rel="external" href="https://www.mapbox.com/">Mapbox</a>',
+<txp:if_variable name="api-key-undefined" value="1">
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a target="_blank" rel="noopener" href="https://www.openstreetmap.org/">OpenStreetMap</a> (<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>)',
+    maxZoom: 18
+}).addTo(myMap);
+
+<txp:else />
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_token={accessToken}', {
+    attribution: '&copy; <a target="_blank" rel="noopener" href="https://www.openstreetmap.org/">OpenStreetMap</a> (<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>) + &copy; <a rel="external" href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
-    id: 'mapbox/light-v10',
+    id: '<txp:variable name="--contact-map-style" />',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: mapKey
-}).addTo(mymap);
+    accessToken: '<txp:variable name="--contact-map-api-key" />'
+}).addTo(myMap);
+
+</txp:if_variable>
             </script>
         </txp:if_variable>
     </txp:if_variable></txp:if_article_list>
