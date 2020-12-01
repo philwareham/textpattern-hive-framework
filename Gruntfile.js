@@ -162,7 +162,7 @@ module.exports = function (grunt)
                         '<%= paths.src.js %>**/*.js'
                     ],
                     safelist: {
-                        greedy: [/disabled$/]
+                        greedy: [/input$/, /textarea$/, /disabled$/]
                     }
                 },
                 files: {
