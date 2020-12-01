@@ -1,5 +1,5 @@
 <section<txp:evaluate> class="<txp:if_yield name="align">align-<txp:yield name="align" /> </txp:if_yield><txp:if_yield name="padding-y">py-<txp:yield name="padding-y" /></txp:if_yield>"</txp:evaluate>>
-    <txp:if_yield><txp:yield /><txp:else /><h3 class="accessibility"><txp:text item="gallery" /></h3></txp:if_yield>
+    <txp:if_yield><txp:yield /><txp:else /><h3 class="sr-only"><txp:text item="gallery" /></h3></txp:if_yield>
     <div class="glide">
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">

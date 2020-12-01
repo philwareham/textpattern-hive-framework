@@ -15,7 +15,7 @@
                 <txp:if_section name='<txp:section />'>
                     <li class="active">
                         <a itemprop="url" href="<txp:section url />" aria-current="page"><txp:section title /></a>
-                        <span class="accessibility">(<txp:text item="current" />)</span>
+                        <span class="sr-only">(<txp:text item="current" />)</span>
                     </li>
                 <txp:else />
                     <li>
@@ -31,9 +31,9 @@
                     <meta itemprop="url" content="<txp:site_url />">
                     <form role="search" method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                         <meta itemprop="target" content="<txp:site_url />?q={q}">
-                        <label class="accessibility" for="search"><txp:text item="search" /></label>
+                        <label class="sr-only" for="search"><txp:text item="search" /></label>
                         <input id="search" name="q" type="search" itemprop="query-input" placeholder="<txp:text item="search" />"<txp:if_search> value="<txp:search_term />"</txp:if_search>>
-                        <button class="accessibility" type="submit"><txp:text item="submit" /></button>
+                        <button class="sr-only" type="submit"><txp:text item="submit" /></button>
                     </form>
                 </div>
             </txp:if_variable>
