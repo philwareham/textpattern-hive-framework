@@ -153,6 +153,24 @@ module.exports = function (grunt)
             }
         },
 
+        // Purge unused CSS from production.
+        purgecss: {
+            my_target: {
+                options: {
+                    content: [
+                        '<%= paths.src.templates %>**/*.txp',
+                        '<%= paths.src.js %>**/*.js'
+                    ],
+                    safelist: ['disabled', /disabled$/],
+                    keyframes: true,
+                    fontFace: true
+                },
+                files: {
+                    '<%= paths.dest.css %>style.css': ['<%= paths.dest.css %>style.css']
+                }
+            }
+        },
+
         // Generate version number automatically in theme manifest.json file.
         replace: {
             theme: {
@@ -235,7 +253,7 @@ module.exports = function (grunt)
 
     // Register tasks.
     grunt.registerTask('build', ['clean', 'concurrent', 'uglify']);
-    grunt.registerTask('css', ['stylelint', 'sass', 'postcss']);
+    grunt.registerTask('css', ['stylelint', 'sass', 'purgecss', 'postcss']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('html', ['copy:html', 'copy:img']);
     grunt.registerTask('travis', ['build']);
