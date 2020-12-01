@@ -56,7 +56,6 @@ module.exports = function (grunt)
             dist: [
                 'browserify',
                 'copy',
-                'css',
                 'jshint',
                 'replace'
             ]
@@ -252,8 +251,10 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['clean', 'concurrent', 'uglify']);
-    grunt.registerTask('css', ['stylelint', 'sass', 'purgecss', 'postcss']);
+    grunt.registerTask('build', ['clean', 'concurrent', 'css', 'uglify']);
+    grunt.registerTask('build-production', ['clean', 'concurrent', 'css-production', 'uglify']);
+    grunt.registerTask('css', ['stylelint', 'sass', 'postcss']);
+    grunt.registerTask('css-production', ['stylelint', 'sass', 'purgecss', 'postcss']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('html', ['copy:html', 'copy:img']);
     grunt.registerTask('travis', ['build']);
