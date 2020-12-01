@@ -161,7 +161,9 @@ module.exports = function (grunt)
                         '<%= paths.src.templates %>**/*.txp',
                         '<%= paths.src.js %>**/*.js'
                     ],
-                    safelist: ['disabled', /disabled$/]
+                    safelist: {
+                        greedy: [/disabled$/]
+                    }
                 },
                 files: {
                     '<%= paths.dest.css %>style.css': ['<%= paths.dest.css %>style.css']
