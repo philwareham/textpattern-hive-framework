@@ -32,13 +32,14 @@
     $border-radius-form: 0.25rem,
 
     // Button styling
-    $button-height:              2em,
     $button-padding:             0.25em 1em,
     $button-large-padding:       0.5em 1em,
     $button-small-padding:       0.3076923em 1em,
     $button-border:              1px solid,
     $button-radius:              0.5rem,
+    $button-large-radius:        0.5rem,
     $button-box-shadow-offset-y: 2px,
+    $button-box-shadow:          0 2px 0,
 
     // Site logo defaults
     $site-logo-file:   "../img/site-logo@2x.png",
