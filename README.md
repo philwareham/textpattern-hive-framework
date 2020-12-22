@@ -1,6 +1,6 @@
 # Hive website theme framework for Textpattern CMS
 
-[![Build Status](https://travis-ci.org/philwareham/textpattern-hive-framework.svg)](https://travis-ci.org/philwareham/textpattern-hive-framework)
+[![Build Status](https://travis-ci.com/philwareham/textpattern-hive-framework.svg)](https://travis-ci.com/philwareham/textpattern-hive-framework)
 
 A collection of Textpattern CMS website theme modules using [Hive Framework](https://github.com/philwareham/hive-framework) as a scaffold. Requires Textpattern CMS version 4.8.4 or higher.
 
