@@ -64,6 +64,7 @@ Add full URLs to the 'value' attribute for each required channel.
 <txp:variable name="--url-github" value="" />
 <txp:variable name="--url-instagram" value="" />
 <txp:variable name="--url-linkedin" value="" />
+<txp:variable name="--url-mastodon" value="" />
 <txp:variable name="--url-pinterest" value="" />
 <txp:variable name="--url-twitter" value="" />
 <txp:variable name="--url-youtube" value="" />
