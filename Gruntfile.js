@@ -210,11 +210,18 @@ module.exports = function (grunt)
         },
 
         // Minify `app.js`.
-        uglify: {
-            dist: {
-                options: {
-                    sourceMap: false
+        terser: {
+            options: {
+                ecma: 2015,
+                compress: {
+                    booleans_as_integers: true,
+                    drop_console: true
                 },
+                format: {
+                    comments: false
+                }
+            },
+            dist: {
                 files: [
                     {
                         '<%= paths.dest.js %>app.js': ['<%= paths.dest.js %>app.js']
@@ -234,7 +241,7 @@ module.exports = function (grunt)
                 tasks: [
                     'jshint',
                     'browserify',
-                    'uglify'
+                    'terser'
                 ]
             },
             html: {
@@ -251,8 +258,8 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['clean', 'concurrent', 'uglify', 'css']);
-    grunt.registerTask('build-production', ['clean', 'concurrent', 'uglify', 'css-production']);
+    grunt.registerTask('build', ['clean', 'concurrent', 'terser', 'css']);
+    grunt.registerTask('build-production', ['clean', 'concurrent', 'terser', 'css-production']);
     grunt.registerTask('css', ['stylelint', 'sass', 'postcss']);
     grunt.registerTask('css-production', ['stylelint', 'sass', 'purgecss', 'postcss']);
     grunt.registerTask('default', ['watch']);
