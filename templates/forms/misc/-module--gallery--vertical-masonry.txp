@@ -3,8 +3,16 @@
     <txp:if_yield><txp:yield /><txp:else /><h3 class="sr-only"><txp:text item="gallery" /></h3></txp:if_yield>
     <div class="layout-text<txp:variable name="--gallery-columns" />col gallery<txp:if_variable name="--gallery-gap" not value=""> gap-<txp:variable name="--gallery-gap" /></txp:if_variable>">
         <txp:evaluate>
-            <txp:images category="gallery" break="" sort="date desc" limit="24">
-                <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image">
+            <txp:images category="gallery" break="" sort="date desc" limit="96">
+                <txp:if_variable name="--gallery-additional-img-formats" not value="">
+                    <picture>
+                        <txp:if_variable name="--gallery-additional-img-formats" match="any" value="avif"><source srcset="<txp:image_url trim="/\.(gif|png|jpe?g)$/" />.avif" type="image/avif" /></txp:if_variable>
+                        <txp:if_variable name="--gallery-additional-img-formats" match="any" value="webp"><source srcset="<txp:image_url trim="/\.(gif|png|jpe?g)$/" />.webp" type="image/webp" /></txp:if_variable>
+                        <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image">
+                    </picture>
+                <txp:else />
+                    <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image">
+                </txp:if_variable>
             </txp:images>
         <txp:else />
             <txp:variable name="gallery-fallback" value="1" />
