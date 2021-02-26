@@ -54,7 +54,7 @@ OVERRIDE DEFAULT SOCIAL MEDIA ICON STYLE ---------------------------------------
 By default, social media icons are full colour. Add either 'monochrome' or
 'monochrome--inverse' to the 'value' attribute to override the default style.
 </txp:hide>
-<txp:variable name="--social-media-icon-style" value="" />
+<txp:variable name="--socmed-icon-style" value="" />
 
 <txp:hide>
 SOCIAL MEDIA CHANNEL URLS ------------------------------------------------------
