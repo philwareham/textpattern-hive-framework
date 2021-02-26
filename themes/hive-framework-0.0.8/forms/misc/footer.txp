@@ -19,6 +19,7 @@
                     <txp:if_variable name="--url-github" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-github" />" class="github">GitHub</a></li></txp:if_variable>
                     <txp:if_variable name="--url-instagram" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-instagram" />" class="instagram">Instagram</a></li></txp:if_variable>
                     <txp:if_variable name="--url-linkedin" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-linkedin" />" class="linkedin">LinkedIn</a></li></txp:if_variable>
+                    <txp:if_variable name="--url-mastodon" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-mastodon" />" class="mastodon">Mastodon</a></li></txp:if_variable>
                     <txp:if_variable name="--url-pinterest" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-pinterest" />" class="pinterest">Pinterest</a></li></txp:if_variable>
                     <txp:if_variable name="--url-twitter" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-twitter" />" class="twitter">Twitter</a></li></txp:if_variable>
                     <txp:if_variable name="--url-youtube" not value=""><li><a rel="external" itemprop="url" href="<txp:variable name="--url-youtube" />" class="youtube">YouTube</a></li></txp:if_variable>
