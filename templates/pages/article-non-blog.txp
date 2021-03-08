@@ -55,7 +55,7 @@
         </txp:if_category>
     </txp:if_author>
 </head>
-<body class="<txp:if_article_list>listing-page<txp:else />article-page</txp:if_article_list>" itemscope itemtype="https://schema.org/WebPage">
+<body class="<txp:if_article_list>listing-page<txp:else />article-page</txp:if_article_list><txp:if_variable name="--site-footer-background" value="1"> box--subtle</txp:if_variable><txp:if_variable name="--site-footer-background" value="2"> box--strong</txp:if_variable>" itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="header" />
     <div class="wrapper">
         <txp:output_form form="breadcrumbs" />

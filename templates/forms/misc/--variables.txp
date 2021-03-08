@@ -19,6 +19,18 @@ Value of '0' for no, '1' for yes.
 <txp:variable name="--site-head-atom" value="0" />
 
 <txp:hide>
+HEADER BACKGROUND NONE, LIGHT OR DARK? -----------------------------------------
+Value of '0' for no colour, '1' for light colour, '2' for dark colour.
+</txp:hide>
+<txp:variable name="--site-header-background" value="1" />
+
+<txp:hide>
+FOOTER BACKGROUND NONE, LIGHT OR DARK? -----------------------------------------
+Value of '0' for no colour, '1' for light colour, '2' for dark colour.
+</txp:hide>
+<txp:variable name="--site-footer-background" value="1" />
+
+<txp:hide>
 SITE LOGO IN HEADER? -----------------------------------------------------------
 Value of '0' for no, '1' for yes.
 </txp:hide>
