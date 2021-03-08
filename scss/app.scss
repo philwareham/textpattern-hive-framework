@@ -6,6 +6,9 @@
     // Support non-latin languages?
     $internationalization: true,
 
+    // Which colour scheme?
+    $color-scheme:         default,
+
     // Support for Dark Mode?
     $use-dark-mode:        true,
 
@@ -16,10 +19,10 @@
     $use-icons:            true,
 
     // typography grid
-    $base-font-size:      16px,
-    $base-line-height:    1.5,
-    $code-font-size:      0.875rem,
-    $small-font-size:     0.8125rem,
+    $base-font-size:   16px,
+    $base-line-height: 1.5,
+    $code-font-size:   0.875rem,
+    $small-font-size:  0.8125rem,
 
     // layout grid
     $container-max-width: 75rem,

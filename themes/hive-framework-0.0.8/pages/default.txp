@@ -49,7 +49,7 @@
         <div class="wrapper">
             <txp:output_form form="breadcrumbs" />
             <txp:if_variable name="page-type" value="search-page">
-                <div class="zebra--subtle">
+                <div class="box--subtle">
                     <div class="container">
                         <txp:output_form form="search-hero" />
                     </div>

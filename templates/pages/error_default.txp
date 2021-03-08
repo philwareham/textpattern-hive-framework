@@ -10,7 +10,7 @@
     <txp:output_form form="header" />
     <div class="wrapper">
         <txp:output_form form="breadcrumbs" />
-        <div class="zebra--subtle">
+        <div class="box--subtle">
             <div class="container">
                 <txp:output_form form="search-hero" />
             </div>

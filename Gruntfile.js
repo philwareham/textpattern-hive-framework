@@ -117,7 +117,7 @@ module.exports = function (grunt)
                 forin: true,
                 globals: {
                     $: true,
-                    console: true, // Comment this out for production code.
+                    console: true,
                     jQuery: true,
                     Zepto: true,
                     define: true,
