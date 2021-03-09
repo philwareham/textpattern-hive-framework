@@ -24,7 +24,7 @@
         <meta name="robots" content="none">
     </txp:if_article_list>
 </head>
-<body class="contact-page" itemscope itemtype="https://schema.org/ContactPage">
+<body class="contact-page<txp:if_variable name="--site-footer-background" value="1"> box--subtle</txp:if_variable><txp:if_variable name="--site-footer-background" value="2"> box--strong</txp:if_variable>" itemscope itemtype="https://schema.org/ContactPage">
     <txp:output_form form="header" />
     <div class="wrapper">
         <txp:output_form form="breadcrumbs" />
