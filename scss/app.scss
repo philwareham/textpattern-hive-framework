@@ -7,6 +7,7 @@
     $internationalization: true,
 
     // Which colour scheme?
+    // options: default, TODO
     $color-scheme:         default,
 
     // Support for Dark Mode?
@@ -48,6 +49,13 @@
     $site-logo-file:   "../img/site-logo@2x.png",
     $site-logo-width:  240px, // recommended maximum width ~240px.
     $site-logo-height: 45px,
+);
+@use "node_modules/hive-framework/src/assets/sass/color-schemes" as * with (
+    // User-defined overrides for individual colours
+    $colors-fixed-light-custom: (),
+    $colors-fixed-dark-custom: (),
+    $colors-themable-light-custom: (),
+    $colors-themable-dark-custom: (),
 );
 @use "node_modules/hive-framework/src/assets/sass/style";
 
