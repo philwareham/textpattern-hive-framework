@@ -8,24 +8,22 @@
 
     // Which colour scheme?
     // options: default, TODO
-    $color-scheme:         default,
+    $color-scheme: default,
 
     // User-defined overrides for individual colours
     $colors-fixed-light-custom: (),
     $colors-fixed-dark-custom: (),
-    $colors-themable-light-custom: (
-        text: hsl(50 70% 20%),
-    ),
+    $colors-themable-light-custom: (),
     $colors-themable-dark-custom: (),
 
     // Support for Dark Mode?
-    $use-dark-mode:        true,
+    $use-dark-mode: true,
 
     // Support for jQuery UI elements?
-    $use-jquery-ui:        false,
+    $use-jquery-ui: false,
 
     // Support for Hive Icons?
-    $use-icons:            true,
+    $use-icons: true,
 
     // typography grid
     $base-font-size:   16px,
