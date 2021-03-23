@@ -1,6 +1,6 @@
 <a class="a--skip-link" href="#main"><txp:text item="go_content" /></a>
 <txp:if_variable name="--site-header-search" value="1"><a class="a--skip-link" href="#search"><txp:text item="go_search" /></a></txp:if_variable>
-<div class="dynamic-header<txp:if_variable name="--site-header-background" value="1"> box--subtle</txp:if_variable><txp:if_variable name="--site-header-background" value="2"> box--strong</txp:if_variable>">
+<div class="dynamic-header<txp:if_variable name="--site-header-background" value="1"> box--subtle</txp:if_variable><txp:if_variable name="--site-header-background" value="2"> box--strong</txp:if_variable><txp:if_variable name="--site-header-background" value="3"> box--subtle-highlight</txp:if_variable><txp:if_variable name="--site-header-background" value="4"> box--strong-highlight</txp:if_variable>">
     <header class="site-header" itemscope itemtype="https://schema.org/WPHeader">
         <txp:if_variable name="--site-header-logo" value="1">
              <txp:if_variable name="--site-nav-home" value="1"><h2 class="site-logo"><txp:site_name /></h2><txp:else /><h2><a class="site-logo" href="<txp:site_url />" title="<txp:text item="home" />"><txp:site_name /></a></h2></txp:if_variable>
