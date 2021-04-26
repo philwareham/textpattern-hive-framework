@@ -13,7 +13,7 @@ Default (undefined) is 2rem gap between grid cells.
 
 <txp:hide>
 GALLERY PROGRESSIVELY ENHANCED IMAGE FORMATS -----------------------------------
-All possible (comma seperated) values: 'avif', 'webp'. (e.g. 'avif, webp').
+All possible (comma seperated) values: 'avif', 'webp'. (e.g. 'avif,webp').
 Default (undefined) = no additional image formats.
 To use modern image formats in addition to legacy image formats, please manually
 upload versions of your images using identical ID numbering (e.g. if you have a
