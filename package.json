@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.14.0",
-    "@babel/preset-env": "7.14.05",
+    "@babel/preset-env": "7.14.1",
     "@lodder/grunt-postcss": "3.0.1",
     "autoprefixer": "10.2.5",
     "babelify": "10.0.0",
@@ -51,7 +51,7 @@
     "stylelint-scss": "3.19.0"
   },
   "dependencies": {
-    "hive-framework": "0.22.1",
+    "hive-framework": "0.22.2",
     "leaflet": "1.7.1"
   },
   "optionalDependencies": {
