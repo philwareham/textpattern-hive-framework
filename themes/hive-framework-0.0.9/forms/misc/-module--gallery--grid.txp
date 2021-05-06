@@ -7,6 +7,7 @@
                 <div class="layout-<txp:variable name="--gallery-columns" />col">
                     <txp:if_variable name="--gallery-additional-img-formats" not value="">
                         <picture>
+                            <txp:if_variable name="--gallery-additional-img-formats" match="any" value="jxl"><source srcset="<txp:image_url trim="/\.(gif|png|jpe?g)$/" />.jxl" type="image/jxl" /></txp:if_variable>
                             <txp:if_variable name="--gallery-additional-img-formats" match="any" value="avif"><source srcset="<txp:image_url trim="/\.(gif|png|jpe?g)$/" />.avif" type="image/avif" /></txp:if_variable>
                             <txp:if_variable name="--gallery-additional-img-formats" match="any" value="webp"><source srcset="<txp:image_url trim="/\.(gif|png|jpe?g)$/" />.webp" type="image/webp" /></txp:if_variable>
                             <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image">
