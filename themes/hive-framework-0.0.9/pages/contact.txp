@@ -81,9 +81,12 @@
                         <txp:if_variable name="--contact-map-latitude" not value="">
                             <txp:if_variable name="--contact-map-longitude" not value="">
                                 <txp:variable name="longitude-latitude-defined" value="1" />
-                                <span class="geo">
-                                    <meta class="latitude" content="<txp:variable name="--contact-map-latitude" />">
-                                    <meta class="longitude" content="<txp:variable name="--contact-map-longitude" />">
+                                <span itemscope itemtype="https://schema.org/Place">
+                                    <meta itemprop="name" content="<txp:variable name="--site-org" /><txp:if_variable name="--contact-organization-unit" not value=""> <txp:variable name="--contact-organization-unit" /></txp:if_variable>">
+                                    <span class="geo" itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+                                        <meta class="latitude" itemprop="latitude" content="<txp:variable name="--contact-map-latitude" />">
+                                        <meta class="longitude" itemprop="longitude" content="<txp:variable name="--contact-map-longitude" />">
+                                    </span>
                                 </span>
                             </txp:if_variable>
                         </txp:if_variable>
