@@ -1,8 +1,6 @@
+@use "sass:map";
 @use "sass:meta";
 @use "node_modules/hive-framework/src/assets/sass/setup" with (
-    // Use user defined list of modules?
-    $modules-user-defined: false,
-
     // Support non-latin languages?
     $internationalization: true,
 
@@ -21,9 +19,6 @@
 
     // Support for jQuery UI elements?
     $use-jquery-ui: false,
-
-    // Support for Hive Icons?
-    $use-icons: true,
 
     // typography grid
     $base-font-size:   16px,
@@ -57,7 +52,94 @@
     $site-logo-width:     240px, // recommended maximum width ~240px.
     $site-logo-height:    45px,
 );
-@use "node_modules/hive-framework/src/assets/sass/screen";
+@use "node_modules/hive-framework/src/assets/sass/color-schemes" as *;
+
+// Import all modules?
+@forward "node_modules/hive-framework/src/assets/sass/modules";
+// Or import modules individually?
+//@use "node_modules/hive-framework/src/assets/sass/modules/fonts";
+//@use "node_modules/hive-framework/src/assets/sass/modules/layout";
+//@use "node_modules/hive-framework/src/assets/sass/modules/layout-helpers";
+//@use "node_modules/hive-framework/src/assets/sass/modules/navigation";
+//@use "node_modules/hive-framework/src/assets/sass/modules/links";
+//@use "node_modules/hive-framework/src/assets/sass/modules/typography";
+//@use "node_modules/hive-framework/src/assets/sass/modules/typography-helpers";
+//@use "node_modules/hive-framework/src/assets/sass/modules/embedded-content";
+//@use "node_modules/hive-framework/src/assets/sass/modules/tables";
+//@use "node_modules/hive-framework/src/assets/sass/modules/lists";
+//@use "node_modules/hive-framework/src/assets/sass/modules/forms-base";
+//@use "node_modules/hive-framework/src/assets/sass/modules/forms-input-checkboxradio";
+//@use "node_modules/hive-framework/src/assets/sass/modules/forms-input-file";
+//@use "node_modules/hive-framework/src/assets/sass/modules/forms-input-range";
+//@use "node_modules/hive-framework/src/assets/sass/modules/forms-disabled";
+//@use "node_modules/hive-framework/src/assets/sass/modules/buttons";
+//@use "node_modules/hive-framework/src/assets/sass/modules/progress";
+//@use "node_modules/hive-framework/src/assets/sass/modules/meter";
+//@use "node_modules/hive-framework/src/assets/sass/modules/disclosure";
+//@use "node_modules/hive-framework/src/assets/sass/modules/code-highlighting";
+//@use "node_modules/hive-framework/src/assets/sass/modules/pagination";
+//@use "node_modules/hive-framework/src/assets/sass/modules/breadcrumbs";
+//@use "node_modules/hive-framework/src/assets/sass/modules/carousel";
+//@use "node_modules/hive-framework/src/assets/sass/modules/social-base";
+//@use "node_modules/hive-framework/src/assets/sass/modules/social-color";
+//@use "node_modules/hive-framework/src/assets/sass/modules/social-mono";
+//@use "node_modules/hive-framework/src/assets/sass/modules/social-mono-inverse";
+//@use "node_modules/hive-framework/src/assets/sass/modules/misc";
+//@use "node_modules/hive-framework/src/assets/sass/modules/cards";
+//@use "node_modules/hive-framework/src/assets/sass/modules/alerts";
+//@use "node_modules/hive-framework/src/assets/sass/modules/color-helpers";
+//@use "node_modules/hive-framework/src/assets/sass/modules/article";
+//@use "node_modules/hive-framework/src/assets/sass/modules/article-comments";
+//@use "node_modules/hive-framework/src/assets/sass/modules/accessibility";
+//@use "node_modules/hive-framework/src/assets/sass/modules/animation-keyframes";
+//@use "node_modules/hive-framework/src/assets/sass/modules/responsive";
+//@forward "node_modules/hive-framework/src/assets/sass/modules/jquery-ui";
+
+$colors-fixed-light: map.merge($colors-fixed-light, setup.$colors-fixed-light-custom);
+$colors-fixed-dark: map.merge($colors-fixed-dark, setup.$colors-fixed-dark-custom);
+$colors-themable-light: map.merge($colors-themable-light, setup.$colors-themable-light-custom);
+$colors-themable-dark: map.merge($colors-themable-dark, setup.$colors-themable-dark-custom);
+
+/* CSS custom variables
+   ========================================================================== */
+
+/* stylelint-disable declaration-colon-space-after */
+
+:root {
+    // font families
+    --font-serif:         #{meta.inspect(setup.$font-stack-serif)};
+    --font-serif-vf:      #{meta.inspect(setup.$font-stack-serif-vf)};
+    --font-sans-serif:    #{meta.inspect(setup.$font-stack-sans-serif)};
+    --font-sans-serif-vf: #{meta.inspect(setup.$font-stack-sans-serif-vf)};
+    --font-form:          #{meta.inspect(setup.$font-stack-form)};
+    --font-form-vf:       #{meta.inspect(setup.$font-stack-form-vf)};
+    --font-monospaced:    #{meta.inspect(setup.$font-stack-monospaced)};
+    // shadows
+    --standard-shadow: 0 0 0.5em hsl(0 0% 0% / 0.2);
+    // text colours
+    --clr-text-white-enforced: hsl(0 0% 100%);
+
+    @each $name, $value in $colors-themable-light {
+        --clr-#{$name}: #{$value};
+    }
+
+    @each $name, $value in $colors-fixed-light {
+        --clr-#{$name}: #{$value};
+    }
+}
+
+@include setup.dark-mode {
+    // shadows
+    --standard-shadow: 0 0 0.5em hsl(0 0% 0% / 0.8);
+    // text colours
+    @each $name, $value in $colors-themable-dark {
+        --clr-#{$name}: #{$value};
+    }
+
+    @each $name, $value in $colors-fixed-dark {
+        --clr-#{$name}: #{$value};
+    }
+}
 
 // Add your additional CSS/SCSS rule-sets below.
 
