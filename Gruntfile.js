@@ -165,7 +165,7 @@ module.exports = function (grunt)
                     }
                 },
                 files: {
-                    '<%= paths.dest.css %>style.css': ['<%= paths.dest.css %>style.css']
+                    '<%= paths.dest.css %>screen.css': ['<%= paths.dest.css %>screen.css']
                 }
             }
         },
@@ -196,7 +196,8 @@ module.exports = function (grunt)
             },
             dist: {
                 files: [
-                    {'<%= paths.dest.css %>style.css': '<%= paths.src.sass %>app.scss'}
+                    {'<%= paths.dest.css %>screen.css': '<%= paths.src.sass %>screen.scss'},
+                    {'<%= paths.dest.css %>print.css': '<%= paths.src.sass %>print.scss'}
                 ]
             }
         },
