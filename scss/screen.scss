@@ -56,6 +56,7 @@
 
 // Import all modules?
 @forward "node_modules/hive-framework/src/assets/sass/modules";
+@forward "node_modules/hive-framework/src/assets/sass/modules/icons";
 // Or import each module individually?
 //@use "node_modules/hive-framework/src/assets/sass/modules/fonts";
 //@use "node_modules/hive-framework/src/assets/sass/modules/layout";
@@ -87,6 +88,7 @@
 //@use "node_modules/hive-framework/src/assets/sass/modules/misc";
 //@use "node_modules/hive-framework/src/assets/sass/modules/cards";
 //@use "node_modules/hive-framework/src/assets/sass/modules/alerts";
+//@use "node_modules/hive-framework/src/assets/sass/modules/icons";
 //@use "node_modules/hive-framework/src/assets/sass/modules/color-helpers";
 //@use "node_modules/hive-framework/src/assets/sass/modules/article";
 //@use "node_modules/hive-framework/src/assets/sass/modules/article-comments";
@@ -100,20 +102,15 @@ $colors-fixed-dark: map.merge($colors-fixed-dark, setup.$colors-fixed-dark-custo
 $colors-themable-light: map.merge($colors-themable-light, setup.$colors-themable-light-custom);
 $colors-themable-dark: map.merge($colors-themable-dark, setup.$colors-themable-dark-custom);
 
-/* CSS custom variables
-   ========================================================================== */
-
-/* stylelint-disable declaration-colon-space-after */
-
 :root {
     // font families
-    --font-serif:         #{meta.inspect(setup.$font-stack-serif)};
-    --font-serif-vf:      #{meta.inspect(setup.$font-stack-serif-vf)};
-    --font-sans-serif:    #{meta.inspect(setup.$font-stack-sans-serif)};
+    --font-serif: #{meta.inspect(setup.$font-stack-serif)};
+    --font-serif-vf: #{meta.inspect(setup.$font-stack-serif-vf)};
+    --font-sans-serif: #{meta.inspect(setup.$font-stack-sans-serif)};
     --font-sans-serif-vf: #{meta.inspect(setup.$font-stack-sans-serif-vf)};
-    --font-form:          #{meta.inspect(setup.$font-stack-form)};
-    --font-form-vf:       #{meta.inspect(setup.$font-stack-form-vf)};
-    --font-monospaced:    #{meta.inspect(setup.$font-stack-monospaced)};
+    --font-form: #{meta.inspect(setup.$font-stack-form)};
+    --font-form-vf: #{meta.inspect(setup.$font-stack-form-vf)};
+    --font-monospaced: #{meta.inspect(setup.$font-stack-monospaced)};
     // shadows
     --standard-shadow: 0 0 0.5em hsl(0 0% 0% / 0.2);
     // text colours
@@ -141,7 +138,10 @@ $colors-themable-dark: map.merge($colors-themable-dark, setup.$colors-themable-d
     }
 }
 
+
+// =============================================================================
 // Add your additional CSS/SCSS rule-sets below.
+// =============================================================================
 
 #map {
     height: 720px;
