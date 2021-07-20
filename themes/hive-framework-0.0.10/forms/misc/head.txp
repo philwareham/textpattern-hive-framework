@@ -1,4 +1,5 @@
 <txp:output_form form="--variables" />
+<txp:output_form form="--variables--contact" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="stylesheet" media="screen" href="<txp:page_url type="theme_path" />/assets/css/screen.css">
