@@ -19,6 +19,7 @@
         <txp:if_variable name="--contact-map" value="1">
             <link rel="stylesheet" href="<txp:page_url type="theme_path" />/assets/css/map.css">
         </txp:if_variable>
+        <txp:variable name="page-type" value="contact-page" />
     <txp:else />
         <meta name="robots" content="none">
     </txp:if_article_list>
@@ -95,7 +96,7 @@
                         </txp:if_plugin>
                         <txp:if_variable name="--contact-phone" not value="">
                             <br>
-                            <span class="faux-h1" itemprop="contactPoint" class="tel" itemscope itemtype="https://schema.org/contactPoint">
+                            <strong class="faux-h1" itemprop="contactPoint" class="tel" itemscope itemtype="https://schema.org/contactPoint">
                                 <meta class="type" itemprop="contactType name" content="<txp:text item="tel" />">
                                 <span class="value" itemprop="telephone">
                                     <txp:if_variable name="--contact-phone-rfc3966" not value="">
@@ -104,7 +105,7 @@
                                         <txp:variable name="--contact-phone" />
                                     </txp:if_variable>
                                 </span>
-                            </span>
+                            </strong>
                         </txp:if_variable>
                         <meta class="url" itemprop="url" content="<txp:site_url />">
                         <span itemprop="logo" itemscope itemtype="https://schema.org/imageObject">
