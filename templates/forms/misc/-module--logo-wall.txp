@@ -3,7 +3,16 @@
     <txp:evaluate>
         <txp:images category="logo-wall" break="" sort="date desc" limit="24">
             <div class="layout-<txp:variable name="--logo-wall-columns" />col py-1">
-                <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image">
+                <txp:if_variable name="--logo-wall-additional-img-formats" not value="">
+                    <picture>
+                        <txp:if_variable name="--logo-wall-additional-img-formats" match="any" value="jxl"><source srcset="<txp:image_url trim="/\.(gif|png|jpe?g)$/" />.jxl" type="image/jxl" /></txp:if_variable>
+                        <txp:if_variable name="--logo-wall-additional-img-formats" match="any" value="avif"><source srcset="<txp:image_url trim="/\.(gif|png|jpe?g)$/" />.avif" type="image/avif" /></txp:if_variable>
+                        <txp:if_variable name="--logo-wall-additional-img-formats" match="any" value="webp"><source srcset="<txp:image_url trim="/\.(gif|png|jpe?g)$/" />.webp" type="image/webp" /></txp:if_variable>
+                        <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image">
+                    </picture>
+                <txp:else />
+                    <img loading="lazy" src="<txp:image_url />" alt="<txp:image_info type='alt' />" itemprop="image">
+                </txp:if_variable>
             </div>
         </txp:images>
     <txp:else />
