@@ -3,3 +3,14 @@ LOGO WALL COLUMNS -----------------------------------------------------------
 Possible values: '2' (2 column), '3' (3 column), '4' (4 column).
 </txp:hide>
 <txp:variable name="--logo-wall-columns" value="4" />
+
+<txp:hide>
+LOGO WALL ENHANCED IMAGE FORMATS -----------------------------------
+All possible (comma seperated) values: 'avif', 'webp', 'jxl'. (e.g. 'webp,jxl').
+Default (undefined) = no additional image formats.
+To use modern image formats in addition to legacy image formats, please manually
+upload versions of your images using identical ID numbering (e.g. if you have a
+'24.jpg' image, manually upload a '24.avif' and/or '24.webp' and/or '24.jxl'
+image to the same image directory).
+</txp:hide>
+<txp:variable name="--logo-wall-additional-img-formats" value="" />
