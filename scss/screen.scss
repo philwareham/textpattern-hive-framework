@@ -51,6 +51,8 @@
     //$site-logo-file-dark: "../img/site-logo-dark@2x.png",
     $site-logo-width:     240px, // recommended maximum width ~240px.
     $site-logo-height:    45px,
+    $site-logo-width-mobile:  null,
+    $site-logo-height-mobile: null,
 );
 @use "node_modules/hive-framework/src/assets/sass/color-schemes" as *;
 
