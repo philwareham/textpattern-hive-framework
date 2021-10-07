@@ -145,7 +145,7 @@ var myIcon = L.icon({
         shadowUrl: '<txp:page_url type="theme_path" />/assets/img/map/marker-shadow.png'
     });
 
-var myMap = L.map('map').setView([mapLat, mapLong], mapZoom),
+var myMap = L.map('map', {scrollWheelZoom: false}).setView([mapLat, mapLong], mapZoom),
     marker = L.marker([mapLat, mapLong], {icon: myIcon}).addTo(myMap);
 
 <txp:if_variable name="api-key-undefined" value="1">
