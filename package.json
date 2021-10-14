@@ -51,7 +51,7 @@
     "stylelint-scss": "3.21.0"
   },
   "dependencies": {
-    "hive-framework": "0.23.1",
+    "hive-framework": "0.23.2",
     "leaflet": "1.7.1"
   },
   "optionalDependencies": {
