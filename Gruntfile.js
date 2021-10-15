@@ -161,7 +161,7 @@ module.exports = function (grunt)
                         '<%= paths.dest.js %>**/*.js'
                     ],
                     safelist: {
-                        deep: [
+                        standard: [
                             'caps',
                             'comments_error',
                             'cpreview',
