@@ -166,7 +166,12 @@ module.exports = function (grunt)
                             'comments_error',
                             'cpreview',
                             'error_message',
-                            'footnote'
+                            'footnote',
+                            'list--no-bullets',
+                            'success',
+                            'error',
+                            'alert-block success',
+                            'alert-block error'
                         ],
                         greedy: [
                             /input$/,
