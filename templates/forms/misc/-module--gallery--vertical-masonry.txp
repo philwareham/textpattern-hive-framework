@@ -1,6 +1,6 @@
 <txp:output_form form="--variables--gallery" />
 <section<txp:evaluate> class="<txp:if_yield name="align">align-<txp:yield name="align" /> </txp:if_yield><txp:if_yield name="padding-y">py-<txp:yield name="padding-y" /></txp:if_yield>"</txp:evaluate>>
-    <txp:if_yield><txp:yield /><txp:else /><h3 class="sr-only"><txp:text item="gallery" /></h3></txp:if_yield>
+    <txp:if_yield><txp:yield /><txp:else /><h2 class="sr-only"><txp:text item="gallery" /></h2></txp:if_yield>
     <div class="layout-text<txp:variable name="--gallery-columns" />col gallery<txp:if_variable name="--gallery-gap" not value=""> gap-<txp:variable name="--gallery-gap" /></txp:if_variable>">
         <txp:evaluate>
             <txp:images category="gallery" break="" sort="date desc" limit="96">
