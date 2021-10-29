@@ -281,5 +281,4 @@ module.exports = function (grunt)
     grunt.registerTask('css-production', ['stylelint', 'sass', 'purgecss', 'postcss']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('html', ['copy:html', 'copy:img']);
-    grunt.registerTask('travis', ['build']);
 };

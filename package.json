@@ -51,7 +51,7 @@
     "stylelint-scss": "3.21.0"
   },
   "dependencies": {
-    "hive-framework": "0.23.3",
+    "hive-framework": "0.23.4",
     "leaflet": "1.7.1"
   },
   "optionalDependencies": {
@@ -62,8 +62,5 @@
     "Firefox ESR",
     "not IE 11"
   ],
-  "scripts": {
-    "test": "grunt travis --verbose"
-  },
   "license": "(MIT AND GPL-2.0)"
 }
