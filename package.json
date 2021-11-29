@@ -38,7 +38,7 @@
     "grunt-contrib-copy": "1.0.0",
     "grunt-contrib-jshint": "3.1.1",
     "grunt-contrib-watch": "1.1.0",
-    "grunt-purgecss": "4.0.3",
+    "grunt-purgecss": "4.1.1",
     "grunt-replace-regex": "1.0.3",
     "grunt-sass": "3.1.0",
     "grunt-stylelint": "0.16.0",
