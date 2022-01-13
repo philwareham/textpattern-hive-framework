@@ -1,7 +1,7 @@
 {
   "name": "textpattern-hive-framework",
   "description": "A Textpattern website theme development framework built with Grunt and Sass.",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "keywords": [
     "css",
     "framework",
