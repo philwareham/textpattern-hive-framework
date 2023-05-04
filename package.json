@@ -48,7 +48,7 @@
     "sass": "1.59.3",
     "stylelint": "13.13.1",
     "stylelint-order": "6.0.3",
-    "stylelint-scss": "4.5.0"
+    "stylelint-scss": "5.0.0"
   },
   "dependencies": {
     "hive-framework": "0.23.9",
