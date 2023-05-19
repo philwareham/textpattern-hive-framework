@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "hive-framework": "0.23.9",
-    "leaflet": "1.9.3"
+    "leaflet": "1.9.4"
   },
   "optionalDependencies": {
     "fibers": "5.0.3"
