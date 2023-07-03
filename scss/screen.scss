@@ -99,7 +99,6 @@
 //@use "node_modules/hive-framework/src/assets/sass/modules/animation-keyframes";
 //@use "node_modules/hive-framework/src/assets/sass/modules/responsive";
 //@forward "node_modules/hive-framework/src/assets/sass/modules/jquery-ui";
-
 $colors-fixed-light: map.merge($colors-fixed-light, setup.$colors-fixed-light-custom);
 $colors-fixed-dark: map.merge($colors-fixed-dark, setup.$colors-fixed-dark-custom);
 $colors-themable-light: map.merge($colors-themable-light, setup.$colors-themable-light-custom);
