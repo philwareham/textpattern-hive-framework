@@ -33,15 +33,15 @@
         <txp:if_variable name="--site-header-light-switch" value="1"><a id="lightswitch" href="#" role="button" title="<txp:text item="lightswitch" />"><span class="ui-icon ui-icon-medium ui-icon-lightbulb"><txp:text item="lightswitch" /></span></a></txp:if_variable>
         <txp:if_variable name="--site-header-search" value="1">
             <txp:if_variable name="page-type" not match="any" value="error-page,search-page">
-                <div class="search-form" itemscope itemtype="https://schema.org/WebSite">
+                <search role="search" class="search-form" itemscope itemtype="https://schema.org/WebSite">
                     <meta itemprop="url" content="<txp:site_url />">
-                    <form role="search" method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+                    <form method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                         <meta itemprop="target" content="<txp:site_url />?q={q}">
                         <label class="sr-only" for="search"><txp:text item="search" /></label>
                         <input id="search" name="q" type="search" itemprop="query-input" placeholder="<txp:text item="search" />"<txp:if_search> value="<txp:search_term />"</txp:if_search>>
                         <button class="sr-only" type="submit"><txp:text item="submit" /></button>
                     </form>
-                </div>
+                </search>
             </txp:if_variable>
         </txp:if_variable>
     </div>
