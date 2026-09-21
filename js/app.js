@@ -1,7 +1,3 @@
-//import $ from 'jquery';
-// export for others scripts to use
-//window.$ = $;
-
 import Prism from 'prismjs';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
 import 'prismjs/components/prism-markup-templating';
@@ -10,148 +6,128 @@ import 'prismjs/components/prism-scss';
 
 import Glide from '@glidejs/glide';
 
-(function()
-{
-    'use strict';
+// If JavaScript is enabled, add a class to the <html> element.
+document.documentElement.classList.add('js');
 
-    // If JavaScript enabled, add a class to `<html>` tag.
+// Load DOM elements.
+const code = document.querySelectorAll(
+    'code[class*="language-"], [class*="language-"] code'
+);
+const navMenu = document.getElementById('site-navigation');
+const slider = document.querySelectorAll('.glide');
 
-    document.documentElement.className = 'js';
+// Syntax highlighting via Prism.
+if (code.length) {
+    Prism.highlightAll();
+}
 
-    // Load objects as variables.
+// Responsive navigation menu.
+if (navMenu) {
+    const navToggle = document.getElementById('site-navigation-toggle');
+    const navList = document.getElementById('site-navigation-list');
 
-    var code = document.querySelectorAll('code[class*="language-"], [class*="language-"] code'),
-        navmenu = document.getElementById('site-navigation'),
-        slider = document.querySelectorAll('.glide');
+    navToggle?.addEventListener('click', event => {
+        event.preventDefault();
 
-    // Syntax highlighting, via 'Prism'.
-    // Applies syntax highlighting to `code` HTML elements.
-    // More info - https://prismjs.com.
+        navToggle.classList.toggle('site-navigation-toggle-active');
+        navMenu.classList.toggle('site-navigation-open');
+    });
 
-    if (code.length) {
-        Prism.highlightAll();
-    }
+    navList?.addEventListener('focusin', () => {
+        navToggle?.classList.add('site-navigation-toggle-active');
+        navMenu.classList.add('site-navigation-open');
+    });
 
-    // Responsive navigation menu.
+    navList?.addEventListener('focusout', () => {
+        navToggle?.classList.remove('site-navigation-toggle-active');
+        navMenu.classList.remove('site-navigation-open');
+    });
+}
 
-    if (navmenu) {
-        var navtoggle = document.getElementById('site-navigation-toggle'),
-            navlist = document.getElementById('site-navigation-list');
-
-        navtoggle.addEventListener('click', function(e)
-        {
-            e.preventDefault();
-            navtoggle.classList.toggle('site-navigation-toggle-active');
-            navmenu.classList.toggle('site-navigation-open');
-        });
-
-        navlist.addEventListener('focusin', function()
-        {
-            navtoggle.classList.add('site-navigation-toggle-active');
-            navmenu.classList.add('site-navigation-open');
-        });
-
-        navlist.addEventListener('focusout', function()
-        {
-            navtoggle.classList.remove('site-navigation-toggle-active');
-            navmenu.classList.remove('site-navigation-open');
-        });
-    }
-
-    // Slider, via 'Glide'.
-    // More info - https://github.com/glidejs/glide.
-
-    if (slider.length) {
-        new Glide('.glide', {
+// Slider via Glide.
+if (slider.length) {
+    slider.forEach(element => {
+        new Glide(element, {
             type: 'carousel'
         }).mount();
-    }
+    });
+}
 
-    // Dark Mode.
+// Dark mode.
+const bodyClass = document.body.classList;
+const images = document.querySelectorAll('img.prefers-color-scheme');
+const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+const lightSwitch = document.getElementById('lightswitch');
 
-    var bodyClass = document.body.classList,
-        imgPrefers = document.querySelectorAll('img.prefers-color-scheme'),
-        isDark = window.matchMedia('screen and (prefers-color-scheme: dark)'),
-        lightSwitch = document.getElementById('lightswitch');
+// Set images and page styles for dark mode.
+const makeImagesDark = () => {
+    bodyClass.add('darkmode');
 
-    // Specific dark and light images.
-    // Example:
-    // <img class="prefers-color-scheme"
-    //     src="assets/img/feature.png"
-    //     data-src-light="assets/img/example.png"
-    //     data-src-dark="assets/img/example-dark.png"
-    //     srcset="assets/img/example@2x.png 2x"
-    //     data-srcset-light="assets/img/example@2x.png 2x"
-    //     data-srcset-dark="assets/img/example-dark@2x.png 2x">
+    images.forEach(image => {
+        const src = image.dataset.srcDark;
+        const srcset = image.dataset.srcsetDark;
 
-    function makeImagesDark()
-    {
-        bodyClass.add('darkmode');
-
-        for (var i = 0; i < imgPrefers.length; i++) {
-            if (imgPrefers[i].getAttribute('data-src-dark')) {
-                imgPrefers[i].setAttribute('src', imgPrefers[i].getAttribute('data-src-dark'));
-            }
-
-            if (imgPrefers[i].getAttribute('data-srcset-dark')) {
-                imgPrefers[i].setAttribute('srcset', imgPrefers[i].getAttribute('data-srcset-dark'));
-            }
+        if (src) {
+            image.src = src;
         }
-    }
 
-    function makeImagesLight()
-    {
-        bodyClass.remove('darkmode');
-
-        for (var i = 0; i < imgPrefers.length; i++) {
-            if (imgPrefers[i].getAttribute('data-src-light')) {
-                imgPrefers[i].setAttribute('src', imgPrefers[i].getAttribute('data-src-light'));
-            }
-
-            if (imgPrefers[i].getAttribute('data-srcset-light')) {
-                imgPrefers[i].setAttribute('srcset', imgPrefers[i].getAttribute('data-srcset-light'));
-            }
+        if (srcset) {
+            image.srcset = srcset;
         }
-    }
+    });
+};
 
-    // Detect and change Dark Mode/Light Mode (but only if no localStorage preference).
+// Set images and page styles for light mode.
+const makeImagesLight = () => {
+    bodyClass.remove('darkmode');
 
-    function toggleDarkMode(isDark)
-    {
-        if (localStorage.getItem('prefers-color-scheme') === null) {
-            if (isDark.matches) {
-                makeImagesDark();
-            } else {
-                if (bodyClass.contains('darkmode')) {
-                    makeImagesLight();
-                }
-            }
+    images.forEach(image => {
+        const src = image.dataset.srcLight;
+        const srcset = image.dataset.srcsetLight;
+
+        if (src) {
+            image.src = src;
         }
+
+        if (srcset) {
+            image.srcset = srcset;
+        }
+    });
+};
+
+// Detect and change dark/light mode when there is no
+// locally stored preference.
+const toggleDarkMode = mediaQuery => {
+    if (localStorage.getItem('prefers-color-scheme') !== null) {
+        return;
     }
 
-    toggleDarkMode(isDark);
-    isDark.addListener(toggleDarkMode);
-
-    // Check localStorage for Dark Mode/Light Mode preference.
-
-    if (localStorage.getItem('prefers-color-scheme') === 'dark') {
+    if (mediaQuery.matches) {
         makeImagesDark();
+    } else if (bodyClass.contains('darkmode')) {
+        makeImagesLight();
     }
+};
 
-    // Switch between Dark Mode/Light Mode manually.
+toggleDarkMode(darkModeMediaQuery);
 
-    if (lightSwitch) {
-        lightSwitch.addEventListener('click', function(e)
-        {
-            if (bodyClass.contains('darkmode')) {
-                makeImagesLight();
-                localStorage.setItem('prefers-color-scheme', 'light');
-            } else {
-                makeImagesDark();
-                localStorage.setItem('prefers-color-scheme', 'dark');
-            }
+// Modern replacement for the deprecated MediaQueryList.addListener().
+darkModeMediaQuery.addEventListener('change', toggleDarkMode);
 
-            e.preventDefault();
-        });
+// Apply stored dark mode preference.
+if (localStorage.getItem('prefers-color-scheme') === 'dark') {
+    makeImagesDark();
+}
+
+// Manually switch between dark and light mode.
+lightSwitch?.addEventListener('click', event => {
+    event.preventDefault();
+
+    if (bodyClass.contains('darkmode')) {
+        makeImagesLight();
+        localStorage.setItem('prefers-color-scheme', 'light');
+    } else {
+        makeImagesDark();
+        localStorage.setItem('prefers-color-scheme', 'dark');
     }
-})();
+});

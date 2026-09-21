@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "sass:meta";
-@use "node_modules/hive-framework/src/assets/sass/setup" with (
+@use "../node_modules/hive-framework/src/assets/sass/setup" with (
     // Support non-latin languages?
     $internationalization: true,
 
@@ -55,50 +55,50 @@
     $site-logo-width-mobile:  null,
     $site-logo-height-mobile: null,
 );
-@use "node_modules/hive-framework/src/assets/sass/color-schemes" as *;
+@use "../node_modules/hive-framework/src/assets/sass/color-schemes" as *;
 
 // Import all modules?
-@forward "node_modules/hive-framework/src/assets/sass/modules";
-@forward "node_modules/hive-framework/src/assets/sass/modules/icons";
+@forward "../node_modules/hive-framework/src/assets/sass/modules";
+@forward "../node_modules/hive-framework/src/assets/sass/modules/icons";
 // Or import each module individually?
-//@use "node_modules/hive-framework/src/assets/sass/modules/fonts";
-//@use "node_modules/hive-framework/src/assets/sass/modules/layout";
-//@use "node_modules/hive-framework/src/assets/sass/modules/layout-helpers";
-//@use "node_modules/hive-framework/src/assets/sass/modules/navigation";
-//@use "node_modules/hive-framework/src/assets/sass/modules/links";
-//@use "node_modules/hive-framework/src/assets/sass/modules/typography";
-//@use "node_modules/hive-framework/src/assets/sass/modules/typography-helpers";
-//@use "node_modules/hive-framework/src/assets/sass/modules/embedded-content";
-//@use "node_modules/hive-framework/src/assets/sass/modules/tables";
-//@use "node_modules/hive-framework/src/assets/sass/modules/lists";
-//@use "node_modules/hive-framework/src/assets/sass/modules/forms-base";
-//@use "node_modules/hive-framework/src/assets/sass/modules/forms-input-checkboxradio";
-//@use "node_modules/hive-framework/src/assets/sass/modules/forms-input-file";
-//@use "node_modules/hive-framework/src/assets/sass/modules/forms-input-range";
-//@use "node_modules/hive-framework/src/assets/sass/modules/forms-disabled";
-//@use "node_modules/hive-framework/src/assets/sass/modules/buttons";
-//@use "node_modules/hive-framework/src/assets/sass/modules/progress";
-//@use "node_modules/hive-framework/src/assets/sass/modules/meter";
-//@use "node_modules/hive-framework/src/assets/sass/modules/disclosure";
-//@use "node_modules/hive-framework/src/assets/sass/modules/code-highlighting";
-//@use "node_modules/hive-framework/src/assets/sass/modules/pagination";
-//@use "node_modules/hive-framework/src/assets/sass/modules/breadcrumbs";
-//@use "node_modules/hive-framework/src/assets/sass/modules/carousel";
-//@use "node_modules/hive-framework/src/assets/sass/modules/social-base";
-//@use "node_modules/hive-framework/src/assets/sass/modules/social-color";
-//@use "node_modules/hive-framework/src/assets/sass/modules/social-mono";
-//@use "node_modules/hive-framework/src/assets/sass/modules/social-mono-inverse";
-//@use "node_modules/hive-framework/src/assets/sass/modules/misc";
-//@use "node_modules/hive-framework/src/assets/sass/modules/cards";
-//@use "node_modules/hive-framework/src/assets/sass/modules/alerts";
-//@use "node_modules/hive-framework/src/assets/sass/modules/icons";
-//@use "node_modules/hive-framework/src/assets/sass/modules/color-helpers";
-//@use "node_modules/hive-framework/src/assets/sass/modules/article";
-//@use "node_modules/hive-framework/src/assets/sass/modules/article-comments";
-//@use "node_modules/hive-framework/src/assets/sass/modules/accessibility";
-//@use "node_modules/hive-framework/src/assets/sass/modules/animation-keyframes";
-//@use "node_modules/hive-framework/src/assets/sass/modules/responsive";
-//@forward "node_modules/hive-framework/src/assets/sass/modules/jquery-ui";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/fonts";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/layout";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/layout-helpers";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/navigation";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/links";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/typography";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/typography-helpers";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/embedded-content";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/tables";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/lists";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/forms-base";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/forms-input-checkboxradio";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/forms-input-file";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/forms-input-range";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/forms-disabled";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/buttons";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/progress";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/meter";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/disclosure";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/code-highlighting";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/pagination";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/breadcrumbs";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/carousel";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/social-base";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/social-color";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/social-mono";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/social-mono-inverse";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/misc";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/cards";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/alerts";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/icons";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/color-helpers";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/article";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/article-comments";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/accessibility";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/animation-keyframes";
+//@use "../node_modules/hive-framework/src/assets/sass/modules/responsive";
+//@forward "../node_modules/hive-framework/src/assets/sass/modules/jquery-ui";
 $colors-fixed-light: map.merge($colors-fixed-light, setup.$colors-fixed-light-custom);
 $colors-fixed-dark: map.merge($colors-fixed-dark, setup.$colors-fixed-dark-custom);
 $colors-themable-light: map.merge($colors-themable-light, setup.$colors-themable-light-custom);
