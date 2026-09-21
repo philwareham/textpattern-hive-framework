@@ -26,26 +26,6 @@ module.exports = function (grunt)
             }
         },
 
-        // Bundle up the JavaScript.
-        browserify: {
-            development: {
-                src: [
-                    '<%= paths.src.js %>app.js'
-                ],
-                dest: '<%= paths.dest.js %>app.js',
-                options: {
-                    browserifyOptions: {
-                        debug: false
-                    },
-                    transform: [[
-                        'babelify', {
-                            'presets': ['@babel/preset-env']
-                        }
-                    ]]
-                }
-            }
-        },
-
         // Clean theme directory to start afresh.
         clean: [
             'themes/*'
@@ -109,29 +89,7 @@ module.exports = function (grunt)
         // Check code quality of Gruntfile.js and site-specific JavaScript using JSHint.
         jshint: {
             options: {
-                bitwise: true,
-                browser: true,
-                curly: true,
-                eqeqeq: true,
-                esversion: 6,
-                forin: true,
-                globals: {
-                    $: true,
-                    console: true,
-                    jQuery: true,
-                    Zepto: true,
-                    define: true,
-                    module: true,
-                    require: true,
-                    autosize: true,
-                    Prism: true
-                },
-                latedef: true,
-                noarg: true,
-                nonew: true,
-                strict: true,
-                undef: true,
-                unused: true
+                esversion: 11
             },
             files: [
                 'Gruntfile.js',
@@ -241,7 +199,7 @@ module.exports = function (grunt)
             dist: {
                 files: [
                     {
-                        '<%= paths.dest.js %>app.js': ['<%= paths.dest.js %>app.js']
+                        '<%= paths.dest.js %>app.js': ['<%= paths.src.js %>app.js']
                     }
                 ]
             }
