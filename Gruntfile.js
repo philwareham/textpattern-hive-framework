@@ -34,7 +34,6 @@ module.exports = function (grunt)
         // Run some tasks in parallel to speed up the build process.
         concurrent: {
             dist: [
-                'browserify',
                 'copy',
                 'jshint',
                 'replace'
@@ -215,7 +214,6 @@ module.exports = function (grunt)
                 files: '<%= paths.src.js %>**',
                 tasks: [
                     'jshint',
-                    'browserify',
                     'terser'
                 ]
             },
