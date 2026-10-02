@@ -50,9 +50,6 @@
     "hive-framework": "0.25.0",
     "leaflet": "1.9.4"
   },
-  "optionalDependencies": {
-    "fibers": "5.0.3"
-  },
   "browserslist": [
     "> 0.5%",
     "last 2 versions",
