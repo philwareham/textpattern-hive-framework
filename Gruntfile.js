@@ -2,6 +2,7 @@ module.exports = function (grunt) {
     'use strict';
 
     const fs = require('fs');
+    const path = require('path');
     const terser = require('terser');
 
     // -------------------------------------------------------------------------
@@ -155,8 +156,8 @@ module.exports = function (grunt) {
         fs.mkdirSync(destination, { recursive: true });
 
         fs.readdirSync(source, { withFileTypes: true }).forEach((entry) => {
-            const sourcePath = require('path').join(source, entry.name);
-            const destinationPath = require('path').join(
+            const sourcePath = path.join(source, entry.name);
+            const destinationPath = path.join(
                 destination,
                 entry.name
             );
@@ -178,7 +179,7 @@ module.exports = function (grunt) {
             grunt.fail.fatal(`Source file not found: ${source}`);
         }
 
-        fs.mkdirSync(require('path').dirname(destination), {
+        fs.mkdirSync(path.dirname(destination), {
             recursive: true
         });
 
@@ -201,7 +202,7 @@ module.exports = function (grunt) {
             getPath('<%= paths.src.templates %>'),
             getPath('<%= paths.dest.templates %>'),
             (sourcePath) =>
-                require('path').relative(
+                path.relative(
                     getPath('<%= paths.src.templates %>'),
                     sourcePath
                 ) !== 'manifest.json'
