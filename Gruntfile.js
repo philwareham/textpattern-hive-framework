@@ -1,9 +1,17 @@
-module.exports = function (grunt)
-{
+module.exports = function (grunt) {
     'use strict';
 
-    // Load all Grunt tasks.
+    const fs = require('fs');
+
+    // -------------------------------------------------------------------------
+    // Load Grunt tasks
+    // -------------------------------------------------------------------------
+
     require('load-grunt-tasks')(grunt);
+
+    // -------------------------------------------------------------------------
+    // Configuration
+    // -------------------------------------------------------------------------
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -26,19 +34,13 @@ module.exports = function (grunt)
             }
         },
 
-        // Clean theme directory to start afresh.
+        // ---------------------------------------------------------------------
+        // Clean
+        // ---------------------------------------------------------------------
+
         clean: [
             'themes/*'
         ],
-
-        // Run some tasks in parallel to speed up the build process.
-        concurrent: {
-            dist: [
-                'copy',
-                'jshint',
-                'replace'
-            ]
-        },
 
         copy: {
             // Copy fonts.
@@ -230,11 +232,47 @@ module.exports = function (grunt)
 
     });
 
-    // Register tasks.
-    grunt.registerTask('build', ['clean', 'concurrent', 'terser', 'css']);
-    grunt.registerTask('build-production', ['clean', 'concurrent', 'terser', 'css-production']);
-    grunt.registerTask('css', ['stylelint', 'sass', 'postcss']);
-    grunt.registerTask('css-production', ['stylelint', 'sass', 'purgecss', 'postcss']);
-    grunt.registerTask('default', ['watch']);
-    grunt.registerTask('html', ['copy:html', 'copy:img']);
+    // -------------------------------------------------------------------------
+    // Composite tasks
+    // -------------------------------------------------------------------------
+
+    grunt.registerTask('css', [
+        'stylelint',
+        'sass',
+        'postcss'
+    ]);
+
+    grunt.registerTask('css-production', [
+        'stylelint',
+        'sass',
+        'purgecss',
+        'postcss'
+    ]);
+
+    grunt.registerTask('html', [
+        'copy:html',
+        'copy:img'
+    ]);
+
+    grunt.registerTask('build', [
+        'clean',
+        'copy',
+        'jshint',
+        'replace',
+        'terser',
+        'css'
+    ]);
+
+    grunt.registerTask('build-production', [
+        'clean',
+        'copy',
+        'jshint',
+        'replace',
+        'terser',
+        'css-production'
+    ]);
+
+    grunt.registerTask('default', [
+        'build'
+    ]);
 };
