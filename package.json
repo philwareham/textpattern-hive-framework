@@ -36,7 +36,6 @@
     "grunt-sass": "4.1.0",
     "grunt-stylelint": "0.21.0",
     "jshint": "2.13.6",
-    "load-grunt-tasks": "5.1.0",
     "postcss": "8.5.30",
     "sass": "1.105.1",
     "stylelint": "17.16.0",

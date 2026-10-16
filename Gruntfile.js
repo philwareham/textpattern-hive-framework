@@ -9,7 +9,15 @@ module.exports = function (grunt) {
     // Load Grunt tasks
     // -------------------------------------------------------------------------
 
-    require('load-grunt-tasks')(grunt);
+    [
+        '@lodder/grunt-postcss',
+        'grunt-contrib-clean',
+        'grunt-contrib-copy',
+        'grunt-purgecss',
+        'grunt-replace-regex',
+        'grunt-sass',
+        'grunt-stylelint'
+    ].forEach(grunt.loadNpmTasks);
 
     // -------------------------------------------------------------------------
     // Configuration
