@@ -200,6 +200,30 @@ module.exports = function (grunt) {
     });
 
     // -------------------------------------------------------------------------
+    // Update theme manifest version
+    // -------------------------------------------------------------------------
+
+    grunt.registerTask(
+        'manifest-version',
+        'Generate the theme manifest with the current package version.',
+        function () {
+            const sourceFile = 'templates/manifest.json';
+            const destinationFile =
+                `${grunt.config.get('paths.dest.templates')}manifest.json`;
+
+            const manifest = grunt.file.readJSON(sourceFile);
+            manifest.version = grunt.config.get('pkg.version');
+
+            grunt.file.write(
+                destinationFile,
+                `${JSON.stringify(manifest, null, 4)}\n`
+            );
+
+            grunt.log.ok(`Updated manifest version to ${manifest.version}`);
+        }
+    );
+
+    // -------------------------------------------------------------------------
     // JavaScript linting
     // -------------------------------------------------------------------------
 
@@ -320,7 +344,7 @@ module.exports = function (grunt) {
         'clean',
         'copy',
         'jshint',
-        'replace',
+        'manifest-version',
         'terser',
         'css'
     ]);
@@ -329,7 +353,7 @@ module.exports = function (grunt) {
         'clean',
         'copy',
         'jshint',
-        'replace',
+        'manifest-version',
         'terser',
         'css-production'
     ]);
