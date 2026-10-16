@@ -10,7 +10,6 @@ module.exports = function (grunt) {
 
     [
         '@lodder/grunt-postcss',
-        'grunt-contrib-copy',
         'grunt-purgecss',
         'grunt-sass',
         'grunt-stylelint'
@@ -38,55 +37,6 @@ module.exports = function (grunt) {
                 images: 'themes/hive-framework-<%= pkg.version %>/assets/img/',
                 js: 'themes/hive-framework-<%= pkg.version %>/assets/js/',
                 templates: 'themes/hive-framework-<%= pkg.version %>/'
-            }
-        },
-
-        // ---------------------------------------------------------------------
-        // Copy assets
-        // ---------------------------------------------------------------------
-
-        copy: {
-            // Copy fonts.
-            fonts: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '<%= paths.src.fonts %>',
-                        src: '**',
-                        dest: '<%= paths.dest.fonts %>'
-                    }
-                ]
-            },
-            // Copy Textpattern templates.
-            html: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '<%= paths.src.templates %>',
-                        src: ['**', '!manifest.json'],
-                        dest: '<%= paths.dest.templates %>'
-                    }
-                ]
-            },
-            // Copy fonts.
-            img: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '<%= paths.src.images %>',
-                        src: '**',
-                        dest: '<%= paths.dest.images %>'
-                    }
-                ]
-            },
-            // Copy Leaflet (open-source interactive maps) files.
-            leaflet: {
-                files: [
-                    {
-                        '<%= paths.dest.js %>map.js': ['node_modules/leaflet/dist/leaflet.js'],
-                        '<%= paths.dest.css %>map.css': ['node_modules/leaflet/dist/leaflet.css']
-                    }
-                ]
             }
         },
 
@@ -192,6 +142,97 @@ module.exports = function (grunt) {
             grunt.log.ok('Cleaned generated theme files.');
         }
     );
+
+    // -------------------------------------------------------------------------
+    // Copy assets using native Node.js file operations
+    // -------------------------------------------------------------------------
+
+    function copyDirectory(source, destination, filter) {
+        if (!fs.existsSync(source)) {
+            grunt.fail.fatal(`Source directory not found: ${source}`);
+        }
+
+        fs.mkdirSync(destination, { recursive: true });
+
+        fs.readdirSync(source, { withFileTypes: true }).forEach((entry) => {
+            const sourcePath = require('path').join(source, entry.name);
+            const destinationPath = require('path').join(
+                destination,
+                entry.name
+            );
+
+            if (filter && !filter(sourcePath, entry)) {
+                return;
+            }
+
+            if (entry.isDirectory()) {
+                copyDirectory(sourcePath, destinationPath, filter);
+            } else if (entry.isFile()) {
+                fs.copyFileSync(sourcePath, destinationPath);
+            }
+        });
+    }
+
+    function copyFile(source, destination) {
+        if (!fs.existsSync(source)) {
+            grunt.fail.fatal(`Source file not found: ${source}`);
+        }
+
+        fs.mkdirSync(require('path').dirname(destination), {
+            recursive: true
+        });
+
+        fs.copyFileSync(source, destination);
+    }
+
+    function getPath(path) {
+        return grunt.template.process(path);
+    }
+
+    grunt.registerTask('copy:fonts', function () {
+        copyDirectory(
+            getPath('<%= paths.src.fonts %>'),
+            getPath('<%= paths.dest.fonts %>')
+        );
+    });
+
+    grunt.registerTask('copy:html', function () {
+        copyDirectory(
+            getPath('<%= paths.src.templates %>'),
+            getPath('<%= paths.dest.templates %>'),
+            (sourcePath) =>
+                require('path').relative(
+                    getPath('<%= paths.src.templates %>'),
+                    sourcePath
+                ) !== 'manifest.json'
+        );
+    });
+
+    grunt.registerTask('copy:img', function () {
+        copyDirectory(
+            getPath('<%= paths.src.images %>'),
+            getPath('<%= paths.dest.images %>')
+        );
+    });
+
+    grunt.registerTask('copy:leaflet', function () {
+        copyFile(
+            'node_modules/leaflet/dist/leaflet.js',
+            getPath('<%= paths.dest.js %>') + 'map.js'
+        );
+
+        copyFile(
+            'node_modules/leaflet/dist/leaflet.css',
+            getPath('<%= paths.dest.css %>') + 'map.css'
+        );
+    });
+
+    grunt.registerTask('copy', [
+        'copy:fonts',
+        'copy:html',
+        'copy:img',
+        'copy:leaflet'
+    ]);
 
     // -------------------------------------------------------------------------
     // Update theme manifest version
