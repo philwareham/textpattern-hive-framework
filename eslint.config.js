@@ -8,13 +8,16 @@ module.exports = [
             ecmaVersion: 2020,
             sourceType: 'module',
             globals: {
-                require: 'readonly',
-                module: 'readonly',
-                exports: 'readonly',
                 __dirname: 'readonly',
                 __filename: 'readonly',
+                console: 'readonly',
+                document: 'readonly',
+                exports: 'readonly',
+                localStorage: 'readonly',
+                module: 'readonly',
                 process: 'readonly',
-                console: 'readonly'
+                require: 'readonly',
+                window: 'readonly'
             }
         },
 

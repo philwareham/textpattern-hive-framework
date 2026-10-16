@@ -11,7 +11,7 @@ document.documentElement.classList.add('js');
 
 // Load DOM elements.
 const code = document.querySelectorAll(
-    'code[class*="language-"], [class*="language-"] code'
+    'pre[class*="language-"], code[class*="language-"]'
 );
 const navMenu = document.getElementById('site-navigation');
 const slider = document.querySelectorAll('.glide');
@@ -38,9 +38,11 @@ if (navMenu) {
         navMenu.classList.add('site-navigation-open');
     });
 
-    navList?.addEventListener('focusout', () => {
-        navToggle?.classList.remove('site-navigation-toggle-active');
-        navMenu.classList.remove('site-navigation-open');
+    navList?.addEventListener('focusout', event => {
+        if (!navList.contains(event.relatedTarget)) {
+            navToggle?.classList.remove('site-navigation-toggle-active');
+            navMenu.classList.remove('site-navigation-open');
+        }
     });
 }
 
@@ -104,7 +106,7 @@ const toggleDarkMode = mediaQuery => {
 
     if (mediaQuery.matches) {
         makeImagesDark();
-    } else if (bodyClass.contains('darkmode')) {
+    } else {
         makeImagesLight();
     }
 };
