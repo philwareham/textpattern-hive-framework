@@ -121,8 +121,7 @@ module.exports = function (grunt) {
                             'list--no-bullets',
                             'success',
                             'error',
-                            'alert-block success',
-                            'alert-block error'
+                            'alert-block'
                         ],
                         greedy: [
                             /input$/,
