@@ -5,7 +5,7 @@ module.exports = [
         files: ['**/*.js'],
 
         languageOptions: {
-            ecmaVersion: 2020,
+            ecmaVersion: 2026,
             sourceType: 'module',
             globals: {
                 __dirname: 'readonly',
