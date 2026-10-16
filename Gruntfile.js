@@ -11,10 +11,8 @@ module.exports = function (grunt) {
 
     [
         '@lodder/grunt-postcss',
-        'grunt-contrib-clean',
         'grunt-contrib-copy',
         'grunt-purgecss',
-        'grunt-replace-regex',
         'grunt-sass',
         'grunt-stylelint'
     ].forEach(grunt.loadNpmTasks);
@@ -43,14 +41,6 @@ module.exports = function (grunt) {
                 templates: 'themes/hive-framework-<%= pkg.version %>/'
             }
         },
-
-        // ---------------------------------------------------------------------
-        // Clean
-        // ---------------------------------------------------------------------
-
-        clean: [
-            'themes/*'
-        ],
 
         // ---------------------------------------------------------------------
         // Copy assets
@@ -148,23 +138,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Generate version number automatically in theme manifest.json file.
-        replace: {
-            theme: {
-                options: {
-                    patterns: [
-                        {
-                            match: 'version',
-                            replacement: '<%= pkg.version %>'
-                        }
-                    ]
-                },
-                files: [
-                    {'<%= paths.dest.templates %>manifest.json': '<%= paths.src.templates %>manifest.json'}
-                ]
-            }
-        },
-
         // ---------------------------------------------------------------------
         // Sass compilation
         // ---------------------------------------------------------------------
@@ -198,6 +171,29 @@ module.exports = function (grunt) {
             ]
         }
     });
+
+    // -------------------------------------------------------------------------
+    // Clean build output
+    // -------------------------------------------------------------------------
+
+    grunt.registerTask(
+        'clean',
+        'Remove generated theme files.',
+        function () {
+            const themesDir = 'themes';
+
+            if (fs.existsSync(themesDir)) {
+                fs.readdirSync(themesDir).forEach((entry) => {
+                    fs.rmSync(`${themesDir}/${entry}`, {
+                        recursive: true,
+                        force: true
+                    });
+                });
+            }
+
+            grunt.log.ok('Cleaned generated theme files.');
+        }
+    );
 
     // -------------------------------------------------------------------------
     // Update theme manifest version
