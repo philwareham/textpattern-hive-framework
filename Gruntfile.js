@@ -44,6 +44,10 @@ module.exports = function (grunt) {
             'themes/*'
         ],
 
+        // ---------------------------------------------------------------------
+        // Copy assets
+        // ---------------------------------------------------------------------
+
         copy: {
             // Copy fonts.
             fonts: {
@@ -153,7 +157,10 @@ module.exports = function (grunt) {
             }
         },
 
-        // Sass configuration.
+        // ---------------------------------------------------------------------
+        // Sass compilation
+        // ---------------------------------------------------------------------
+
         sass: {
             options: {
                 implementation: require('sass'),
@@ -168,38 +175,20 @@ module.exports = function (grunt) {
             }
         },
 
-        // Validate CSS files via stylelint.
+        // ---------------------------------------------------------------------
+        // CSS linting
+        // ---------------------------------------------------------------------
+
         stylelint: {
             options: {
                 configFile: '.stylelintrc.yml'
             },
-            src: ['<%= paths.src.sass %>**/*.{css,scss}']
-        },
 
-        // Directories watched and tasks performed by invoking `grunt watch`.
-        watch: {
-            sass: {
-                files: '<%= paths.src.sass %>**/*.scss',
-                tasks: 'css'
-            },
-            js: {
-                files: '<%= paths.src.js %>**',
-                tasks: [
-                    'jshint',
-                    'terser'
-                ]
-            },
-            html: {
-                files: [
-                    '<%= paths.src.templates %>**'
-                ],
-                tasks: [
-                    'copy:html',
-                    'replace'
-                ]
-            }
+            src: [
+                '<%= paths.src.sass %>/**/*.scss',
+                '<%= paths.src.sass %>/**/*.css'
+            ]
         }
-
     });
 
     // -------------------------------------------------------------------------
