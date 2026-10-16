@@ -24,16 +24,17 @@
     "url": "https://github.com/philwareham/textpattern-hive-framework/issues"
   },
   "devDependencies": {
+    "@eslint/js": "10.0.1",
     "@lodder/grunt-postcss": "3.1.1",
     "autoprefixer": "10.6.1",
     "cssnano": "9.8.0",
+    "eslint": "10.12.0",
     "grunt": "1.6.3",
     "grunt-cli": "1.5.0",
     "grunt-contrib-copy": "1.0.0",
     "grunt-purgecss": "8.0.0",
     "grunt-sass": "4.1.0",
     "grunt-stylelint": "0.21.0",
-    "jshint": "2.13.6",
     "postcss": "8.5.30",
     "sass": "1.105.1",
     "stylelint": "17.16.0",
