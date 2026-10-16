@@ -87,17 +87,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Check code quality of Gruntfile.js and site-specific JavaScript using JSHint.
-        jshint: {
-            options: {
-                esversion: 11
-            },
-            files: [
-                'Gruntfile.js',
-                '<%= paths.src.js %>*.js'
-            ]
-        },
-
         // Add vendor prefixed styles and other post-processing transformations.
         postcss: {
             options: {
@@ -185,27 +174,6 @@ module.exports = function (grunt) {
             src: ['<%= paths.src.sass %>**/*.{css,scss}']
         },
 
-        // Minify `app.js`.
-        terser: {
-            options: {
-                ecma: 2015,
-                compress: {
-                    booleans_as_integers: true,
-                    drop_console: true
-                },
-                format: {
-                    comments: false
-                }
-            },
-            dist: {
-                files: [
-                    {
-                        '<%= paths.dest.js %>app.js': ['<%= paths.src.js %>app.js']
-                    }
-                ]
-            }
-        },
-
         // Directories watched and tasks performed by invoking `grunt watch`.
         watch: {
             sass: {
@@ -231,6 +199,101 @@ module.exports = function (grunt) {
         }
 
     });
+
+    // -------------------------------------------------------------------------
+    // JavaScript linting
+    // -------------------------------------------------------------------------
+
+    grunt.registerTask(
+        'jshint',
+        'Lint JavaScript with JSHint.',
+        function () {
+            const files = [
+                'Gruntfile.js',
+                `${grunt.config.get('paths.src.js')}/**/*.js`
+            ];
+
+            const options = {
+                esversion: 11
+            };
+
+            let failed = false;
+
+            grunt.file.expand(files).forEach((file) => {
+                const source = fs.readFileSync(file, 'utf8');
+
+                if (!jshint(source, options)) {
+                    failed = true;
+
+                    grunt.log.error(`JSHint failed: ${file}`);
+
+                    jshint.errors.forEach((error) => {
+                        if (error) {
+                            grunt.log.error(
+                                `  Line ${error.line}, column ${error.character}: ${error.reason}`
+                            );
+                        }
+                    });
+                }
+            });
+
+            if (failed) {
+                return false;
+            }
+
+            grunt.log.ok('JSHint passed.');
+        }
+    );
+
+    // -------------------------------------------------------------------------
+    // JavaScript minification
+    // -------------------------------------------------------------------------
+
+    grunt.registerTask(
+        'terser',
+        'Minify JavaScript with Terser.',
+        async function () {
+            const done = this.async();
+
+            const sourceFile = `${grunt.config.get('paths.src.js')}/app.js`;
+            const destinationFile = `${grunt.config.get('paths.dest.js')}/app.js`;
+
+            try {
+                const source = fs.readFileSync(sourceFile, 'utf8');
+
+                const result = await terser.minify(source, {
+                    ecma: 2015,
+
+                    compress: {
+                        booleans_as_integers: true,
+                        drop_console: true
+                    },
+
+                    format: {
+                        comments: false
+                    }
+                });
+
+                if (result.error) {
+                    throw result.error;
+                }
+
+                fs.mkdirSync(
+                    grunt.config.get('paths.dest.js'),
+                    { recursive: true }
+                );
+
+                fs.writeFileSync(destinationFile, result.code);
+
+                grunt.log.ok(`Minified ${sourceFile} -> ${destinationFile}`);
+
+                done();
+            } catch (error) {
+                grunt.log.error(error);
+                done(false);
+            }
+        }
+    );
 
     // -------------------------------------------------------------------------
     // Composite tasks
