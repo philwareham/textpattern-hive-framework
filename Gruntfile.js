@@ -2,6 +2,8 @@ module.exports = function (grunt) {
     'use strict';
 
     const fs = require('fs');
+    const jshint = require('jshint').JSHINT;
+    const terser = require('terser');
 
     // -------------------------------------------------------------------------
     // Load Grunt tasks
